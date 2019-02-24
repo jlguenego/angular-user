@@ -3,5 +3,7 @@
  */
 
 export * from './lib/layout.service';
-export * from './lib/layout.component';
 export * from './lib/layout.module';
+export * from './lib/header/header.component';
+export * from './lib/body/body.component';
+export * from './lib/footer/footer.component';
