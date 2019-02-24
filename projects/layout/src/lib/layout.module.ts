@@ -4,17 +4,16 @@ import { FooterComponent } from './footer/footer.component';
 import { BodyComponent } from './body/body.component';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
-import { SiteIdComponent } from './site-id/site-id.component';
 import { ModuleWithProviders } from '@angular/compiler/src/core';
 import { LayoutConfigService } from './layout-config.service';
 
 @NgModule({
-  declarations: [HeaderComponent, FooterComponent, BodyComponent, SiteIdComponent],
+  declarations: [HeaderComponent, FooterComponent, BodyComponent],
   imports: [
     CommonModule,
     RouterModule,
   ],
-  exports: [HeaderComponent, FooterComponent, BodyComponent, SiteIdComponent]
+  exports: [HeaderComponent, FooterComponent, BodyComponent]
 })
 export class LayoutModule {
   static config: LayoutConfigService;
