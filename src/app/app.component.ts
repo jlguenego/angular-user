@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ResponsiveService } from 'projects/layout/src/public_api';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-  title = 'angular-user';
+  constructor(public responsive: ResponsiveService) {}
 }
