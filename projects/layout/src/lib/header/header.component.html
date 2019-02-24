@@ -1,5 +1,5 @@
 <header>
-  <div class="site-id" #ref>
+  <div class="site-id" #ref routerLink="/">
     <ng-content select=".site-id"></ng-content>
   </div>
   <div class="site-id" *ngIf="ref.childNodes.length == 0">
