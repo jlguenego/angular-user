@@ -20,9 +20,11 @@
     ],
     "paths": {
       "layout": [
+        "dist/layout",
         "dist/layout"
       ],
       "layout/*": [
+        "dist/layout/*",
         "dist/layout/*"
       ]
     }
