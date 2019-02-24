@@ -1,4 +1,5 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Inject } from '@angular/core';
+import { LayoutConfigService } from '../layout-config.service';
 
 export interface NavItem { label: string, route: string };
 
@@ -11,7 +12,7 @@ export class HeaderComponent implements OnInit {
 
   @Input() navItems: NavItem[] = [];
 
-  constructor() { }
+  constructor(public config: LayoutConfigService) { }
 
   ngOnInit() { }
 

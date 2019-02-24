@@ -5,6 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LayoutModule } from 'projects/layout/src/public_api';
 
+
 @NgModule({
   declarations: [
     AppComponent
@@ -12,7 +13,7 @@ import { LayoutModule } from 'projects/layout/src/public_api';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    LayoutModule
+    LayoutModule.forRoot({hue: 200})
   ],
   providers: [],
   bootstrap: [AppComponent]
