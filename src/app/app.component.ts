@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { ResponsiveService } from 'projects/layout/src/public_api';
+import { ResponsiveService, NavItem } from 'projects/layout/src/public_api';
 
 @Component({
   selector: 'app-root',
@@ -8,4 +8,10 @@ import { ResponsiveService } from 'projects/layout/src/public_api';
 })
 export class AppComponent {
   constructor(public responsive: ResponsiveService) {}
+  
+  nav: NavItem[] = [
+    {label: 'Brainstorm', route: '/brainstorm'},
+    {label: 'Presentation', route: '/presentation'},
+    {label: 'Contact', route: '/contact'},
+  ];
 }

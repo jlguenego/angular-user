@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, ElementRef, ViewChild, ContentChild } from '@angular/core';
+import { SiteIdComponent } from '../site-id/site-id.component';
+
+export interface NavItem { label: string, route: string };
 
 @Component({
   selector: 'layout-header',
@@ -7,9 +10,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
+  @Input() navItems: NavItem[] = [];
+
   constructor() { }
 
-  ngOnInit() {
-  }
+  ngOnInit() { }
 
 }
