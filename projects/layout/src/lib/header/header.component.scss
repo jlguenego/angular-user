@@ -1,4 +1,22 @@
+@import 'layout';
+
 header {
-    background-color: #444;
-    height: 3rem;
+    display: flex;
+    justify-content: center;
+    background-color: #eee;
+    height: $header-height;
+
+    .margin-auto {
+        width: 100%;
+        max-width: $max-width;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        .site-id {
+            font-size: 1.5rem;
+            padding: 1rem;
+        }
+    }
+
+
 }

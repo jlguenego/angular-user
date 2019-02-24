@@ -1,14 +1,17 @@
 <header>
-  <div class="site-id" #ref routerLink="/">
-    <ng-content select=".site-id"></ng-content>
+  <div class="margin-auto">
+    <div class="site-id" #ref routerLink="/">
+      <ng-content select=".site-id"></ng-content>
+    </div>
+    <div class="site-id" *ngIf="ref.childNodes.length == 0">
+      <span>DefaultLogo</span>
+    </div>
+    <nav>
+      <a *ngFor="let item of navItems" [routerLink]="item.route">{{item.label}}</a>
+    </nav>
+    <div class="utilities">Mon compte</div>
   </div>
-  <div class="site-id" *ngIf="ref.childNodes.length == 0">
-    <span>DefaultLogo</span>
-  </div>
-  <nav>
-    <a *ngFor="let item of navItems" [routerLink]="item.route">{{item.label}}</a>
-  </nav>
-  <div class="utilities">Mon compte</div>
+
 </header>
 
 Hue = {{config.hue}}

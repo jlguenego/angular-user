@@ -31,7 +31,8 @@
             ],
             "stylePreprocessorOptions": {
               "includePaths": [
-                "src/scss"
+                "src/scss",
+                "projects/layout/src"
               ]
             },
             "scripts": [],
@@ -145,6 +146,11 @@
       "sourceRoot": "projects/layout/src",
       "projectType": "library",
       "prefix": "layout",
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "sass"
+        }
+      },
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-ng-packagr:build",
