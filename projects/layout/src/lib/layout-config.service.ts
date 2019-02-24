@@ -4,10 +4,8 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class LayoutConfigService {
-  
-  hue: number;
+
+  hue: number = 200;
 
   constructor() { }
 }
-
-

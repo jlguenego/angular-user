@@ -4,8 +4,6 @@ import { FooterComponent } from './footer/footer.component';
 import { BodyComponent } from './body/body.component';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
-import { ModuleWithProviders } from '@angular/compiler/src/core';
-import { LayoutConfigService } from './layout-config.service';
 
 @NgModule({
   declarations: [HeaderComponent, FooterComponent, BodyComponent],
@@ -15,17 +13,4 @@ import { LayoutConfigService } from './layout-config.service';
   ],
   exports: [HeaderComponent, FooterComponent, BodyComponent]
 })
-export class LayoutModule {
-  static config: LayoutConfigService;
-  static forRoot(config: LayoutConfigService): ModuleWithProviders {
-    return {
-      ngModule: LayoutModule,
-      providers: [
-        {
-          provide: LayoutConfigService,
-          useValue: config
-        }
-      ]
-    }
-  }
-}
+export class LayoutModule {}

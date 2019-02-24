@@ -13,7 +13,7 @@ import { LayoutModule } from 'projects/layout/src/public_api';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    LayoutModule.forRoot({hue: 200})
+    LayoutModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

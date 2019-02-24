@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { ResponsiveService, NavItem } from 'projects/layout/src/public_api';
+import { ResponsiveService, NavItem, LayoutConfigService } from 'projects/layout/src/public_api';
 
 @Component({
   selector: 'app-root',
@@ -7,7 +7,10 @@ import { ResponsiveService, NavItem } from 'projects/layout/src/public_api';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-  constructor(public responsive: ResponsiveService) {}
+  constructor(public responsive: ResponsiveService, private layoutConfig: LayoutConfigService) {
+
+    this.layoutConfig.hue = 303;
+  }
   
   nav: NavItem[] = [
     {label: 'Brainstorm', route: '/brainstorm'},
