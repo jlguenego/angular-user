@@ -1,12 +1,10 @@
-$header-height: 3rem;
 $max-width: 45rem;
 
 header {
     display: flex;
     justify-content: center;
-    background-color: #eee;
-    height: $header-height;
-
+    
+    
     .margin-auto {
         width: 100%;
         max-width: $max-width;

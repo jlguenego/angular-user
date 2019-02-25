@@ -1,0 +1,20 @@
+@import './reset';
+@import './variables';
+@import './colors';
+
+header {
+    height: $header-height;
+    background-color: $primary-dark-color;
+    color: white;
+    a {
+        padding: 1rem;
+        color: white;
+        text-decoration: none;
+    }
+}
+
+.primary-light-color {
+    color: $primary-light-color;
+}
+
+

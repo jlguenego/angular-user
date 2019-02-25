@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { ResponsiveService, NavItem, LayoutConfigService } from 'projects/layout/src/public_api';
+import { ResponsiveService, NavItem } from 'projects/layout/src/public_api';
 
 @Component({
   selector: 'app-root',
@@ -7,14 +7,12 @@ import { ResponsiveService, NavItem, LayoutConfigService } from 'projects/layout
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-  constructor(public responsive: ResponsiveService, private layoutConfig: LayoutConfigService) {
-
-    this.layoutConfig.hue = 303;
+  constructor(public responsive: ResponsiveService) {
   }
-  
+
   nav: NavItem[] = [
-    {label: 'Brainstorm', route: '/brainstorm'},
-    {label: 'Presentation', route: '/presentation'},
-    {label: 'Contact', route: '/contact'},
+    { label: 'Brainstorm', route: '/brainstorm' },
+    { label: 'Presentation', route: '/presentation' },
+    { label: 'Contact', route: '/contact' },
   ];
 }

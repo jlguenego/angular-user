@@ -3,7 +3,6 @@
  */
 
 export * from './lib/responsive.service';
-export * from './lib/layout-config.service';
 export * from './lib/layout.module';
 export * from './lib/header/header.component';
 export * from './lib/body/body.component';

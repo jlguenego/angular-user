@@ -7,7 +7,9 @@
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "build-layout": "rimraf dist/layout && ng build layout && npm run build-layout-styles",
+    "build-layout-styles": "cpx \"./projects/layout/src/lib/scss/**/*\" \"./dist/layout/scss\""
   },
   "private": true,
   "dependencies": {
@@ -20,6 +22,8 @@
     "@angular/platform-browser-dynamic": "~7.2.0",
     "@angular/router": "~7.2.0",
     "core-js": "^2.5.4",
+    "cpx": "^1.5.0",
+    "rimraf": "^2.6.3",
     "rxjs": "~6.3.3",
     "tslib": "^1.9.0",
     "zone.js": "~0.8.26"
