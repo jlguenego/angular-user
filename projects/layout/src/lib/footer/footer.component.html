@@ -1,3 +1,11 @@
-<p>
-  footer works!
-</p>
+<footer>
+  <div class="margin-auto">
+    <div #ref>
+      <ng-content></ng-content>
+    </div>
+    <div *ngIf="ref.childNodes.length == 0">
+      <a routerLink="/legal">Terms of use</a>
+    </div>
+  </div>
+
+</footer>
