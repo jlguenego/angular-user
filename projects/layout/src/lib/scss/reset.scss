@@ -1,4 +1,14 @@
+* {
+    box-sizing: border-box;
+}
+
 body {
+    height: 100vh;
     margin: 0;
     padding: 0;
+}
+
+p {
+    margin: 0;
+    padding-top: 1rem;
 }
