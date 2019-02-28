@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { UtilitiesComponent } from './utilities/utilities.component';
-import { MobileUtilitiesComponent } from './mobile-utilities/mobile-utilities.component';
 import { SigninPageComponent } from './signin-page/signin-page.component';
 import { SocialLoginComponent } from './social-login/social-login.component';
 import { CommonModule } from '@angular/common';
