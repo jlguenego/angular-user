@@ -1,3 +1,6 @@
-$hue: 200;
+@import 'projects/layout/src/lib/scss/variables';
+// custom variables
+$footer-height: 5rem;
 
-$primary-color: hsl($hue, 100%, 50%);
+$primary-hue: 90;
+$secondary-hue: 100;

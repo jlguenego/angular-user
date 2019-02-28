@@ -1,6 +1,4 @@
 @import './reset';
-@import './variables';
-@import './colors';
 
 header {
     height: $header-height;
@@ -47,7 +45,3 @@ button {
         background-color: hsla(0, 100%, 100%, 0.5);
     }
 }
-
-
-
-
