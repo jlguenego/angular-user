@@ -8,6 +8,18 @@
     cursor: pointer;
 }
 
+.light-bg {
+    color: $primary-vdark-color;
+    button {
+        color: $primary-vdark-color;
+        border-color: $primary-vdark-color;
+    }
+}
+
+.dark-bg {
+    color: black;
+}
+
 .overlay {
     display: block;
     position: fixed;
@@ -101,11 +113,19 @@ footer {
 }
 
 main {
+    padding: 0.5rem 0;
     min-height: calc(100% - #{$footer-height + $header-height});
 }
 
+@media only screen and (max-width: $breakpoint) {
+    /* For mobile phones: */
+    main {
+        padding: 0.5rem;
+    }
+}
+
 button {
-    padding: 0.3rem 0.6rem;
+    padding: 0.4rem 0.8rem;
     margin: 0.3rem 0.3rem;
     border: 1px solid white;
     border-radius: 6px;
