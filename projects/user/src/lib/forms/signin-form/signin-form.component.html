@@ -1,0 +1,22 @@
+<form autocomplete [formGroup]="f" (ngSubmit)="onSubmit()">
+  <label>
+    <div>Email*</div>
+    <input type="email" name="email" formControlName="email" autocomplete="email">
+  </label>
+  <label>
+    <div>Mot de passe*</div>
+    <input type="password" name="password" formControlName="password" autocomplete="password">
+    <!-- <widget-password formControlName="password"></widget-password> -->
+  </label>
+  <div class="error-block">
+    <div class="error-incorrect" *ngIf="errorCode !== undefined">
+      <!-- <span *ngIf="errorCode === ERROR.BAD_PASSWORD">Identifiant ou mot de passe incorrect.</span>
+      <span *ngIf="errorCode === ERROR.UNKNOWN">Oups. Erreur technique.</span> -->
+    </div>
+  </div>
+  <div class="reset-submit">
+    <a routerLink="/oubli-mot-de-passe">Mot de passe oublié ?</a>
+    <button class="submit">Connexion</button>
+  </div>
+</form>
+<!-- {{f.value | json}} -->
