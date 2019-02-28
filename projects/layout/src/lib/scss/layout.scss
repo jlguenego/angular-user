@@ -40,13 +40,6 @@ main {
     min-height: calc(100% - #{$footer-height + $header-height});
 }
 
-.primary-light-color {
-    color: $primary-light-color;
-}
-
-.secondary-light-color {
-    color: $secondary-light-color;
-}
 
 button {
     padding: 0.3rem 0.6rem;
@@ -63,3 +56,6 @@ button {
         background-color: hsla(0, 100%, 100%, 0.5);
     }
 }
+
+.primary-light-color { color: $primary-light-color; }
+.secondary-light-color { color: $secondary-light-color; }
