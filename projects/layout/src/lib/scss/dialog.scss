@@ -3,7 +3,7 @@ $radius: 6px;
 .panel {
     display: block;
     max-width: 30rem;
-    width: 90%;
+    width: 95%;
     position: relative;
     top: 50%;
     left: 50%;
@@ -36,4 +36,14 @@ $radius: 6px;
 
 .content {
     padding: 2rem 1rem;
+}
+
+@media only screen and (max-width: $breakpoint) {
+    .panel, .header {
+        border-radius: 0;
+    }
+
+    .content {
+        padding: 2rem 0.5rem;
+    }
 }

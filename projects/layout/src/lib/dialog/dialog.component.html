@@ -1,12 +1,12 @@
 <div *ngIf="isVisible" class="overlay" (click)="dialog.close()">
-    <div class="panel" appClickStopPropagation>
+    <div class="panel" layoutClickStopPropagation>
       <div class="header">
         <div class="title">{{title}}</div>
         <div class="close" (click)="dialog.close()">
             <fa-icon [icon]="faTimes"></fa-icon>
         </div>
       </div>
-      <div class="content">
+      <div class="content light-bg">
         <ng-template layoutAnchor></ng-template>
       </div>
     </div>

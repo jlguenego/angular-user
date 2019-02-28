@@ -7,14 +7,28 @@ import { RouterModule } from '@angular/router';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { DialogComponent } from './dialog/dialog.component';
 import { AnchorDirective } from './anchor.directive';
+import { ClickStopPropagationDirective } from './click-stop-propagation.directive';
 
 @NgModule({
-  declarations: [HeaderComponent, FooterComponent, BodyComponent, DialogComponent, AnchorDirective],
+  declarations: [
+    HeaderComponent,
+    FooterComponent,
+    BodyComponent,
+    DialogComponent,
+    AnchorDirective,
+    ClickStopPropagationDirective
+  ],
   imports: [
     CommonModule,
     RouterModule,
     FontAwesomeModule,
   ],
-  exports: [HeaderComponent, FooterComponent, BodyComponent, DialogComponent]
+  exports: [
+    HeaderComponent, 
+    FooterComponent, 
+    BodyComponent, 
+    DialogComponent,
+    ClickStopPropagationDirective
+  ]
 })
 export class LayoutModule { }
