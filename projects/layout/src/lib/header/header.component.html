@@ -1,11 +1,18 @@
-<header>
-  <div class="margin-auto">
+<ng-template #siteId>
+  <div>
     <div #ref routerLink="/">
       <ng-content select=".site-id"></ng-content>
     </div>
-    <div *ngIf="ref.childNodes.length == 0">
-      <span>DefaultLogo</span>
+    <div *ngIf="ref.childNodes.length == 0" #ref routerLink="/">
+      <span class="site-id">DefaultLogo</span>
     </div>
+  </div>
+
+</ng-template>
+
+<header *ngIf="responsive.isDesktop">
+  <div class="margin-auto">
+    <ng-container *ngTemplateOutlet="siteId"></ng-container>
     <nav>
       <a *ngFor="let item of navItems" [routerLink]="item.route">{{item.label}}</a>
     </nav>
@@ -13,4 +20,10 @@
       <ng-content select=".utilities"></ng-content>
     </div>
   </div>
+</header>
+<header *ngIf="responsive.isMobile">
+  <div class="margin-auto">
+    <ng-container *ngTemplateOutlet="siteId"></ng-container>
+  </div>
+  <fa-icon [icon]="faBars"></fa-icon>
 </header>

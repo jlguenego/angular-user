@@ -14,6 +14,7 @@ function mobilecheck() {
 export class ResponsiveService {
 
   public isMobile: boolean;
+  public isDesktop: boolean;
 
   constructor(@Inject(PLATFORM_ID) private platformId) {
     console.log('responsive service constructor');
@@ -28,5 +29,6 @@ export class ResponsiveService {
 
   private update() {
     this.isMobile = mobilecheck() || window.innerWidth < 768;
+    this.isDesktop = !this.isMobile;
   }
 }

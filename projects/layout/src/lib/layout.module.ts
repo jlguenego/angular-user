@@ -4,13 +4,15 @@ import { FooterComponent } from './footer/footer.component';
 import { BodyComponent } from './body/body.component';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 @NgModule({
   declarations: [HeaderComponent, FooterComponent, BodyComponent],
   imports: [
     CommonModule,
     RouterModule,
+    FontAwesomeModule,
   ],
   exports: [HeaderComponent, FooterComponent, BodyComponent]
 })
-export class LayoutModule {}
+export class LayoutModule { }
