@@ -7,3 +7,4 @@ export * from './lib/layout.module';
 export * from './lib/header/header.component';
 export * from './lib/body/body.component';
 export * from './lib/footer/footer.component';
+export * from './lib/dialog/dialog.component';
