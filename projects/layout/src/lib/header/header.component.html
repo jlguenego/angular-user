@@ -29,7 +29,7 @@
   <div *ngIf="isMenuOpen" (click)="closeMenu()" class="overlay"></div>
   <div (click)="closeMenu()" [class.open]="isMenuOpen" class="primary-mobile-menu">
     <nav>
-      <a *ngFor="let item of navItems" [routerLink]="item.route">{{item.label}}</a>
+      <a *ngFor="let item of mobileNavItems" [routerLink]="item.route">{{item.label}}</a>
     </nav>
   </div>
 </header>

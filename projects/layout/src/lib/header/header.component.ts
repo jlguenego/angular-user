@@ -21,6 +21,8 @@ export class HeaderComponent implements OnInit {
     { label: 'Menu2', route: '/menu2' },
   ];
 
+  @Input() mobileNavItems: NavItem[];
+
   private isOpen$: BehaviorSubject<boolean> = new BehaviorSubject(false);
 
   constructor(public responsive: ResponsiveService) {
@@ -30,7 +32,11 @@ export class HeaderComponent implements OnInit {
     });
   }
 
-  ngOnInit() { }
+  ngOnInit() { 
+    if (!this.mobileNavItems) {
+      this.mobileNavItems = this.navItems;
+    }
+  }
 
   toggleMenu() {
     this.isOpen$.next(!this.isOpen$.value);

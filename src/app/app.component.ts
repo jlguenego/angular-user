@@ -15,4 +15,10 @@ export class AppComponent {
     { label: 'Presentation', route: '/presentation' },
     { label: 'Contact', route: '/contact' },
   ];
+
+  mobileNav: NavItem[] = [
+    { label: 'Mobile', route: '/brainstorm' },
+    { label: 'Presentation', route: '/presentation' },
+    { label: 'Contact', route: '/contact' },
+  ];
 }
