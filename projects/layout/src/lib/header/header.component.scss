@@ -1,13 +1,8 @@
-$max-width: 45rem;
-
 header {
     display: flex;
     justify-content: center;
     
-    
     .margin-auto {
-        width: 100%;
-        max-width: $max-width;
         display: flex;
         justify-content: space-between;
         align-items: center;

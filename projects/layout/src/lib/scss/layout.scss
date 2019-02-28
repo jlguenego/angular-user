@@ -1,11 +1,22 @@
 @import './reset';
 
+.margin-auto {
+    width: 100%;
+    max-width: $page-max-width;
+}
+
 header {
     height: $header-height;
     background-color: $primary-dark-color;
     color: white;
+    nav {
+        display: flex;
+        justify-content: space-between;
+        width: 80%;
+        max-width: $menu-max-width;
+    }
     a {
-        padding: 1rem;
+        padding: 0.5rem;
         color: white;
         text-decoration: none;
     }
@@ -32,7 +43,7 @@ main {
 
 button {
     padding: 0.3rem 0.6rem;
-    margin: 0.3rem 0.6rem;
+    margin: 0.3rem 0.3rem;
     border: 1px solid white;
     border-radius: 6px;
     background-color: transparent;
