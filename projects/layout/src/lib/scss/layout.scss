@@ -5,6 +5,8 @@
 .margin-auto {
     width: 100%;
     max-width: $page-max-width;
+    margin: 0 auto;
+    padding: 1rem;
 }
 
 .light-bg {
@@ -25,7 +27,7 @@ header {
     color: white;
     .site-id {
         font-size: 1.5rem;
-        padding: 0 1rem;
+        padding: 0 1rem 0 0;
     }
     nav {
         display: flex;
@@ -102,13 +104,6 @@ footer {
 main {
     padding: 0.5rem 0;
     min-height: calc(100% - #{$footer-height + $header-height});
-}
-
-@media only screen and (max-width: $breakpoint) {
-    /* For mobile phones: */
-    main {
-        padding: 0.5rem;
-    }
 }
 
 p {
