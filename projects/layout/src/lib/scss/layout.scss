@@ -1,11 +1,10 @@
 @import './reset';
+@import './misc';
+@import './home';
+
 .margin-auto {
     width: 100%;
     max-width: $page-max-width;
-}
-
-[routerLink] {
-    cursor: pointer;
 }
 
 .light-bg {
@@ -18,18 +17,6 @@
 
 .dark-bg {
     color: black;
-}
-
-.overlay {
-    display: block;
-    position: fixed;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    width: 100%;
-    height: 100%;
-    background: hsla(0, 0%, 50%, 0.5);
 }
 
 header {
@@ -124,6 +111,10 @@ main {
     }
 }
 
+p {
+    padding: 0 0 1em;
+}
+
 button {
     padding: 0.4rem 0.8rem;
     margin: 0.3rem 0.3rem;
@@ -138,6 +129,11 @@ button {
     &:active {
         background-color: hsla(0, 100%, 100%, 0.5);
     }
+    &.primary {
+        background-color: $accent-dark-color;
+        color: white;
+        border-color: $accent-dark-color;
+    }
 }
 
 .primary-light-color {
@@ -147,3 +143,5 @@ button {
 .secondary-light-color {
     color: $secondary-light-color;
 }
+
+

@@ -1,0 +1,35 @@
+.jumbo {
+    font-size: 1.5em;
+    font-weight: bold;
+    img {
+        padding: 2rem;
+        width: 80%;
+        max-width: 20rem;
+    }
+}
+
+.tagline {
+    text-align: center;
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+@media only screen and (max-width: $breakpoint) {
+    /* For mobile phones: */
+    .jumbo {
+        font-size: 1.3em;
+        button {
+            width: 90%;
+            margin: 1rem;
+            padding: 1rem;
+        }
+        img {
+            padding: 0.5rem;
+            width: 50%;
+        }
+        p {
+            padding: 0;
+        }
+    }
+}
+
