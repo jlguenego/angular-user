@@ -7,13 +7,17 @@ import { LayoutModule } from 'projects/layout/src/public_api';
 import { UserModule } from 'projects/user/src/public_api';
 import { ContactComponent } from './routes/contact/contact.component';
 import { PresentationComponent } from './routes/presentation/presentation.component';
+import { LegalComponent } from './routes/legal/legal.component';
+import { HomeComponent } from './routes/home/home.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     ContactComponent,
-    PresentationComponent
+    PresentationComponent,
+    LegalComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
