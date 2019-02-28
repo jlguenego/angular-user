@@ -6,9 +6,10 @@ import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { DialogComponent } from './dialog/dialog.component';
+import { AnchorDirective } from './anchor.directive';
 
 @NgModule({
-  declarations: [HeaderComponent, FooterComponent, BodyComponent, DialogComponent],
+  declarations: [HeaderComponent, FooterComponent, BodyComponent, DialogComponent, AnchorDirective],
   imports: [
     CommonModule,
     RouterModule,

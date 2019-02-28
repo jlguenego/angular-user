@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { DialogService } from 'projects/layout/src/lib/dialog.service';
+import { SigninPageComponent } from '../signin-page/signin-page.component';
 
 @Component({
   selector: 'user-utilities',
@@ -7,9 +9,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UtilitiesComponent implements OnInit {
 
-  constructor() { }
+  constructor(private dialog: DialogService) { }
 
   ngOnInit() {
+  }
+
+  signinDialog() {
+    console.log('signin');
+    this.dialog.open(SigninPageComponent);
   }
 
 }
