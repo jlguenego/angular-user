@@ -26,6 +26,12 @@
       "layout/*": [
         "dist/layout/*",
         "dist/layout/*"
+      ],
+      "user": [
+        "dist/user"
+      ],
+      "user/*": [
+        "dist/user/*"
       ]
     }
   }
