@@ -57,7 +57,11 @@ header {
             top: $header-height;
             left: 0;
             right: 0;
-            max-width: initial;
+            nav {
+                display: block;
+                width: 100%;
+                max-width: initial;
+            }
             a {
                 display: block;
                 font-size: 1rem;

@@ -27,11 +27,9 @@
   </div>
   <fa-icon (click)="toggleMenu()" class="bars" [icon]="faBars"></fa-icon>
   <div *ngIf="isMenuOpen" (click)="closeMenu()" class="overlay"></div>
-  <nav (click)="closeMenu()" [class.open]="isMenuOpen" class="primary-mobile-menu">
- 
-    <a routerLink="/creer-revendication">Créer une revendication</a>
-    <a routerLink="/indicateurs">Indicateurs</a>
-    <a routerLink="/presentation">Presentation</a>
-    
-  </nav>
+  <div (click)="closeMenu()" [class.open]="isMenuOpen" class="primary-mobile-menu">
+    <nav>
+      <a *ngFor="let item of navItems" [routerLink]="item.route">{{item.label}}</a>
+    </nav>
+  </div>
 </header>
