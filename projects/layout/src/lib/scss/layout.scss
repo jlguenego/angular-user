@@ -4,6 +4,10 @@
     max-width: $page-max-width;
 }
 
+[routerLink] {
+    cursor: pointer;
+}
+
 header {
     height: $header-height;
     background-color: $primary-dark-color;
@@ -22,6 +26,11 @@ header {
         padding: 0.5rem;
         color: white;
         text-decoration: none;
+    }
+    .bars {
+        font-size: 1.5rem;
+        padding: 0.6rem 1rem;
+        cursor: pointer;
     }
 }
 
