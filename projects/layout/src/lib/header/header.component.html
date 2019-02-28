@@ -26,4 +26,12 @@
     <ng-container *ngTemplateOutlet="siteId"></ng-container>
   </div>
   <fa-icon (click)="toggleMenu()" class="bars" [icon]="faBars"></fa-icon>
+  <div *ngIf="isMenuOpen" (click)="closeMenu()" class="overlay"></div>
+  <nav (click)="closeMenu()" [class.open]="isMenuOpen" class="primary-mobile-menu">
+ 
+    <a routerLink="/creer-revendication">Créer une revendication</a>
+    <a routerLink="/indicateurs">Indicateurs</a>
+    <a routerLink="/presentation">Presentation</a>
+    
+  </nav>
 </header>

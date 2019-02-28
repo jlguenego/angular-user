@@ -27,7 +27,6 @@ export class HeaderComponent implements OnInit {
     this.isOpen$.subscribe(isOpen => {
       this.isMenuOpen = isOpen;
       this.manageBody();
-      console.log('isOpen', this.isMenuOpen);
     });
   }
 
