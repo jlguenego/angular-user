@@ -25,5 +25,5 @@
   <div class="margin-auto">
     <ng-container *ngTemplateOutlet="siteId"></ng-container>
   </div>
-  <fa-icon class="bars" [icon]="faBars"></fa-icon>
+  <fa-icon (click)="toggleMenu()" class="bars" [icon]="faBars"></fa-icon>
 </header>
