@@ -7,7 +7,6 @@
       <span class="site-id">DefaultLogo</span>
     </div>
   </div>
-
 </ng-template>
 
 <header *ngIf="responsive.isDesktop">
@@ -28,6 +27,7 @@
   <fa-icon (click)="toggleMenu()" class="bars" [icon]="faBars"></fa-icon>
   <div *ngIf="isMenuOpen" (click)="closeMenu()" class="overlay"></div>
   <div (click)="closeMenu()" [class.open]="isMenuOpen" class="primary-mobile-menu">
+    <ng-content select=".mobile-menu-header"></ng-content>
     <nav>
       <a *ngFor="let item of mobileNavItems" [routerLink]="item.route">{{item.label}}</a>
     </nav>

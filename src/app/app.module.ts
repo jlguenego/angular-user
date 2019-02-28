@@ -5,11 +5,15 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LayoutModule } from 'projects/layout/src/public_api';
 import { UserModule } from 'projects/user/src/public_api';
+import { ContactComponent } from './routes/contact/contact.component';
+import { PresentationComponent } from './routes/presentation/presentation.component';
 
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    ContactComponent,
+    PresentationComponent
   ],
   imports: [
     BrowserModule,
