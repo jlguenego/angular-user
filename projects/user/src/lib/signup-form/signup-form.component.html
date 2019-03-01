@@ -1,0 +1,28 @@
+<form autocomplete [formGroup]="f" (ngSubmit)="onSubmit()">
+  <label>
+    <div>Email*</div>
+    <input type="email" name="email" formControlName="email" autocomplete="username email">
+  </label>
+  <label>
+    <div>Nom*</div>
+    <input type="text" name="lastname" formControlName="lastname" autocomplete="username lastname">
+  </label>
+  <label>
+    <div>Prénom*</div>
+    <input type="text" name="firstname" formControlName="firstname" autocomplete="username firstname">
+  </label>
+  <label>
+    <div>Mot de passe*</div>
+    <widget-password formControlName="password" appPasswordNew></widget-password>
+  </label>
+  <div class="error-block">
+    <div class="error-incorrect" *ngIf="errorCode !== undefined">
+      <span *ngIf="errorCode === ERROR.WEAK_PASSWORD">Le mot de passe doit contenir plus de 6 caractères.</span>
+      <span *ngIf="errorCode === ERROR.MAIL_ALREADY_IN_USE">Le mail est déjà utilisé.</span>
+    </div>
+  </div>
+
+  <div class="submit">
+    <button type="submit" class="primary">Je crée mon compte</button>
+  </div>
+</form>

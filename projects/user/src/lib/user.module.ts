@@ -7,6 +7,7 @@ import { CommonModule } from '@angular/common';
 import { SigninFormComponent } from './forms/signin-form/signin-form.component';
 import { WidgetModule } from 'projects/widget/src/public_api';
 import { SignupPageComponent } from './signup-page/signup-page.component';
+import { SignupFormComponent } from './signup-form/signup-form.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { SignupPageComponent } from './signup-page/signup-page.component';
     SigninPageComponent,
     SocialLoginComponent,
     SigninFormComponent,
-    SignupPageComponent
+    SignupPageComponent,
+    SignupFormComponent
   ],
   imports: [
     CommonModule,
