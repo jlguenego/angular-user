@@ -32,6 +32,12 @@
       ],
       "user/*": [
         "dist/user/*"
+      ],
+      "widget": [
+        "dist/widget"
+      ],
+      "widget/*": [
+        "dist/widget/*"
       ]
     }
   }
