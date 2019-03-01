@@ -1,5 +1,5 @@
 <div *ngIf="isVisible" class="overlay" (click)="dialog.close()">
-    <div class="panel" layoutClickStopPropagation>
+    <div class="panel" layoutClickStopPropagation [style.maxWidth]="maxWidth">
       <div class="header">
         <div class="title">{{title}}</div>
         <div class="close" (click)="dialog.close()">

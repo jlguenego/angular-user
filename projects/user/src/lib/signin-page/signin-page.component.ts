@@ -9,7 +9,7 @@ import { PageComponent } from 'projects/layout/src/lib/dialog.service';
 export class SigninPageComponent implements OnInit, PageComponent {
 
   title = "Sign in";
-  width = '20rem';
+  maxWidth = '20rem';
 
   constructor() { }
 

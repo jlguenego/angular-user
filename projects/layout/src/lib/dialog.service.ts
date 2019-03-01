@@ -4,10 +4,12 @@ import { timer } from 'rxjs';
 
 export type DialogPage = Type<{}>;
 
+export const DIALOG_DEFAULT_MAXWIDTH = '30rem';
+
 export interface PageComponent {
   title: string;
   data?: any;
-  width?: string;
+  maxWidth?: string;
 }
 
 @Injectable({
@@ -33,6 +35,7 @@ export class DialogService {
       const pageComponent = (<PageComponent>componentRef.instance);
       this.component.title = pageComponent.title;
       pageComponent.data = data;
+      this.component.maxWidth = pageComponent.maxWidth || DIALOG_DEFAULT_MAXWIDTH;
     });
   }
 

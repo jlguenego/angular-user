@@ -1,7 +1,8 @@
-import { Component, OnInit, Type, ComponentRef, ComponentFactoryResolver, ElementRef, ViewChild, ViewContainerRef, TemplateRef } from '@angular/core';
-import { DialogService, DialogPage } from '../dialog.service';
+import { Component, OnInit, ComponentRef, ComponentFactoryResolver, ViewChild } from '@angular/core';
+import { DialogService, DialogPage, DIALOG_DEFAULT_MAXWIDTH } from '../dialog.service';
 import { faTimes } from '@fortawesome/free-solid-svg-icons';
 import { AnchorDirective } from '../anchor.directive';
+
 
 @Component({
   selector: 'layout-dialog',
@@ -10,23 +11,20 @@ import { AnchorDirective } from '../anchor.directive';
 })
 export class DialogComponent implements OnInit {
 
-
   isVisible = false;
-
   title = "Error: I need a title";
-
   faTimes = faTimes;
-
+  maxWidth = DIALOG_DEFAULT_MAXWIDTH;
   @ViewChild(AnchorDirective) anchorHost: AnchorDirective;
 
   constructor(
     public dialog: DialogService,
     private componentFactoryResolver: ComponentFactoryResolver,
-  ) { }
-
-  ngOnInit() {
+  ) {
     this.dialog.registerDialogComponent(this);
   }
+
+  ngOnInit() { }
 
   loadComponent(component: DialogPage): ComponentRef<{}> {
     const componentFactory = this.componentFactoryResolver.resolveComponentFactory(component);

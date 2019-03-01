@@ -1,10 +1,13 @@
 div {
     display: flex;
     align-items: center;
+    justify-content: space-between;
     button {
         display: flex;
         align-items: center;
-        width: 12rem;
+        width: 8rem;
+        margin: 0;
+        padding: 0.4rem 0.4rem;
         border: 2px solid hsl(0, 0%, 70%);
         svg {
             width: 1.5rem;

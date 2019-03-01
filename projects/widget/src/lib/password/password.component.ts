@@ -1,15 +1,36 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons';
+import { AbstractValueAccessor, MakeProvider } from '../AbstractValueAccessor';
 
 @Component({
   selector: 'widget-password',
   templateUrl: './password.component.html',
-  styleUrls: ['./password.component.scss']
+  styleUrls: ['./password.component.scss'],
+  providers: [MakeProvider(PasswordComponent)],
 })
-export class PasswordComponent implements OnInit {
+export class PasswordComponent extends AbstractValueAccessor {
 
-  constructor() { }
+  faEye = faEye;
+  faEyeSlash = faEyeSlash;
 
-  ngOnInit() {
+  isVisible = false;
+  isNewPassword = false;
+  havingFocus = false;
+
+  @Input('appPasswordNew') set appPasswordNew(val: any) {
+    this.isNewPassword = true;
+  }
+
+  toggle() {
+    this.isVisible = !this.isVisible;
+  }
+
+  onFocus() {
+    this.havingFocus = true;
+  }
+  onBlur() {
+    this.havingFocus = false;
+    this.onTouched();
   }
 
 }
