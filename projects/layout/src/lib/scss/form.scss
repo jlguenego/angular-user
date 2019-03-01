@@ -1,0 +1,14 @@
+
+label {
+    display: block;
+    padding: 0 0 1rem;
+}
+
+input {
+    font-size: 1rem;
+    width: 100%;
+    padding: 0.5rem 1rem;
+    border: 1px solid black;
+    border-color: hsl(0, 0%, 80%);
+    border-radius: $radius;
+}
