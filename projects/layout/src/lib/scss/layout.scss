@@ -1,8 +1,8 @@
 @import './reset';
 @import './misc';
 @import './dialog';
+@import './button';
 @import './home';
-
 .margin-auto {
     width: 100%;
     max-width: $page-max-width;
@@ -12,14 +12,10 @@
 
 .light-bg {
     color: $primary-vdark-color;
-    button {
-        color: $primary-vdark-color;
-        border-color: $primary-vdark-color;
-    }
 }
 
 .dark-bg {
-    color: black;
+    color: white;
 }
 
 header {
@@ -111,27 +107,6 @@ p {
     padding: 0 0 1em;
 }
 
-button {
-    padding: 0.4rem 0.8rem;
-    margin: 0.3rem 0.3rem;
-    border: 1px solid white;
-    border-radius: 6px;
-    background-color: transparent;
-    color: white;
-    font-size: inherit;
-    &:hover {
-        background-color: hsla(0, 100%, 100%, 0.3);
-    }
-    &:active {
-        background-color: hsla(0, 100%, 100%, 0.5);
-    }
-    &.primary {
-        background-color: $accent-dark-color;
-        color: white;
-        border-color: $accent-dark-color;
-    }
-}
-
 .primary-light-color {
     color: $primary-light-color;
 }
@@ -139,5 +114,3 @@ button {
 .secondary-light-color {
     color: $secondary-light-color;
 }
-
-

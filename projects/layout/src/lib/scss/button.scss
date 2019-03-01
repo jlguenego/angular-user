@@ -1,0 +1,46 @@
+button {
+    padding: 0.4rem 0.8rem;
+    margin: 0.3rem 0.3rem;
+    border: 1px solid white;
+    border-radius: 6px;
+    background-color: transparent;
+    font-size: inherit;
+}
+
+.light-bg {
+    color: $primary-vdark-color;
+    button {
+        color: $primary-vdark-color;
+        border-color: $primary-vdark-color;
+        &:hover {
+            background-color: transparentize($primary-vdark-color, 0.8);
+        }
+        &:active {
+            background-color: transparentize($primary-vdark-color, 0.5);
+        }
+        &.primary {
+            background-color: $accent-dark-color;
+            color: white;
+            border-color: $accent-dark-color;
+        }
+    }
+}
+
+.dark-bg {
+    color: white;
+    button {
+        color: white;
+        border-color: white;
+        &:hover {
+            background-color: hsla(0, 100%, 100%, 0.3);
+        }
+        &:active {
+            background-color: hsla(0, 100%, 100%, 0.5);
+        }
+        &.primary {
+            background-color: $accent-dark-color;
+            color: white;
+            border-color: $accent-dark-color;
+        }
+    }
+}

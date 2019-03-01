@@ -9,7 +9,7 @@
   </div>
 </ng-template>
 
-<header *ngIf="responsive.isDesktop">
+<header class="dark-bg" *ngIf="responsive.isDesktop">
   <div class="margin-auto">
     <ng-container *ngTemplateOutlet="siteId"></ng-container>
     <nav>
@@ -20,7 +20,7 @@
     </div>
   </div>
 </header>
-<header *ngIf="responsive.isMobile">
+<header class="dark-bg" *ngIf="responsive.isMobile">
   <div class="margin-auto">
     <ng-container *ngTemplateOutlet="siteId"></ng-container>
   </div>
