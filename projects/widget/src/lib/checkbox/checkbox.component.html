@@ -1,3 +1,5 @@
-<div class="widget-checkbox checked" *ngIf="checked" (click)="toggle()">v</div>
-<div class="widget-checkbox" *ngIf="!checked"(click)="toggle()">&nbsp;</div>
-<ng-content></ng-content>
+<span (click)="toggle()">
+  <div class="widget-checkbox checked" *ngIf="checked">v</div>
+  <div class="widget-checkbox" *ngIf="!checked">&nbsp;</div>
+  <ng-content></ng-content>
+</span>
