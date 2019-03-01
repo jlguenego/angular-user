@@ -225,6 +225,11 @@
       "sourceRoot": "projects/widget/src",
       "projectType": "library",
       "prefix": "widget",
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "sass"
+        }
+      },
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-ng-packagr:build",
