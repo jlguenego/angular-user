@@ -4,12 +4,14 @@ import { PasswordCheckComponent } from './password-check/password-check.componen
 import { DividerComponent } from './divider/divider.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { CommonModule } from '@angular/common';
+import { CheckboxComponent } from './checkbox/checkbox.component';
 
 @NgModule({
   declarations: [
     PasswordComponent,
     PasswordCheckComponent,
-    DividerComponent
+    DividerComponent,
+    CheckboxComponent
   ],
   imports: [
     CommonModule,
@@ -17,7 +19,8 @@ import { CommonModule } from '@angular/common';
   ],
   exports: [
     PasswordComponent,
-    DividerComponent
+    DividerComponent,
+    CheckboxComponent
   ]
 })
 export class WidgetModule { }

@@ -23,6 +23,11 @@ button {
             background-color: $primary-dark-color;
             color: white;
             border-color: $primary-dark-color;
+            &[disabled] {
+                background-color: hsl(0, 0%, 80%);
+                color: white;
+                border-color: hsl(0, 0%, 80%);
+            }
         }
         &.important {
             background-color: $accent-dark-color;
