@@ -7,7 +7,8 @@ button {
     font-size: inherit;
 }
 
-.light-bg {
+.light-bg,
+.dark-bg .light-bg {
     color: $primary-vdark-color;
     button {
         color: $primary-vdark-color;
@@ -19,14 +20,28 @@ button {
             background-color: transparentize($primary-vdark-color, 0.5);
         }
         &.primary {
+            background-color: $primary-dark-color;
+            color: white;
+            border-color: $primary-dark-color;
+        }
+        &.important {
             background-color: $accent-dark-color;
             color: white;
             border-color: $accent-dark-color;
         }
+        &.shadow {
+            background-color: transparent;
+            border-color: transparent;
+            &:hover {
+                background-color: $shadow-color;
+                border-color: $shadow-color;
+            }
+        }
     }
 }
 
-.dark-bg {
+.dark-bg,
+.light-bg .dark-bg {
     color: white;
     button {
         color: white;
@@ -42,5 +57,12 @@ button {
             color: white;
             border-color: $accent-dark-color;
         }
+    }
+}
+
+a {
+    text-decoration: none;
+    &:hover {
+        text-decoration: underline;
     }
 }

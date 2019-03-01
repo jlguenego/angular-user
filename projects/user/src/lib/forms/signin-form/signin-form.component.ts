@@ -27,4 +27,8 @@ export class SigninFormComponent implements OnInit {
     });
   }
 
+  forgotPassword() {
+    console.log('forgot password ?');
+  }
+
 }
