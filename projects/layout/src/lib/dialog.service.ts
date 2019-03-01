@@ -6,7 +6,8 @@ export type DialogPage = Type<{}>;
 
 export interface PageComponent {
   title: string;
-  data: any;
+  data?: any;
+  width?: string;
 }
 
 @Injectable({
