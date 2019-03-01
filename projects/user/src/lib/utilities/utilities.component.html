@@ -1,9 +1,9 @@
 <ng-container *ngIf="resp.isDesktop">
-    <a href="#">Sign up</a><button (click)="signinDialog()">Sign in</button>
+    <a (click)="signupDialog()">Sign up</a><button (click)="signinDialog()">Sign in</button>
 </ng-container>
 <ng-container *ngIf="resp.isMobile">
     <div>
-        <a routerLink="/">Sign up</a>
+        <a (click)="signupDialog()">Sign up</a>
         <button (click)="signinDialog()">Sign in</button>
     </div>
 </ng-container>

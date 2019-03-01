@@ -6,9 +6,16 @@ import { SocialLoginComponent } from './social-login/social-login.component';
 import { CommonModule } from '@angular/common';
 import { SigninFormComponent } from './forms/signin-form/signin-form.component';
 import { WidgetModule } from 'projects/widget/src/public_api';
+import { SignupPageComponent } from './signup-page/signup-page.component';
 
 @NgModule({
-  declarations: [UtilitiesComponent, SigninPageComponent, SocialLoginComponent, SigninFormComponent],
+  declarations: [
+    UtilitiesComponent,
+    SigninPageComponent,
+    SocialLoginComponent,
+    SigninFormComponent,
+    SignupPageComponent
+  ],
   imports: [
     CommonModule,
     ReactiveFormsModule,
@@ -17,6 +24,7 @@ import { WidgetModule } from 'projects/widget/src/public_api';
   exports: [UtilitiesComponent],
   entryComponents: [
     SigninPageComponent,
+    SignupPageComponent,
   ]
 })
 export class UserModule { }
