@@ -13,9 +13,8 @@ export class SignupFormComponent implements OnInit {
   errorCode: string;
 
   f = new FormGroup({
-    firstname: new FormControl('', [Validators.required]),
-    lastname: new FormControl('', [Validators.required]),
     email: new FormControl('', [Validators.required, Validators.email]),
+    displayName: new FormControl('', [Validators.required]),
     password: new FormControl('', [Validators.required, this.passwordCheck.validate()]),
   });
 
