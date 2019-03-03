@@ -8,6 +8,8 @@ import { SigninFormComponent } from './forms/signin-form/signin-form.component';
 import { WidgetModule } from 'projects/widget/src/public_api';
 import { SignupPageComponent } from './signup-page/signup-page.component';
 import { SignupFormComponent } from './signup-form/signup-form.component';
+import { RouterModule } from '@angular/router';
+import { AccountCreatedPageComponent } from './account-created-page/account-created-page.component';
 
 @NgModule({
   declarations: [
@@ -16,17 +18,20 @@ import { SignupFormComponent } from './signup-form/signup-form.component';
     SocialLoginComponent,
     SigninFormComponent,
     SignupPageComponent,
-    SignupFormComponent
+    SignupFormComponent,
+    AccountCreatedPageComponent,
   ],
   imports: [
     CommonModule,
     ReactiveFormsModule,
+    RouterModule,
     WidgetModule,
   ],
   exports: [UtilitiesComponent],
   entryComponents: [
     SigninPageComponent,
     SignupPageComponent,
+    AccountCreatedPageComponent,
   ]
 })
 export class UserModule { }

@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { PasswordCheckService } from 'projects/widget/src/lib/password-check.service';
-import { UserService } from '../user.service';
+import { UserService, SignupFormData } from '../user.service';
+import { DialogService } from 'projects/layout/src/lib/dialog.service';
+import { AccountCreatedPageComponent } from '../account-created-page/account-created-page.component';
 
 @Component({
   selector: 'user-signup-form',
@@ -20,6 +22,7 @@ export class SignupFormComponent implements OnInit {
 
   constructor(
     private user: UserService,
+    private dialog: DialogService,
     private passwordCheck: PasswordCheckService) { }
 
   ngOnInit() {
@@ -28,7 +31,9 @@ export class SignupFormComponent implements OnInit {
   onSubmit() {
     this.errorCode = undefined;
 
-    this.user.createAccount(this.f.value).catch(
+    this.user.createAccount(<SignupFormData>this.f.value).then(() => {
+      this.dialog.open(AccountCreatedPageComponent);
+    }).catch(
       errorCode => {
         this.errorCode = errorCode;
       });

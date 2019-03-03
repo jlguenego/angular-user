@@ -3,3 +3,11 @@
     justify-content: flex-end;
     align-items: center;
 }
+
+label.checkbox {
+    display: flex;
+    align-items: center;
+    a {
+        padding-left: 0.3rem;
+    }
+}

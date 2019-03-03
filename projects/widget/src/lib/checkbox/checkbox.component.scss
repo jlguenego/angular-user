@@ -1,13 +1,29 @@
-div.widget-checkbox {
+:host {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    width: 1rem;
-    height: 1rem;
-    border: 1px solid hsl(0, 0%, 80%);
-    border-radius: 2px;
-    margin-right: 0.5rem;
-    &.checked {
-        background-color: hsl(0, 0%, 80%);
+}
+span.widget-checkbox {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    >div {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 1.5rem;
+        height: 1.5rem;
+        border: 1px solid hsl(0, 0%, 80%);
+        border-radius: 4px;
+        margin-right: 0.5rem;
+        &.checked {
+            background-color: hsl(0, 0%, 80%);
+            border-color: black;
+        }
+        svg {
+            display: block;
+            width: 90%;
+            height: 1.5rem;
+        }
     }
 }
