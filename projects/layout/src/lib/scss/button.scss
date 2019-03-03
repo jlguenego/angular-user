@@ -14,10 +14,10 @@ button {
         color: $primary-vdark-color;
         border-color: $primary-vdark-color;
         &:hover {
-            background-color: transparentize($primary-vdark-color, 0.8);
+            background-color: transparentize($primary-vdark-color, 0.9);
         }
         &:active {
-            background-color: transparentize($primary-vdark-color, 0.5);
+            background-color: transparentize($primary-vdark-color, 0.8);
         }
         &.primary {
             background-color: $primary-dark-color;
@@ -33,6 +33,15 @@ button {
             background-color: $accent-dark-color;
             color: white;
             border-color: $accent-dark-color;
+        }
+        &.danger {
+            background-color: $danger-color;
+            color: white;
+            border-color: $danger-color;
+            &:hover {
+                background-color: transparentize($danger-color, 0.3);
+                border-color: $danger-color;
+            }
         }
         &.shadow {
             background-color: transparent;
