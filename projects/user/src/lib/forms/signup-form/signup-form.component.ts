@@ -3,7 +3,7 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { PasswordCheckService } from 'projects/widget/src/lib/password-check.service';
 import { UserService, SignupFormData } from '../../user.service';
 import { DialogService } from 'projects/layout/src/lib/dialog.service';
-import { AccountCreatedPageComponent } from '../../account-created-page/account-created-page.component';
+import { AccountCreatedPageComponent } from '../../pages/account-created-page/account-created-page.component';
 import { ERROR } from '../../error';
 
 @Component({

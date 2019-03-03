@@ -1,11 +1,13 @@
 import { Component, OnInit } from '@angular/core';
-import { DialogService } from 'projects/layout/src/lib/dialog.service';
-import { SigninPageComponent } from '../signin-page/signin-page.component';
-import { ResponsiveService } from 'projects/layout/src/lib/responsive.service';
-import { SignupPageComponent } from '../signup-page/signup-page.component';
-import { UserService } from '../user.service';
 import { Router } from '@angular/router';
 import { faUserCircle } from '@fortawesome/free-solid-svg-icons';
+
+import { ResponsiveService } from 'projects/layout/src/lib/responsive.service';
+import { DialogService } from 'projects/layout/src/lib/dialog.service';
+import { UserService } from '../user.service';
+
+import { SigninPageComponent } from '../pages/signin-page/signin-page.component';
+import { SignupPageComponent } from '../pages/signup-page/signup-page.component';
 
 @Component({
   selector: 'user-utilities',

@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { UserService } from '../../user.service';
 import { DialogService } from 'projects/layout/src/lib/dialog.service';
-import { SuccessfullyConnectedPageComponent } from '../../successfully-connected-page/successfully-connected-page.component';
+import { SuccessfullyConnectedPageComponent } from '../../pages/successfully-connected-page/successfully-connected-page.component';
 
 @Component({
   selector: 'user-signin-form',
