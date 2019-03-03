@@ -18,6 +18,7 @@ import { SigninFormComponent } from './forms/signin-form/signin-form.component';
 import { MobileMenuIconComponent } from './mobile-menu-icon/mobile-menu-icon.component';
 import { ProfileComponent } from './routes/profile/profile.component';
 import { UpdateFormComponent } from './forms/update-form/update-form.component';
+import { SucessfullyDeletedComponent } from './routes/sucessfully-deleted/sucessfully-deleted.component';
 
 @NgModule({
   declarations: [
@@ -32,6 +33,7 @@ import { UpdateFormComponent } from './forms/update-form/update-form.component';
     MobileMenuIconComponent,
     ProfileComponent,
     UpdateFormComponent,
+    SucessfullyDeletedComponent,
   ],
   imports: [
     CommonModule,

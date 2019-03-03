@@ -18,7 +18,7 @@ export class ProfileComponent implements OnInit {
     const confirm = window.confirm('Are you sure you want to delete your account ?');
     if (confirm) {
       this.user.delete().then(() => {
-        this.router.navigate(['/']);
+        this.router.navigate(['/account-deleted']);
       });
     }
   }
