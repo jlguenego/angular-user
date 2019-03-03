@@ -7,23 +7,55 @@ export interface SignupFormData {
   password: string;
 }
 
+export interface SigninFormData {
+  email: string;
+  password: string;
+}
+
+export interface UserData {
+  email: string;
+  password: string;
+  displayName: string;
+}
+
 @Injectable({
   providedIn: 'root'
 })
 export class UserService {
-  createAccount(userData: SignupFormData): any {
-    console.log('about to create account', userData);
+  userData: UserData;
+  isLogged: boolean;
+
+  createAccount(formData: SignupFormData): Promise<void> {
+    console.log('about to create account', formData);
+    this.isLogged = false;
+    this.userData = undefined;
     // here you create the account
-    const key = `user:${userData.email}`;
+    const key = `user:${formData.email}`;
     if (localStorage.getItem(key)) {
       return Promise.reject(ERROR.MAIL_ALREADY_IN_USE);
     }
-    localStorage.setItem(key, JSON.stringify(userData));
+    localStorage.setItem(key, JSON.stringify(formData));
+    this.isLogged = true;
+    this.userData = formData;
     return Promise.resolve();
   }
 
-  login(email: any, password: any): any {
-    throw new Error("Method not implemented.");
+  login(formData: SigninFormData): any {
+    console.log('about to login', formData);
+    this.isLogged = false;
+    this.userData = undefined;
+    const key = `user:${formData.email}`;
+    const json = localStorage.getItem(key);
+    if (!json) {
+      return Promise.reject(ERROR.BAD_LOGIN);
+    }
+    const userData = <UserData>JSON.parse(json);
+    if (userData.password !== formData.password) {
+      return Promise.reject(ERROR.BAD_LOGIN);
+    }
+    this.isLogged = true;
+    this.userData = userData;
+    return Promise.resolve(userData);
   }
 
   constructor() { }

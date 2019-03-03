@@ -11,6 +11,7 @@ import { SigninPageComponent } from './signin-page/signin-page.component';
 import { AccountCreatedPageComponent } from './account-created-page/account-created-page.component';
 import { SignupFormComponent } from './forms/signup-form/signup-form.component';
 import { SigninFormComponent } from './forms/signin-form/signin-form.component';
+import { SuccessfullyConnectedPageComponent } from './successfully-connected-page/successfully-connected-page.component';
 
 @NgModule({
   declarations: [
@@ -21,6 +22,7 @@ import { SigninFormComponent } from './forms/signin-form/signin-form.component';
     SignupPageComponent,
     SignupFormComponent,
     AccountCreatedPageComponent,
+    SuccessfullyConnectedPageComponent,
   ],
   imports: [
     CommonModule,
@@ -33,6 +35,7 @@ import { SigninFormComponent } from './forms/signin-form/signin-form.component';
     SigninPageComponent,
     SignupPageComponent,
     AccountCreatedPageComponent,
+    SuccessfullyConnectedPageComponent,
   ]
 })
 export class UserModule { }

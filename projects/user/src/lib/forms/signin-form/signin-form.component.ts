@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { UserService } from '../../user.service';
+import { DialogService } from 'projects/layout/src/lib/dialog.service';
+import { SuccessfullyConnectedPageComponent } from '../../successfully-connected-page/successfully-connected-page.component';
 
 @Component({
   selector: 'user-signin-form',
@@ -15,14 +17,16 @@ export class SigninFormComponent implements OnInit {
   });
   errorCode;
 
-  constructor(private user: UserService) { }
+  constructor(private user: UserService, private dialog: DialogService) { }
 
   ngOnInit() {
   }
 
   onSubmit() {
     this.errorCode = undefined;
-    this.user.login(this.f.value.email, this.f.value.password).catch(errorCode => {
+    this.user.login(this.f.value).then(userData => {
+      this.dialog.open(SuccessfullyConnectedPageComponent);
+    }).catch(errorCode => {
       this.errorCode = errorCode;
     });
   }

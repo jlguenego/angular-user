@@ -11,6 +11,10 @@ export const ERROR = {
     WEAK_PASSWORD: {
         code: 'auth/weak-password',
         message: 'The password is too weak'
+    },
+    BAD_LOGIN: {
+        code: 'auth/bad-login',
+        message: 'Bad login or password'
     }
     
 }
