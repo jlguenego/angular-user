@@ -15,7 +15,7 @@
     <nav>
       <a *ngFor="let item of navItems" [routerLink]="item.route">{{item.label}}</a>
     </nav>
-    <div class="utilities" routerLink="/">
+    <div class="utilities">
       <ng-content select=".utilities"></ng-content>
     </div>
   </div>

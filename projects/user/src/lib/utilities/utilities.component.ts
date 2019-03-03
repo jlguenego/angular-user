@@ -40,7 +40,7 @@ export class UtilitiesComponent implements OnInit {
   }
 
   profile() {
-    console.log('profile');
+    console.log('profilex');
     this.router.navigate(['/my-profile']);
   }
 
