@@ -5,13 +5,15 @@ import { DividerComponent } from './divider/divider.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { CommonModule } from '@angular/common';
 import { CheckboxComponent } from './checkbox/checkbox.component';
+import { PopupComponent } from './popup/popup.component';
 
 @NgModule({
   declarations: [
     PasswordComponent,
     PasswordCheckComponent,
     DividerComponent,
-    CheckboxComponent
+    CheckboxComponent,
+    PopupComponent
   ],
   imports: [
     CommonModule,
@@ -20,7 +22,8 @@ import { CheckboxComponent } from './checkbox/checkbox.component';
   exports: [
     PasswordComponent,
     DividerComponent,
-    CheckboxComponent
+    CheckboxComponent,
+    PopupComponent
   ]
 })
 export class WidgetModule { }

@@ -3,7 +3,22 @@
         <a (click)="signupDialog()">Sign up</a><button (click)="signinDialog()">Sign in</button>
     </ng-container>
     <ng-container *ngIf="user.isLogged">
-        <a (click)="profile()">{{user.userData.email}}</a>
+        <widget-popup [label]="user.userData.email" (open)="user.refresh()">
+            <div class="logged light-bg" *ngIf="user.isLogged">
+                <div class="identity">
+                    <div class="photo">
+                        <fa-icon [icon]="faUserCircle"></fa-icon>
+                    </div>
+                    <div class="id">
+                        <div class="display-name">{{user.userData.displayName}}</div>
+                    </div>
+                </div>
+                <div class="actions">
+                    <button (click)="profile()">My profile</button>
+                    <button (click)="signout()">Sign out</button>
+                </div>
+            </div>
+        </widget-popup>
     </ng-container>
 </ng-container>
 <ng-container *ngIf="resp.isMobile">

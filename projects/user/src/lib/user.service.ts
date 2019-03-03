@@ -26,6 +26,10 @@ export class UserService {
   isLogged: boolean = undefined;
 
   constructor() {
+    this.refresh();
+  }
+
+  refresh() {
     this.isConnected();
   }
 

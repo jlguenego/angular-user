@@ -7,7 +7,7 @@ div {
     display: block;
     .identity {
         display: flex;
-        justify-content: space-around;
+        justify-content: space-between;
         align-items: center;
         width: 100%;
         .photo {
@@ -16,8 +16,10 @@ div {
         }
         .id {
             display: block;
+            padding: 0 1rem;
             .display-name {
                 font-weight: bold;
+                white-space: nowrap;
             }
             .email {
                 font-size: 0.8rem;

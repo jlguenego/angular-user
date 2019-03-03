@@ -1,0 +1,41 @@
+.main {
+    display: inline-block;
+    position: relative;
+}
+
+.label {
+    cursor: pointer;
+//     &:hover {
+//         color: $header-color-small-relief;
+//     }
+//     &.active {
+//         color: $header-color-relief;
+//     }
+}
+
+.overlay {
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: transparent;
+}
+
+.popup {
+    display: none;
+    &.visible {
+        display: block;
+        position: absolute;
+        z-index: 2;
+        background: white;
+        padding: 1rem;
+        min-width: 100%;
+        top: 1.5rem;
+        right: 0;
+        color: black;
+        border: 1px solid gray;
+        border-radius: 6px;
+    }
+}
