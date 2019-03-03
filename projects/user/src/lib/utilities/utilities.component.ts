@@ -5,6 +5,7 @@ import { ResponsiveService } from 'projects/layout/src/lib/responsive.service';
 import { SignupPageComponent } from '../signup-page/signup-page.component';
 import { UserService } from '../user.service';
 import { Router } from '@angular/router';
+import { faUserCircle } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'user-utilities',
@@ -12,6 +13,8 @@ import { Router } from '@angular/router';
   styleUrls: ['./utilities.component.scss']
 })
 export class UtilitiesComponent implements OnInit {
+
+  faUserCircle = faUserCircle;
 
   constructor(
     private dialog: DialogService,

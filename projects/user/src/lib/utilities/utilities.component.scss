@@ -2,3 +2,31 @@ div {
     display: flex;
     justify-content: space-around;
 }
+
+.logged {
+    display: block;
+    .identity {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        width: 100%;
+        .photo {
+            padding: 0.5rem;
+            font-size: 5rem;
+        }
+        .id {
+            display: block;
+            .display-name {
+                font-weight: bold;
+            }
+            .email {
+                font-size: 0.8rem;
+            }
+        }
+    }
+    .actions {
+        display: flex;
+        justify-content: space-around;
+        padding-bottom: 1rem;
+    }
+}

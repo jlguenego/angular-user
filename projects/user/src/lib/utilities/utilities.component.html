@@ -1,9 +1,9 @@
 <ng-container *ngIf="resp.isDesktop">
     <ng-container *ngIf="!user.isLogged">
-            <a (click)="signupDialog()">Sign up</a><button (click)="signinDialog()">Sign in</button>
+        <a (click)="signupDialog()">Sign up</a><button (click)="signinDialog()">Sign in</button>
     </ng-container>
     <ng-container *ngIf="user.isLogged">
-            <a (click)="profile()">{{user.userData.email}}</a>
+        <a (click)="profile()">{{user.userData.email}}</a>
     </ng-container>
 </ng-container>
 <ng-container *ngIf="resp.isMobile">
@@ -11,8 +11,19 @@
         <a (click)="signupDialog()">Sign up</a>
         <button (click)="signinDialog()">Sign in</button>
     </div>
-    <div *ngIf="user.isLogged">
-        <button (click)="profile()">My profile</button>
-        <button (click)="signout()">Sign out</button>
+    <div class="logged" *ngIf="user.isLogged">
+        <div class="identity">
+            <div class="photo">
+                <fa-icon [icon]="faUserCircle"></fa-icon>
+            </div>
+            <div class="id">
+                <div class="display-name">{{user.userData.displayName}}</div>
+                <div>{{user.userData.email}}</div>
+            </div>
+        </div>
+        <div class="actions">
+            <button (click)="profile()">My profile</button>
+            <button (click)="signout()">Sign out</button>
+        </div>
     </div>
 </ng-container>
