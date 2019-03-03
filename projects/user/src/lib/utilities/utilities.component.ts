@@ -38,7 +38,7 @@ export class UtilitiesComponent implements OnInit {
   }
 
   profile() {
-    this.router.navigate(['/user/my-profile']);
+    this.router.navigate(['/my-profile']);
   }
 
 }

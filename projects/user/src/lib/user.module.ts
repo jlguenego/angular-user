@@ -14,6 +14,8 @@ import { SigninFormComponent } from './forms/signin-form/signin-form.component';
 import { SuccessfullyConnectedPageComponent } from './successfully-connected-page/successfully-connected-page.component';
 import { MobileMenuIconComponent } from './mobile-menu-icon/mobile-menu-icon.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { ProfileComponent } from './routes/profile/profile.component';
+import { UserRoutingModule } from './user-routing.module';
 
 @NgModule({
   declarations: [
@@ -26,6 +28,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     AccountCreatedPageComponent,
     SuccessfullyConnectedPageComponent,
     MobileMenuIconComponent,
+    ProfileComponent,
   ],
   imports: [
     CommonModule,
@@ -33,6 +36,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     RouterModule,
     FontAwesomeModule,
     WidgetModule,
+    UserRoutingModule,
   ],
   exports: [
     UtilitiesComponent,
