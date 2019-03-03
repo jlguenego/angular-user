@@ -11,8 +11,4 @@ input {
     border: 1px solid black;
     border-color: hsl(0, 0%, 80%);
     border-radius: $radius;
-    &[type="checkbox"] {
-        font-size: 3rem;
-        color: yellow;
-    }
 }
