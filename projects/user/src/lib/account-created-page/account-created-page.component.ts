@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DialogService } from 'projects/layout/src/lib/dialog.service';
 
 @Component({
   selector: 'user-account-created-page',
@@ -7,7 +8,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AccountCreatedPageComponent implements OnInit {
 
-  constructor() { }
+  title = "Congratulations!"
+
+  constructor(public dialog: DialogService) { }
 
   ngOnInit() {
   }
