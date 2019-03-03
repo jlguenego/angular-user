@@ -87,4 +87,9 @@ export class UserService {
     return Promise.resolve(userData);
   }
 
+  logout() {
+    this.isLogged = false;
+    this.userData = undefined;
+  }
+
 }
