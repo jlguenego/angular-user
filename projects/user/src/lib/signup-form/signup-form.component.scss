@@ -11,3 +11,11 @@ label.checkbox {
         padding-left: 0.3rem;
     }
 }
+
+form {
+    .error-block {
+        height: 2rem;
+        font-weight: bold;
+        color: red;
+    }
+}

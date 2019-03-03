@@ -15,14 +15,14 @@
     <widget-checkbox #terms>I accept the </widget-checkbox> <a target="_blank" href="/legal">terms of use</a>.
   </label>
   <div class="error-block">
-    <!-- <div class="error-incorrect" *ngIf="errorCode !== undefined">
+    <div class="error-incorrect" *ngIf="errorCode !== undefined">
       <span *ngIf="errorCode === ERROR.WEAK_PASSWORD">Le mot de passe doit contenir plus de 6 caractères.</span>
-      <span *ngIf="errorCode === ERROR.MAIL_ALREADY_IN_USE">Le mail est déjà utilisé.</span>
-    </div> -->
+      <span *ngIf="errorCode === ERROR.MAIL_ALREADY_IN_USE">Email already used.</span>
+    </div>
   </div>
 
 
   <div class="submit">
-    <button type="submit" class="primary" [disabled]="terms.checked === false">Je crée mon compte</button>
+    <button type="submit" class="primary" [disabled]="f.invalid || terms.checked === false">Je crée mon compte</button>
   </div>
 </form>

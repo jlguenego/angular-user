@@ -4,6 +4,7 @@ import { PasswordCheckService } from 'projects/widget/src/lib/password-check.ser
 import { UserService, SignupFormData } from '../user.service';
 import { DialogService } from 'projects/layout/src/lib/dialog.service';
 import { AccountCreatedPageComponent } from '../account-created-page/account-created-page.component';
+import { ERROR } from '../error';
 
 @Component({
   selector: 'user-signup-form',
@@ -12,6 +13,7 @@ import { AccountCreatedPageComponent } from '../account-created-page/account-cre
 })
 export class SignupFormComponent implements OnInit {
 
+  ERROR = ERROR;
   errorCode: string;
 
   f = new FormGroup({
