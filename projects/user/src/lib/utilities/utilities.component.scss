@@ -5,6 +5,7 @@ div {
 
 .logged {
     display: block;
+    padding: 1rem;
     .identity {
         display: flex;
         justify-content: space-between;
@@ -16,7 +17,7 @@ div {
         }
         .id {
             display: block;
-            padding: 0 1rem;
+            padding: 0;
             .display-name {
                 font-weight: bold;
                 white-space: nowrap;
@@ -29,6 +30,5 @@ div {
     .actions {
         display: flex;
         justify-content: space-around;
-        padding-bottom: 1rem;
     }
 }
