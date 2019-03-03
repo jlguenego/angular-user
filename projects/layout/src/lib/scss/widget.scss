@@ -1,0 +1,14 @@
+widget-password {
+    div.password {
+        white-space: nowrap;
+    }
+    fa-icon {
+        position: relative;
+        left: -2.5rem;
+        top: 0.05rem;
+        font-size: 1rem;
+    }
+    input {
+        display: inline-block;
+    }
+}
