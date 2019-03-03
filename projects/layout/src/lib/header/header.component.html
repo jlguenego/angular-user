@@ -15,7 +15,7 @@
     <nav>
       <a *ngFor="let item of navItems" [routerLink]="item.route">{{item.label}}</a>
     </nav>
-    <div class="utilities" #ref routerLink="/">
+    <div class="utilities" routerLink="/">
       <ng-content select=".utilities"></ng-content>
     </div>
   </div>
@@ -24,7 +24,13 @@
   <div class="margin-auto">
     <ng-container *ngTemplateOutlet="siteId"></ng-container>
   </div>
-  <fa-icon (click)="toggleMenu()" class="bars" [icon]="faBars"></fa-icon>
+  <div class="menu-icon" #refIcon (click)="toggleMenu()">
+    <ng-content select=".mobile-menu-icon"></ng-content>
+  </div>
+  <div class="menu-icon" *ngIf="refIcon.childNodes.length == 0" (click)="toggleMenu()">
+    <fa-icon class="bars" [icon]="faBars"></fa-icon>
+  </div>
+
   <div *ngIf="isMenuOpen" (click)="closeMenu()" class="overlay"></div>
   <div (click)="closeMenu()" [class.open]="isMenuOpen" class="primary-mobile-menu">
     <ng-content select=".mobile-menu-header"></ng-content>

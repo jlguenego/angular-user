@@ -23,7 +23,34 @@ export interface UserData {
 })
 export class UserService {
   userData: UserData;
-  isLogged: boolean;
+  isLogged: boolean = undefined;
+
+  constructor() {
+    this.isConnected();
+  }
+
+  isConnected(): Promise<void> {
+    if (this.isLogged !== undefined) {
+      if (this.isLogged) {
+        return Promise.resolve();
+      } else {
+        return Promise.reject();
+      }
+    }
+    const isLogged = localStorage.getItem('isLogged');
+    if (isLogged === undefined) {
+      this.isLogged = false;
+      this.userData = undefined;
+      return Promise.reject();
+    }
+    const email = isLogged;
+    const key = `user:${email}`;
+    const userData = localStorage.getItem(key);
+    if (userData) {
+      this.userData = JSON.parse(userData);
+      this.isLogged = true;
+    }
+  }
 
   createAccount(formData: SignupFormData): Promise<void> {
     console.log('about to create account', formData);
@@ -35,6 +62,7 @@ export class UserService {
       return Promise.reject(ERROR.MAIL_ALREADY_IN_USE);
     }
     localStorage.setItem(key, JSON.stringify(formData));
+    localStorage.setItem('isLogged', formData.email);
     this.isLogged = true;
     this.userData = formData;
     return Promise.resolve();
@@ -53,10 +81,10 @@ export class UserService {
     if (userData.password !== formData.password) {
       return Promise.reject(ERROR.BAD_LOGIN);
     }
+    localStorage.setItem('isLogged', formData.email);
     this.isLogged = true;
     this.userData = userData;
     return Promise.resolve(userData);
   }
 
-  constructor() { }
 }

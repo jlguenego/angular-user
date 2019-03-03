@@ -1,0 +1,7 @@
+<ng-container *ngIf="!user.isLogged">
+  <fa-icon class="bars" [icon]="faBars"></fa-icon>
+</ng-container>
+<ng-container *ngIf="user.isLogged">
+  <fa-icon class="bars" [icon]="faBars"></fa-icon>
+  <fa-icon class="user" [icon]="faUser" ></fa-icon>
+</ng-container>

@@ -12,6 +12,8 @@ import { AccountCreatedPageComponent } from './account-created-page/account-crea
 import { SignupFormComponent } from './forms/signup-form/signup-form.component';
 import { SigninFormComponent } from './forms/signin-form/signin-form.component';
 import { SuccessfullyConnectedPageComponent } from './successfully-connected-page/successfully-connected-page.component';
+import { MobileMenuIconComponent } from './mobile-menu-icon/mobile-menu-icon.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 @NgModule({
   declarations: [
@@ -23,14 +25,19 @@ import { SuccessfullyConnectedPageComponent } from './successfully-connected-pag
     SignupFormComponent,
     AccountCreatedPageComponent,
     SuccessfullyConnectedPageComponent,
+    MobileMenuIconComponent,
   ],
   imports: [
     CommonModule,
     ReactiveFormsModule,
     RouterModule,
+    FontAwesomeModule,
     WidgetModule,
   ],
-  exports: [UtilitiesComponent],
+  exports: [
+    UtilitiesComponent,
+    MobileMenuIconComponent,
+  ],
   entryComponents: [
     SigninPageComponent,
     SignupPageComponent,
