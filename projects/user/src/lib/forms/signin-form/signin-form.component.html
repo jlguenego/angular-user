@@ -15,6 +15,6 @@
   </div>
   <div class="reset-submit">
     <a href="#" (click)="forgotPassword()" >Forgot password?</a>
-    <button type="submit" class="primary">Connexion</button>
+    <button type="submit" class="primary" [disabled]="f.invalid">Connexion</button>
   </div>
 </form>
