@@ -30,29 +30,17 @@ export class UserService {
   }
 
   refresh() {
-    this.isConnected();
+    this.isConnected().catch(() => { });
   }
 
   isConnected(): Promise<void> {
+    this.sync();
     if (this.isLogged !== undefined) {
       if (this.isLogged) {
         return Promise.resolve();
       } else {
         return Promise.reject();
       }
-    }
-    const isLogged = localStorage.getItem('isLogged');
-    if (isLogged === undefined) {
-      this.isLogged = false;
-      this.userData = undefined;
-      return Promise.reject();
-    }
-    const email = isLogged;
-    const key = `user:${email}`;
-    const userData = localStorage.getItem(key);
-    if (userData) {
-      this.userData = JSON.parse(userData);
-      this.isLogged = true;
     }
   }
 
@@ -61,22 +49,20 @@ export class UserService {
     this.isLogged = false;
     this.userData = undefined;
     // here you create the account
-    const key = `user:${formData.email}`;
+    const key = this.getKey(formData);
     if (localStorage.getItem(key)) {
       return Promise.reject(ERROR.MAIL_ALREADY_IN_USE);
     }
+    localStorage.setItem('isLogged', key);
     localStorage.setItem(key, JSON.stringify(formData));
-    localStorage.setItem('isLogged', formData.email);
-    this.isLogged = true;
-    this.userData = formData;
+    this.sync();
     return Promise.resolve();
   }
 
   login(formData: SigninFormData): any {
     console.log('about to login', formData);
-    this.isLogged = false;
-    this.userData = undefined;
-    const key = `user:${formData.email}`;
+
+    const key = this.getKey(formData);
     const json = localStorage.getItem(key);
     if (!json) {
       return Promise.reject(ERROR.BAD_LOGIN);
@@ -85,15 +71,50 @@ export class UserService {
     if (userData.password !== formData.password) {
       return Promise.reject(ERROR.BAD_LOGIN);
     }
-    localStorage.setItem('isLogged', formData.email);
-    this.isLogged = true;
-    this.userData = userData;
+    localStorage.setItem('isLogged', key);
+    this.sync();
     return Promise.resolve(userData);
   }
 
   logout() {
     this.isLogged = false;
     this.userData = undefined;
+    localStorage.removeItem('isLogged');
+  }
+
+  getKey(userData) {
+    return `user:${userData.email}`;
+  }
+
+  delete(): Promise<void> {
+    const key = this.getKey(this.userData);
+    localStorage.removeItem(key);
+    localStorage.removeItem('isLogged');
+    this.sync();
+    return Promise.resolve();
+  }
+
+  sync() {
+    const isLogged = localStorage.getItem('isLogged');
+    if (!isLogged) {
+      localStorage.removeItem('isLogged');
+      this.isLogged = false;
+      this.userData = undefined;
+      return;
+    }
+    try {
+      const key = isLogged;
+      const data = localStorage.getItem(key);
+      if (data === undefined) {
+        throw 'no data';
+      }
+      this.userData = JSON.parse(data);
+      this.isLogged = true;
+    } catch (error) {
+      this.isLogged = false;
+      this.userData = undefined;
+    }
+
   }
 
 }

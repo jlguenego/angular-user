@@ -3,6 +3,7 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { UserService } from '../../user.service';
 import { DialogService } from 'projects/layout/src/lib/dialog.service';
 import { SuccessfullyConnectedPageComponent } from '../../pages/successfully-connected-page/successfully-connected-page.component';
+import { ERROR } from '../../error';
 
 @Component({
   selector: 'user-signin-form',
@@ -15,6 +16,7 @@ export class SigninFormComponent implements OnInit {
     email: new FormControl('', [Validators.required]),
     password: new FormControl('', [Validators.required]),
   });
+  ERROR = ERROR;
   errorCode;
 
   constructor(private user: UserService, private dialog: DialogService) { }

@@ -1,3 +1,8 @@
-<p>
-  profile works!
-</p>
+<h1>My profile</h1>
+<h2>Password</h2>
+<button *ngIf="user.userData.password === undefined">Initialize my password</button>
+<button *ngIf="user.userData.password !== undefined">Update my password</button>
+<h2>My personal data</h2>
+<user-update-form></user-update-form>
+<h1>Danger zone</h1>
+<button (click)="delete()">Delete my account</button>

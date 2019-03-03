@@ -17,6 +17,7 @@ import { SignupFormComponent } from './forms/signup-form/signup-form.component';
 import { SigninFormComponent } from './forms/signin-form/signin-form.component';
 import { MobileMenuIconComponent } from './mobile-menu-icon/mobile-menu-icon.component';
 import { ProfileComponent } from './routes/profile/profile.component';
+import { UpdateFormComponent } from './forms/update-form/update-form.component';
 
 @NgModule({
   declarations: [
@@ -30,6 +31,7 @@ import { ProfileComponent } from './routes/profile/profile.component';
     SuccessfullyConnectedPageComponent,
     MobileMenuIconComponent,
     ProfileComponent,
+    UpdateFormComponent,
   ],
   imports: [
     CommonModule,

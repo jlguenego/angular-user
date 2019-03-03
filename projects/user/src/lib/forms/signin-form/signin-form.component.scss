@@ -6,3 +6,11 @@
         margin: 0;
     }
 }
+
+form {
+    .error-block {
+        height: 2rem;
+        font-weight: bold;
+        color: red;
+    }
+}
