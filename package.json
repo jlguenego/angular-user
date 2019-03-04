@@ -8,7 +8,7 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "build-layout": "rimraf dist/layout && ng build layout && npm run build-layout-styles",
+    "build-layout": "rimraf dist/angular-layout && ng build layout && npm run build-layout-styles",
     "build-layout-styles": "cpx \"./projects/layout/src/lib/scss/**/*\" \"./dist/angular-layout/scss\""
   },
   "private": true,
