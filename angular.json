@@ -219,6 +219,46 @@
           }
         }
       }
+    },
+    "firebase": {
+      "root": "projects/firebase",
+      "sourceRoot": "projects/firebase/src",
+      "projectType": "library",
+      "prefix": "user",
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "sass"
+        }
+      },
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/firebase/tsconfig.lib.json",
+            "project": "projects/firebase/ng-package.json"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/firebase/src/test.ts",
+            "tsConfig": "projects/firebase/tsconfig.spec.json",
+            "karmaConfig": "projects/firebase/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/firebase/tsconfig.lib.json",
+              "projects/firebase/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
     }
   },
   "defaultProject": "angular-user"

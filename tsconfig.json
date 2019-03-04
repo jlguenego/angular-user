@@ -38,6 +38,12 @@
       ],
       "widget/*": [
         "dist/widget/*"
+      ],
+      "firebase": [
+        "dist/firebase"
+      ],
+      "firebase/*": [
+        "dist/firebase/*"
       ]
     }
   }
