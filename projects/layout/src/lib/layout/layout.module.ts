@@ -1,13 +1,13 @@
 import { NgModule } from '@angular/core';
-import { HeaderComponent } from './header/header.component';
-import { FooterComponent } from './footer/footer.component';
-import { BodyComponent } from './body/body.component';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { WidgetModule } from '../widget/widget.module';
+
+import { HeaderComponent } from './header/header.component';
+import { FooterComponent } from './footer/footer.component';
+import { BodyComponent } from './body/body.component';
 import { DialogComponent } from './dialog/dialog.component';
-import { AnchorDirective } from './anchor.directive';
-import { ClickStopPropagationDirective } from './click-stop-propagation.directive';
 
 @NgModule({
   declarations: [
@@ -15,20 +15,18 @@ import { ClickStopPropagationDirective } from './click-stop-propagation.directiv
     FooterComponent,
     BodyComponent,
     DialogComponent,
-    AnchorDirective,
-    ClickStopPropagationDirective
   ],
   imports: [
     CommonModule,
     RouterModule,
     FontAwesomeModule,
+    WidgetModule,
   ],
   exports: [
     HeaderComponent, 
     FooterComponent, 
     BodyComponent, 
     DialogComponent,
-    ClickStopPropagationDirective
   ]
 })
 export class LayoutModule { }

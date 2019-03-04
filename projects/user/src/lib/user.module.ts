@@ -4,7 +4,6 @@ import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
-import { WidgetModule } from 'projects/widget/src/public_api';
 import { UserRoutingModule } from './user-routing.module';
 
 import { UtilitiesComponent } from './utilities/utilities.component';
@@ -19,6 +18,7 @@ import { MobileMenuIconComponent } from './mobile-menu-icon/mobile-menu-icon.com
 import { ProfileComponent } from './routes/profile/profile.component';
 import { UpdateFormComponent } from './forms/update-form/update-form.component';
 import { SucessfullyDeletedComponent } from './routes/sucessfully-deleted/sucessfully-deleted.component';
+import { WidgetModule } from 'projects/layout/src/lib/widget/widget.module';
 
 @NgModule({
   declarations: [

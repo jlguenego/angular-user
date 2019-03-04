@@ -1,7 +1,7 @@
 import { Component, OnInit, ComponentRef, ComponentFactoryResolver, ViewChild } from '@angular/core';
-import { DialogService, DialogPage, DIALOG_DEFAULT_MAXWIDTH } from '../dialog.service';
 import { faTimes } from '@fortawesome/free-solid-svg-icons';
-import { AnchorDirective } from '../anchor.directive';
+import { DIALOG_DEFAULT_MAXWIDTH, DialogService, DialogPage } from '../../dialog.service';
+import { AnchorDirective } from '../../widget/anchor.directive';
 
 
 @Component({

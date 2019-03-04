@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { PasswordCheckService, PasswordRule } from '../password-check.service';
+import { PasswordRule, PasswordCheckService } from '../../password-check.service';
 
 @Component({
   selector: 'widget-password-check',

@@ -1,7 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { ResponsiveService } from '../responsive.service';
 import { faBars } from '@fortawesome/free-solid-svg-icons';
 import { BehaviorSubject } from 'rxjs';
+import { ResponsiveService } from '../../responsive.service';
 
 export interface NavItem { label: string, route: string };
 

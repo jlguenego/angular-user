@@ -1,6 +1,6 @@
 import { Injectable, Type } from '@angular/core';
-import { DialogComponent } from './dialog/dialog.component';
 import { timer } from 'rxjs';
+import { DialogComponent } from './layout/dialog/dialog.component';
 
 export type DialogPage = Type<{}>;
 

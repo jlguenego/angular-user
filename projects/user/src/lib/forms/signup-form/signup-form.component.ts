@@ -1,10 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
-import { PasswordCheckService } from 'projects/widget/src/lib/password-check.service';
 import { UserService, SignupFormData } from '../../user.service';
-import { DialogService } from 'projects/layout/src/lib/dialog.service';
 import { AccountCreatedPageComponent } from '../../pages/account-created-page/account-created-page.component';
 import { ERROR } from '../../error';
+import { DialogService, PasswordCheckService } from 'projects/layout/src/public_api';
 
 @Component({
   selector: 'user-signup-form',

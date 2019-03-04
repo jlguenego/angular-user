@@ -1,11 +1,14 @@
 import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+
 import { PasswordComponent } from './password/password.component';
 import { PasswordCheckComponent } from './password-check/password-check.component';
 import { DividerComponent } from './divider/divider.component';
-import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { CommonModule } from '@angular/common';
 import { CheckboxComponent } from './checkbox/checkbox.component';
 import { PopupComponent } from './popup/popup.component';
+import { AnchorDirective } from './anchor.directive';
+import { ClickStopPropagationDirective } from './click-stop-propagation.directive';
 
 @NgModule({
   declarations: [
@@ -13,7 +16,9 @@ import { PopupComponent } from './popup/popup.component';
     PasswordCheckComponent,
     DividerComponent,
     CheckboxComponent,
-    PopupComponent
+    PopupComponent,
+    AnchorDirective,
+    ClickStopPropagationDirective,
   ],
   imports: [
     CommonModule,
@@ -23,7 +28,9 @@ import { PopupComponent } from './popup/popup.component';
     PasswordComponent,
     DividerComponent,
     CheckboxComponent,
-    PopupComponent
+    PopupComponent,
+    AnchorDirective,
+    ClickStopPropagationDirective,
   ]
 })
 export class WidgetModule { }
