@@ -13,6 +13,7 @@ import { ERROR } from './error';
 })
 export class UserBackOfficeService {
 
+
   sendMailOnCreate = false;
 
   constructor() { }
@@ -39,5 +40,8 @@ export class UserBackOfficeService {
     return Promise.resolve(<UserData>JSON.parse(json));
   }
 
-  
+  logout() {
+    // nothing to do.
+  }
+
 }

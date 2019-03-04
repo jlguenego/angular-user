@@ -78,9 +78,9 @@ export class UserService {
   }
 
   logout() {
-    this.isLogged = false;
-    this.userData = undefined;
+    this.bo.logout();
     localStorage.removeItem('isLogged');
+    this.sync();
   }
 
   getKey(email: string) {
