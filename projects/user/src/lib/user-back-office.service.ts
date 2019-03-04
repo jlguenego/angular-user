@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { SignupFormData, UserData } from './user.service';
+import { SignupFormData, UserData, SigninFormData } from './user.service';
 import { ERROR } from './error';
 
 /**
@@ -28,6 +28,15 @@ export class UserBackOfficeService {
       return Promise.reject(ERROR.MAIL_ALREADY_IN_USE);
     }
     return Promise.resolve();
+  }
+
+  login(formData: SigninFormData): Promise<UserData> {
+    const key = this.getKey(formData.email);
+    const json = localStorage.getItem(key);
+    if (!json) {
+      return Promise.reject(ERROR.BAD_LOGIN);
+    }
+    return Promise.resolve(<UserData>JSON.parse(json));
   }
 
   

@@ -47,33 +47,34 @@ export class UserService {
   }
 
   createAccount(formData: SignupFormData): Promise<void> {
-    console.log('about to create account', formData);
     this.isLogged = false;
     this.userData = undefined;
     // here you create the account
+    const key = this.getKey(formData.email);
     return this.bo.createAccount(formData).then(() => {
-      const key = this.getKey(formData.email);
       localStorage.setItem('isLogged', key);
       localStorage.setItem(key, JSON.stringify(formData));
       this.sync();
+    }).catch(err => {
+      localStorage.removeItem('isLogged');
+      localStorage.removeItem(key);
+      this.sync();
+      return Promise.reject(err);
     });
   }
 
-  login(formData: SigninFormData): any {
-    console.log('about to login', formData);
-
+  login(formData: SigninFormData): Promise<void> {
     const key = this.getKey(formData.email);
-    const json = localStorage.getItem(key);
-    if (!json) {
-      return Promise.reject(ERROR.BAD_LOGIN);
-    }
-    const userData = <UserData>JSON.parse(json);
-    if (userData.password !== formData.password) {
-      return Promise.reject(ERROR.BAD_LOGIN);
-    }
-    localStorage.setItem('isLogged', key);
-    this.sync();
-    return Promise.resolve(userData);
+    return this.bo.login(formData).then(userData => {
+      localStorage.setItem('isLogged', key);
+      localStorage.setItem(key, JSON.stringify(userData));
+      this.sync();
+    }).catch(err => {
+      localStorage.removeItem('isLogged');
+      localStorage.removeItem(key);
+      this.sync();
+      return Promise.reject(err);
+    });
   }
 
   logout() {
