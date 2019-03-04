@@ -3,7 +3,7 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { UserService, SignupFormData } from '../../user.service';
 import { AccountCreatedPageComponent } from '../../pages/account-created-page/account-created-page.component';
 import { ERROR, Error } from '../../error';
-import { DialogService, PasswordCheckService } from 'projects/layout/src/public_api';
+import { DialogService, PasswordCheckService } from '@jlguenego/angular-layout';
 
 @Component({
   selector: 'user-signup-form',

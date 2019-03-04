@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { LayoutModule } from 'projects/layout/src/public_api';
+import { LayoutModule } from '@jlguenego/angular-layout';
 import { UserModule } from 'projects/user/src/public_api';
 
 import { AppRoutingModule } from './app-routing.module';

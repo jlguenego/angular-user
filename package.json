@@ -8,8 +8,9 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "build-layout": "rimraf dist/angular-layout && ng build layout && npm run build-layout-styles",
-    "build-layout-styles": "cpx \"./projects/layout/src/lib/scss/**/*\" \"./dist/angular-layout/scss\""
+    "build-layout": "rimraf dist/angular-layout && ng build layout && npm run build-layout-styles && npm run deploy-layout",
+    "build-layout-styles": "cpx \"./projects/layout/src/lib/scss/**/*\" \"./dist/angular-layout/scss\"",
+    "deploy-layout": "cpx \"./dist/angular-layout\" \"./node_modules/@jlguenego/angular-layout\""
   },
   "private": true,
   "dependencies": {
@@ -24,6 +25,7 @@
     "@fortawesome/angular-fontawesome": "^0.3.0",
     "@fortawesome/fontawesome-svg-core": "^1.2.15",
     "@fortawesome/free-solid-svg-icons": "^5.7.2",
+    "@jlguenego/angular-layout": "0.0.1",
     "core-js": "^2.5.4",
     "rimraf": "^2.6.3",
     "rxjs": "~6.3.3",

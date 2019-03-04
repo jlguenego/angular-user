@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { DialogService } from 'projects/layout/src/lib/dialog.service';
+import { DialogService } from '@jlguenego/angular-layout';
 
 @Component({
   selector: 'user-account-created-page',

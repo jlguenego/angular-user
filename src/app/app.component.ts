@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { ResponsiveService, NavItem } from 'projects/layout/src/public_api';
+import { ResponsiveService, NavItem } from '@jlguenego/angular-layout';
 
 @Component({
   selector: 'app-root',

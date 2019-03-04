@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { UserService } from '../../user.service';
-import { DialogService } from 'projects/layout/src/lib/dialog.service';
+import { DialogService } from '@jlguenego/angular-layout';
 import { SuccessfullyConnectedPageComponent } from '../../pages/successfully-connected-page/successfully-connected-page.component';
 import { ERROR } from '../../error';
 

@@ -2,6 +2,11 @@
   "$schema": "../../node_modules/ng-packagr/ng-package.schema.json",
   "dest": "../../dist/angular-user",
   "lib": {
-    "entryFile": "src/public_api.ts"
+    "entryFile": "src/public_api.ts",
+    "umdModuleIds": {
+      "@jlguenego/angular-layout": "@jlguenego/angular-layout",
+      "@fortawesome/angular-fontawesome": "@fortawesome/angular-fontawesome",
+      "@fortawesome/free-solid-svg-icons": "@@fortawesome/free-solid-svg-icons"
+    }
   }
 }

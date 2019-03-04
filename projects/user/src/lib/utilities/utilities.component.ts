@@ -2,8 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { faUserCircle } from '@fortawesome/free-solid-svg-icons';
 
-import { ResponsiveService } from 'projects/layout/src/lib/responsive.service';
-import { DialogService } from 'projects/layout/src/lib/dialog.service';
+import { ResponsiveService, DialogService } from '@jlguenego/angular-layout';
 import { UserService } from '../user.service';
 
 import { SigninPageComponent } from '../pages/signin-page/signin-page.component';

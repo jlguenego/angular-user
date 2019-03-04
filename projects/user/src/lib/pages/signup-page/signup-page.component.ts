@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { PageComponent } from 'projects/layout/src/lib/dialog.service';
+import { PageComponent } from '@jlguenego/angular-layout';
 
 @Component({
   selector: 'user-signup-page',
