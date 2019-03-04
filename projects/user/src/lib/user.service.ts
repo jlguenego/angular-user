@@ -1,7 +1,5 @@
 import { Injectable } from '@angular/core';
-import { ERROR } from './error';
 import { UserBackOfficeService } from './user-back-office.service';
-import { errFn } from 'projects/misc/misc';
 
 export interface SignupFormData {
   email: string;
@@ -29,6 +27,7 @@ export class UserService {
 
   constructor(private bo: UserBackOfficeService) {
     this.refresh();
+    this.bo.register(this);
   }
 
   refresh() {
@@ -89,10 +88,11 @@ export class UserService {
 
   delete(): Promise<void> {
     const key = this.getKey(this.userData.email);
-    localStorage.removeItem(key);
-    localStorage.removeItem('isLogged');
-    this.sync();
-    return Promise.resolve();
+    return this.bo.delete().then(() => {
+      localStorage.removeItem(key);
+      localStorage.removeItem('isLogged');
+      this.sync();
+    });
   }
 
   sync() {

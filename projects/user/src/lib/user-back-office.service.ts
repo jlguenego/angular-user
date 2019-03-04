@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { SignupFormData, UserData, SigninFormData } from './user.service';
+import { SignupFormData, UserData, SigninFormData, UserService } from './user.service';
 import { ERROR } from './error';
 
 /**
@@ -12,11 +12,15 @@ import { ERROR } from './error';
   providedIn: 'root'
 })
 export class UserBackOfficeService {
-
-
+  
   sendMailOnCreate = false;
+  user: UserService;
 
   constructor() { }
+
+  register(user: UserService) {
+    this.user = user;
+  }
 
   getKey(email: string) {
     return `user:${email}`;
@@ -42,6 +46,12 @@ export class UserBackOfficeService {
 
   logout() {
     // nothing to do.
+  }
+
+  delete(): Promise<void> {
+    const key = this.getKey(this.user.userData.email);
+    localStorage.removeItem(key);
+    return Promise.resolve();
   }
 
 }
