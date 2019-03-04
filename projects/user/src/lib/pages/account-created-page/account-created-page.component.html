@@ -10,7 +10,7 @@
 <p class="congrats">
   Account successfully created!
 </p>
-<p>
+<p *ngIf="bo.sendMailOnCreate">
   Please look at your email to activate it.
 </p>
 <button class="primary" (click)="dialog.close()">Continue</button>

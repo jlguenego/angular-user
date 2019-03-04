@@ -1,5 +1,7 @@
 import { Injectable } from '@angular/core';
 import { ERROR } from './error';
+import { UserBackOfficeService } from './user-back-office.service';
+import { errFn } from 'projects/misc/misc';
 
 export interface SignupFormData {
   email: string;
@@ -25,7 +27,7 @@ export class UserService {
   userData: UserData;
   isLogged: boolean = undefined;
 
-  constructor() {
+  constructor(private bo: UserBackOfficeService) {
     this.refresh();
   }
 
@@ -49,20 +51,18 @@ export class UserService {
     this.isLogged = false;
     this.userData = undefined;
     // here you create the account
-    const key = this.getKey(formData);
-    if (localStorage.getItem(key)) {
-      return Promise.reject(ERROR.MAIL_ALREADY_IN_USE);
-    }
-    localStorage.setItem('isLogged', key);
-    localStorage.setItem(key, JSON.stringify(formData));
-    this.sync();
-    return Promise.resolve();
+    return this.bo.createAccount(formData).then(() => {
+      const key = this.getKey(formData.email);
+      localStorage.setItem('isLogged', key);
+      localStorage.setItem(key, JSON.stringify(formData));
+      this.sync();
+    });
   }
 
   login(formData: SigninFormData): any {
     console.log('about to login', formData);
 
-    const key = this.getKey(formData);
+    const key = this.getKey(formData.email);
     const json = localStorage.getItem(key);
     if (!json) {
       return Promise.reject(ERROR.BAD_LOGIN);
@@ -82,12 +82,12 @@ export class UserService {
     localStorage.removeItem('isLogged');
   }
 
-  getKey(userData) {
-    return `user:${userData.email}`;
+  getKey(email: string) {
+    return `user:${email}`;
   }
 
   delete(): Promise<void> {
-    const key = this.getKey(this.userData);
+    const key = this.getKey(this.userData.email);
     localStorage.removeItem(key);
     localStorage.removeItem('isLogged');
     this.sync();

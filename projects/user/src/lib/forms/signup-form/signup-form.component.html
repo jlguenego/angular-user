@@ -1,11 +1,11 @@
 <form autocomplete [formGroup]="f" (ngSubmit)="onSubmit()">
   <label>
     <div>Email*</div>
-    <input type="email" name="email" formControlName="email" autocomplete="email">
+    <input type="email" name="email" formControlName="email" autocomplete="username email">
   </label>
   <label>
     <div>Display name*</div>
-    <input type="text" name="name" formControlName="displayName" autocomplete="name">
+    <input type="text" name="name" formControlName="displayName" autocomplete="username name">
   </label>
   <label>
     <div>Mot de passe*</div>
