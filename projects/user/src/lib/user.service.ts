@@ -14,7 +14,6 @@ export interface SigninFormData {
 
 export interface UserData {
   email: string;
-  password: string;
   displayName: string;
 }
 
@@ -46,13 +45,11 @@ export class UserService {
   }
 
   createAccount(formData: SignupFormData): Promise<void> {
-    this.isLogged = false;
-    this.userData = undefined;
     // here you create the account
     const key = this.getKey(formData.email);
-    return this.bo.createAccount(formData).then(() => {
+    return this.bo.createAccount(formData).then(userData => {
       localStorage.setItem('isLogged', key);
-      localStorage.setItem(key, JSON.stringify(formData));
+      localStorage.setItem(key, JSON.stringify(userData));
       this.sync();
     }).catch(err => {
       localStorage.removeItem('isLogged');

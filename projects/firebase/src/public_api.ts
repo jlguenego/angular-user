@@ -2,4 +2,4 @@
  * Public API Surface of firebase
  */
 
-export * from './lib/firebase.service';
+export * from './lib/user-firebase-back-office.service';

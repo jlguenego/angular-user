@@ -2,17 +2,11 @@ import { Injectable } from '@angular/core';
 import { SignupFormData, UserData, SigninFormData, UserService } from './user.service';
 import { ERROR } from './error';
 
-/**
- * Stub for userbackoffice (just use localstorage)
- *
- * @export
- * @class UserBackOfficeService
- */
 @Injectable({
   providedIn: 'root'
 })
 export class UserBackOfficeService {
-  
+
   sendMailOnCreate = false;
   user: UserService;
 
@@ -26,13 +20,16 @@ export class UserBackOfficeService {
     return `user:${email}`;
   }
 
-  createAccount(formData: SignupFormData): Promise<void> {
+  createAccount(formData: SignupFormData): Promise<UserData> {
     const key = this.getKey(formData.email);
     const json = localStorage.getItem(key);
     if (json) {
       return Promise.reject(ERROR.MAIL_ALREADY_IN_USE);
     }
-    return Promise.resolve();
+    return Promise.resolve({
+      displayName: formData.displayName,
+      email: formData.email
+    });
   }
 
   login(formData: SigninFormData): Promise<UserData> {
