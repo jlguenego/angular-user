@@ -4,17 +4,17 @@ export interface Error {
 }
 
 export const ERROR = {
-    MAIL_ALREADY_IN_USE: {
+    MAIL_ALREADY_IN_USE: <Error>{
         code: 'auth/mail-already-in-use',
         message: 'The mail is already in use'
     },
-    WEAK_PASSWORD: {
+    WEAK_PASSWORD: <Error>{
         code: 'auth/weak-password',
         message: 'The password is too weak'
     },
-    BAD_LOGIN: {
+    BAD_LOGIN: <Error>{
         code: 'auth/bad-login',
         message: 'Bad login or password'
     }
-    
+
 }
