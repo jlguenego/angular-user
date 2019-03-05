@@ -7,9 +7,9 @@ Do not reinvent the wheel. Reuse !
 
 Do this Angular website in less than 5 minutes.
 
-![alt text](https://raw.githubusercontent.com/jlguenego/angular-user/master/resources/screenshot1.jpg)
+![Home Screenshot](https://raw.githubusercontent.com/jlguenego/angular-user/master/resources/screenshot1.jpg)
 
-![alt text](https://raw.githubusercontent.com/jlguenego/angular-user/master/resources/screenshot2.jpg)
+![Mobile Screenshot](https://raw.githubusercontent.com/jlguenego/angular-user/master/resources/screenshot2.jpg =250x)
 
 The website is fully **responsive/adaptive** and you can **handle users**.
 
