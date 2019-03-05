@@ -18,9 +18,6 @@ Here are 3 modules that could accelerate your devs:
 
 <img src="https://raw.githubusercontent.com/jlguenego/angular-user/master/resources/screenshot2.jpg" width="200px">
 
-<img src="https://raw.githubusercontent.com/jlguenego/angular-user/master/resources/screenshot3.jpg" width="200px">
-
-
 ## Getting started
 
 First do a normal angular application with Angular CLI.
