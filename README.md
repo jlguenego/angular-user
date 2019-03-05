@@ -9,8 +9,6 @@ Do this Angular website in less than 5 minutes.
 
 ![Home Screenshot](https://raw.githubusercontent.com/jlguenego/angular-user/master/resources/screenshot1.jpg)
 
-<img src="https://raw.githubusercontent.com/jlguenego/angular-user/master/resources/screenshot2.jpg" width="200px">
-
 The website is fully **responsive/adaptive** and you can **handle users**.
 
 Here are 3 modules that could accelerate your devs:
@@ -18,6 +16,7 @@ Here are 3 modules that could accelerate your devs:
 - @jlguenego/angular-user : manage user CRUD, login, logout, forgotten password, etc.
 - @jlguenego/angular-user-firebase : implements user with Google Firebase in back office.
 
+<img src="https://raw.githubusercontent.com/jlguenego/angular-user/master/resources/screenshot2.jpg" width="200px">
 
 
 ## Getting started
