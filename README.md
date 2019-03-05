@@ -140,7 +140,12 @@ ng serve -o
 
 You should see the responsive website!
 
+# Why this project
 
+- I had many angular websites to make to my different clients and needed to speed up.
+- I wanted to maintain many features (user management, layout, etc.) for many websites at same time.
+
+So I decided to pack some personal components as libraries.
 
 # Author
 
