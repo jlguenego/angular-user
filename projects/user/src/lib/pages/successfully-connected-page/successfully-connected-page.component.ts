@@ -8,6 +8,8 @@ import { DialogService } from '@jlguenego/angular-layout';
 })
 export class SuccessfullyConnectedPageComponent implements OnInit {
 
+  title = "You are logged in."
+
   constructor(public dialog: DialogService) { }
 
   ngOnInit() {
