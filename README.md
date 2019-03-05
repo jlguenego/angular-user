@@ -20,24 +20,62 @@ First do a normal angular application with Angular CLI.
 npm i @angular/cli
 ng new a-website --routing --style sass
 cd a-website
-ng serve -o
 ```
-
-Check the normal scaffold Angular app is running.
 
 Then install the modules you need.
 
 ```
 npm i @jlguenego/angular-layout @jlguenego/angular-user
+npm i @fortawesome/angular-fontawesome @fortawesome/fontawesome-svg-core @fortawesome/free-solid-svg-icons
 ```
 
-Make the following change in the project:
+Make the following changes in the project:
+
+`styles.scss`:
+
+```scss
+/* You can add global styles to this file, and also import other style files */
+@import '../node_modules/@jlguenego/angular-layout/scss/variables';
+// build the theme.
+@import '../node_modules/@jlguenego/angular-layout/scss/palette';
+@import '../node_modules/@jlguenego/angular-layout/scss/layout';
+
+```
+
+`app.module.ts`:
+
+```ts
+import { BrowserModule } from '@angular/platform-browser';
+import { NgModule } from '@angular/core';
+
+import { AppRoutingModule } from './app-routing.module';
+import { AppComponent } from './app.component';
+import { LayoutModule } from '@jlguenego/angular-layout';
+import { UserModule } from '@jlguenego/angular-user';
+
+@NgModule({
+  declarations: [
+    AppComponent
+  ],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    LayoutModule,
+    UserModule,
+  ],
+  providers: [],
+  bootstrap: [AppComponent]
+})
+export class AppModule { }
+```
+
+The purpose is to add the two modules `LayoutModule` and `UserModule`
 
 `app.component.html`:
 
 ```html
 <layout-header [navItems]="nav" [mobileNavItems]="mobileNav">
-  <div class="site-id"><span>Neuro</span><span class="secondary-light-color">Shake</span></div>
+  <div class="site-id"><span>My</span><span class="secondary-light-color">Logo</span></div>
   <div class="utilities"><user-utilities></user-utilities></div>
   <div class="mobile-menu-icon">
     <user-mobile-menu-icon></user-mobile-menu-icon>
@@ -48,6 +86,7 @@ Make the following change in the project:
   </div>
 </layout-header>
 <layout-body>
+  <p>Here is the body: you can put here what you wish. Do not hesitate to use routing.</p>
   <router-outlet></router-outlet>
 </layout-body>
 <layout-footer>
@@ -72,15 +111,14 @@ export class AppComponent {
   }
 
   nav: NavItem[] = [
-    { label: 'Brainstorm', route: '/brainstorm' },
-    { label: 'Presentation', route: '/presentation' },
-    { label: 'Contact', route: '/contact' },
+    { label: 'Menu1', route: '/menu1' },
+    { label: 'Menu2', route: '/menu2' },
+    { label: 'Menu3', route: '/menu3' },
   ];
 
   mobileNav: NavItem[] = [
-    { label: 'Mobile', route: '/brainstorm' },
-    { label: 'Presentation', route: '/presentation' },
-    { label: 'Contact', route: '/contact' },
+    { label: 'Menu1', route: '/menu1' },
+    { label: 'Menu2', route: '/menu2' },
   ];
 }
 ```
@@ -88,8 +126,12 @@ export class AppComponent {
 Restart the dev server:
 
 ```
-ng serve
+ng serve -o
 ```
+
+You should see this responsive website:
+
+![alt text](https://raw.githubusercontent.com/jlguenego/angular-user/master/resources/screenshot1.jpg)
 
 # Author
 

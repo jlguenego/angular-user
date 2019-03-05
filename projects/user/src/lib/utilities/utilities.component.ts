@@ -36,6 +36,7 @@ export class UtilitiesComponent implements OnInit {
 
   signout() {
     this.user.logout();
+    this.router.navigate(['/']);
   }
 
   profile() {
