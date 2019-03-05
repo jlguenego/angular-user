@@ -9,7 +9,7 @@ Do this Angular website in less than 5 minutes.
 
 ![Home Screenshot](https://raw.githubusercontent.com/jlguenego/angular-user/master/resources/screenshot1.jpg)
 
-![Mobile Screenshot](https://raw.githubusercontent.com/jlguenego/angular-user/master/resources/screenshot2.jpg =250x)
+<img src="https://raw.githubusercontent.com/jlguenego/angular-user/master/resources/screenshot2.jpg" width="100">
 
 The website is fully **responsive/adaptive** and you can **handle users**.
 
