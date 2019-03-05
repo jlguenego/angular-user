@@ -5,8 +5,16 @@ Want to do a simple website with basic usability ?
 
 Do not reinvent the wheel. Reuse !
 
+Do this Angular website in less than 5 minutes.
+
+![alt text](https://raw.githubusercontent.com/jlguenego/angular-user/master/resources/screenshot1.jpg)
+
+![alt text](https://raw.githubusercontent.com/jlguenego/angular-user/master/resources/screenshot2.jpg)
+
+The website is fully **responsive/adaptive** and you can **handle users**.
+
 Here are 3 modules that could accelerate your devs:
-- @jlguenego/angular-layout : header, body, footer, form widgets, etc.
+- @jlguenego/angular-layout : responsive header, body, footer, form widgets, etc.
 - @jlguenego/angular-user : manage user CRUD, login, logout, forgotten password, etc.
 - @jlguenego/angular-user-firebase : implements user with Google Firebase in back office.
 
@@ -131,9 +139,9 @@ Restart the dev server:
 ng serve -o
 ```
 
-You should see this responsive website:
+You should see the responsive website!
 
-![alt text](https://raw.githubusercontent.com/jlguenego/angular-user/master/resources/screenshot1.jpg)
+
 
 # Author
 
