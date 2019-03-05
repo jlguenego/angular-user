@@ -47,11 +47,11 @@ Make the following changes in the project:
 ```ts
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { LayoutModule } from '@jlguenego/angular-layout';
+import { UserModule } from '@jlguenego/angular-user';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { LayoutModule } from '@jlguenego/angular-layout';
-import { UserModule } from '@jlguenego/angular-user';
 
 @NgModule({
   declarations: [
@@ -59,14 +59,15 @@ import { UserModule } from '@jlguenego/angular-user';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
     LayoutModule,
     UserModule,
+    AppRoutingModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+
 ```
 
 The purpose is to add the two modules `LayoutModule` and `UserModule`
@@ -86,7 +87,8 @@ The purpose is to add the two modules `LayoutModule` and `UserModule`
   </div>
 </layout-header>
 <layout-body>
-  <p>Here is the body: you can put here what you wish. Do not hesitate to use routing.</p>
+  <br>
+  <p style="font-size: 2rem; text-align: center;">Congratulations! You made it!</p>
   <router-outlet></router-outlet>
 </layout-body>
 <layout-footer>
