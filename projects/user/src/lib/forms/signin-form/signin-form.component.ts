@@ -17,7 +17,7 @@ export class SigninFormComponent implements OnInit {
     password: new FormControl('', [Validators.required]),
   });
   ERROR = ERROR;
-  errorCode: Error;
+  errorCode: string;
 
   constructor(private user: UserService, private dialog: DialogService) { }
 
