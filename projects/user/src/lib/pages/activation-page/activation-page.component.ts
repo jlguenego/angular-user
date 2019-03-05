@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { UserService } from '../../user.service';
 
 @Component({
   selector: 'user-activation-page',
@@ -7,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ActivationPageComponent implements OnInit {
   title = "Activate your account";
-  constructor() { }
+  constructor(public user: UserService) { }
 
   ngOnInit() {
   }
