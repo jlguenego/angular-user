@@ -53,4 +53,10 @@ export class UserFirebaseBackOfficeService extends UserBackOfficeService {
   delete(): Promise<void> {
     return this.afAuth.auth.currentUser.delete();
   }
+
+  sendActivationMail() {
+    if (this.sendMailOnCreate) {
+      this.afAuth.auth.currentUser.sendEmailVerification();
+    }
+  }
 }

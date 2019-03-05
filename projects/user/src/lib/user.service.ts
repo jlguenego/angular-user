@@ -81,6 +81,12 @@ export class UserService {
     this.sync();
   }
 
+  sendActivationMail() {
+    if (this.needsActivation) {
+      this.bo.sendActivationMail();
+    }
+  }
+
   getKey(email: string) {
     return `user:${email}`;
   }

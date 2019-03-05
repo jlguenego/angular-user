@@ -45,6 +45,10 @@ export class UserBackOfficeService {
     // nothing to do.
   }
 
+  sendActivationMail() {
+    // nothing to do.
+  }
+
   delete(): Promise<void> {
     const key = this.getKey(this.user.userData.email);
     localStorage.removeItem(key);
