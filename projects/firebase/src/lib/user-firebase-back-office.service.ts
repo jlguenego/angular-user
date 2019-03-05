@@ -18,6 +18,9 @@ export class UserFirebaseBackOfficeService extends UserBackOfficeService {
     return this.afAuth.auth.createUserWithEmailAndPassword(formData.email, formData.password).then(credentials => {
       return this.afAuth.auth.currentUser.updateProfile({ displayName: formData.displayName });
     }).then(() => {
+      if (this.sendMailOnCreate) {
+        this.afAuth.auth.currentUser.sendEmailVerification();
+      }
       return Promise.resolve({
         displayName: formData.displayName,
         email: formData.email
@@ -36,6 +39,7 @@ export class UserFirebaseBackOfficeService extends UserBackOfficeService {
       };
       return Promise.resolve(userData);
     }).catch(err => {
+      console.log('cannot login', err);
       return Promise.reject(ERROR.BAD_LOGIN);
     });
   }

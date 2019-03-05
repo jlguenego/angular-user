@@ -3,7 +3,7 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { UserService } from '../../user.service';
 import { DialogService } from '@jlguenego/angular-layout';
 import { SuccessfullyConnectedPageComponent } from '../../pages/successfully-connected-page/successfully-connected-page.component';
-import { ERROR } from '../../error';
+import { ERROR, Error } from '../../error';
 
 @Component({
   selector: 'user-signin-form',
@@ -17,7 +17,7 @@ export class SigninFormComponent implements OnInit {
     password: new FormControl('', [Validators.required]),
   });
   ERROR = ERROR;
-  errorCode;
+  errorCode: Error;
 
   constructor(private user: UserService, private dialog: DialogService) { }
 
@@ -28,8 +28,9 @@ export class SigninFormComponent implements OnInit {
     this.errorCode = undefined;
     this.user.login(this.f.value).then(userData => {
       this.dialog.open(SuccessfullyConnectedPageComponent);
-    }).catch(errorCode => {
-      this.errorCode = errorCode;
+    }).catch(error => {
+      console.log('cannot login correctly', error);
+      this.errorCode = error.code;
     });
   }
 

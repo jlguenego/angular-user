@@ -66,6 +66,7 @@ export class UserService {
       localStorage.setItem(key, JSON.stringify(userData));
       this.sync();
     }).catch(err => {
+      console.log('user login', err);
       localStorage.removeItem('isLogged');
       localStorage.removeItem(key);
       this.sync();
