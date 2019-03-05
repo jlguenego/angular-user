@@ -16,6 +16,7 @@ import { MobileMenuIconComponent } from './mobile-menu-icon/mobile-menu-icon.com
 import { ProfileComponent } from './routes/profile/profile.component';
 import { SucessfullyDeletedComponent } from './routes/sucessfully-deleted/sucessfully-deleted.component';
 import { UserRoutingModule } from './user-routing.module';
+import { ActivationPageComponent } from './pages/activation-page/activation-page.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { UserRoutingModule } from './user-routing.module';
     SignupFormComponent,
     UpdateFormComponent,
     ProfileComponent,
-    SucessfullyDeletedComponent
+    SucessfullyDeletedComponent,
+    ActivationPageComponent
     
 
   ],
@@ -51,6 +53,7 @@ import { UserRoutingModule } from './user-routing.module';
     SigninPageComponent,
     SignupPageComponent,
     SuccessfullyConnectedPageComponent,
+    ActivationPageComponent,
   ]
 })
 export class UserModule { }

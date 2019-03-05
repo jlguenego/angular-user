@@ -7,6 +7,7 @@ import { UserService } from '../user.service';
 
 import { SigninPageComponent } from '../pages/signin-page/signin-page.component';
 import { SignupPageComponent } from '../pages/signup-page/signup-page.component';
+import { ActivationPageComponent } from '../pages/activation-page/activation-page.component';
 
 @Component({
   selector: 'user-utilities',
@@ -32,6 +33,10 @@ export class UtilitiesComponent implements OnInit {
 
   signupDialog() {
     this.dialog.open(SignupPageComponent);
+  }
+
+  activationDialog() {
+    this.dialog.open(ActivationPageComponent)
   }
 
   signout() {

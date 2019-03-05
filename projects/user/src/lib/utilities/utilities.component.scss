@@ -29,6 +29,14 @@ div {
     }
     .actions {
         display: flex;
-        justify-content: space-around;
+        justify-content: space-between;
+    }
+
+    .need-activation {
+        display: flex;
+        padding-top: 1rem;
+        button {
+            flex-grow: 1;
+        }
     }
 }

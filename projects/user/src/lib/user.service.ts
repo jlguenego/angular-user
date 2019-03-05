@@ -23,6 +23,7 @@ export interface UserData {
 export class UserService {
   userData: UserData;
   isLogged: boolean = undefined;
+  needsActivation = this.bo.sendMailOnCreate;
 
   constructor(private bo: UserBackOfficeService) {
     this.refresh();
@@ -113,7 +114,6 @@ export class UserService {
       this.isLogged = false;
       this.userData = undefined;
     }
-
   }
 
 }
