@@ -17,7 +17,7 @@
                     <button (click)="profile()">My profile</button>
                     <button (click)="signout()">Sign out</button>
                 </div>
-                <div *ngIf="user.needsActivation" class="need-activation">
+                <div *ngIf="user.needsActivation && user.userData.isVerified" class="need-activation">
                     <button class="important" (click)="activationDialog()">Activate my account</button>
                 </div>
             </div>
@@ -43,7 +43,7 @@
             <button (click)="profile()">My profile</button>
             <button (click)="signout()">Sign out</button>
         </div>
-        <div *ngIf="user.needsActivation" class="need-activation">
+        <div *ngIf="user.needsActivation && user.userData.isVerified" class="need-activation">
             <button class="important" (click)="activationDialog()">Activate my account</button>
         </div>
     </div>

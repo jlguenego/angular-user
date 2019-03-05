@@ -15,6 +15,7 @@ export interface SigninFormData {
 export interface UserData {
   email: string;
   displayName: string;
+  isVerified: boolean;
 }
 
 @Injectable({
@@ -23,7 +24,8 @@ export interface UserData {
 export class UserService {
   userData: UserData;
   isLogged: boolean = undefined;
-  needsActivation = this.bo.sendMailOnCreate;
+  needsActivation = this.bo.needsActivation;
+
 
   constructor(private bo: UserBackOfficeService) {
     this.refresh();

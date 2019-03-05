@@ -1,12 +1,12 @@
 import { Injectable } from '@angular/core';
-import { ERROR, UserBackOfficeService, SignupFormData, SigninFormData, UserData } from '@jlguenego/angular-user';
 import { AngularFireAuth } from '@angular/fire/auth';
+import { SignupFormData, UserBackOfficeService, UserData, ERROR, SigninFormData } from 'projects/user/src/public_api';
 
 @Injectable({
   providedIn: 'root'
 })
 export class UserFirebaseBackOfficeService extends UserBackOfficeService {
-  sendMailOnCreate = true;
+  needsActivation = true;
 
   constructor(private afAuth: AngularFireAuth) {
     super();
@@ -15,16 +15,19 @@ export class UserFirebaseBackOfficeService extends UserBackOfficeService {
   createAccount(formData: SignupFormData): Promise<UserData> {
     console.log('email', formData.email);
     console.log('createAccount password', formData.password);
+    let userData: UserData = undefined;
     return this.afAuth.auth.createUserWithEmailAndPassword(formData.email, formData.password).then(credentials => {
+      userData = {
+        email: credentials.user.email,
+        displayName: credentials.user.displayName,
+        isVerified: credentials.user.emailVerified
+      }
       return this.afAuth.auth.currentUser.updateProfile({ displayName: formData.displayName });
     }).then(() => {
-      if (this.sendMailOnCreate) {
+      if (this.needsActivation && (!userData.isVerified)) {
         this.afAuth.auth.currentUser.sendEmailVerification();
       }
-      return Promise.resolve({
-        displayName: formData.displayName,
-        email: formData.email
-      });
+      return Promise.resolve(userData);
     }).catch(err => {
       return Promise.reject(ERROR.MAIL_ALREADY_IN_USE);
     });
@@ -36,6 +39,7 @@ export class UserFirebaseBackOfficeService extends UserBackOfficeService {
       const userData: UserData = {
         email: credentials.user.email,
         displayName: credentials.user.displayName,
+        isVerified: credentials.user.emailVerified,
       };
       return Promise.resolve(userData);
     }).catch(err => {
@@ -55,7 +59,7 @@ export class UserFirebaseBackOfficeService extends UserBackOfficeService {
   }
 
   sendActivationMail() {
-    if (this.sendMailOnCreate) {
+    if (this.needsActivation) {
       this.afAuth.auth.currentUser.sendEmailVerification();
     }
   }

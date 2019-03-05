@@ -7,7 +7,7 @@ import { ERROR } from './error';
 })
 export class UserBackOfficeService {
 
-  sendMailOnCreate = false;
+  needsActivation = false;
   user: UserService;
 
   constructor() { }
@@ -28,7 +28,8 @@ export class UserBackOfficeService {
     }
     return Promise.resolve({
       displayName: formData.displayName,
-      email: formData.email
+      email: formData.email,
+      isVerified: false
     });
   }
 
