@@ -67,8 +67,8 @@ export class UserFirebaseBackOfficeService extends UserBackOfficeService {
     });
   }
 
-  logout() {
-    this.afAuth.auth.signOut().then(() => {
+  logout(): Promise<void> {
+    return this.afAuth.auth.signOut().then(() => {
     });
   }
 

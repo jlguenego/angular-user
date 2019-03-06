@@ -45,8 +45,7 @@ export class UtilitiesComponent implements OnInit {
   }
 
   signout() {
-    this.user.logout();
-    this.router.navigate(['/']);
+    this.user.logout().then(() => {});
   }
 
   refresh(event) {

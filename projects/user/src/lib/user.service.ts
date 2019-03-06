@@ -80,8 +80,7 @@ export class UserService {
   }
 
   logout() {
-    this.bo.logout();
-    this.disconnect();
+    return this.bo.logout().then(() => this.disconnect());
   }
 
   sendActivationMail() {

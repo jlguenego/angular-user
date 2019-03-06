@@ -52,8 +52,9 @@ export class UserBackOfficeService {
     return Promise.resolve(<UserData>data);
   }
 
-  logout() {
+  logout(): Promise<void> {
     localStorage.removeItem('isLogged');
+    return Promise.resolve();
   }
 
   sendActivationMail() {
