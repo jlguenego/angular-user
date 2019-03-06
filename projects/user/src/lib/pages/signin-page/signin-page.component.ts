@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { PageComponent } from '@jlguenego/angular-layout';
+import { UserService } from '../../user.service';
 
 @Component({
   selector: 'user-signin-page',
@@ -11,7 +12,7 @@ export class SigninPageComponent implements OnInit, PageComponent {
   title = "Sign in";
   maxWidth = '20rem';
 
-  constructor() { }
+  constructor(public user: UserService) { }
 
   ngOnInit() {
   }

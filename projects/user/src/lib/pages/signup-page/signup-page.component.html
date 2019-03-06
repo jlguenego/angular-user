@@ -1,3 +1,5 @@
-<user-social-login></user-social-login>
-<widget-divider>or</widget-divider>
+<ng-container *ngIf="user.hasSocialLogin">
+    <user-social-login></user-social-login>
+    <widget-divider>or</widget-divider>
+</ng-container>
 <user-signup-form></user-signup-form>

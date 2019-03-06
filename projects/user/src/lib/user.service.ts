@@ -25,6 +25,7 @@ export class UserService {
   userData: UserData;
   isLogged: boolean = undefined;
   needsActivation = this.bo.needsActivation;
+  hasSocialLogin = this.bo.hasSocialLogin;
 
 
   constructor(private bo: UserBackOfficeService) {

@@ -7,6 +7,7 @@ import { SignupFormData, UserBackOfficeService, UserData, ERROR, SigninFormData 
 })
 export class UserFirebaseBackOfficeService extends UserBackOfficeService {
   needsActivation = true;
+  hasSocialLogin = true;
 
   constructor(private afAuth: AngularFireAuth) {
     super();

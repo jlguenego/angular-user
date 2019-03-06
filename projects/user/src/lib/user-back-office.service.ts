@@ -8,6 +8,7 @@ import { ERROR } from './error';
 export class UserBackOfficeService {
 
   needsActivation = false;
+  hasSocialLogin = false;
   user: UserService;
 
   constructor() { }
