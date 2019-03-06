@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { ERROR } from '../../error';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { UserService } from '../../user.service';
+import { DialogService } from '@jlguenego/angular-layout';
+import { PasswordChangedPageComponent } from '../../pages/password-changed-page/password-changed-page.component';
 
 
 @Component({
@@ -18,11 +21,17 @@ export class UpdatePasswordFormComponent implements OnInit {
     newPassword: new FormControl('', Validators.required)
   });
 
-  constructor() { }
+  constructor(private user: UserService, private dialog: DialogService) { }
 
   ngOnInit() {
   }
 
-  onSubmit() {}
+  onSubmit() {
+    this.user.updatePassword(this.f.value.currentPassword, this.f.value.newPassword)
+      .then(() => {
+        this.dialog.open(PasswordChangedPageComponent);
+      })
+      .catch(err => this.errorCode = err.code);
+  }
 
 }

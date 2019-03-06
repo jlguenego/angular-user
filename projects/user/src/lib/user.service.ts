@@ -97,4 +97,8 @@ export class UserService {
     });
   }
 
+  updatePassword(currentPassword: string, newPassword: string) {
+    return this.bo.updatePassword(currentPassword, newPassword);
+  }
+
 }

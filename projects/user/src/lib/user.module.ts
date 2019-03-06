@@ -20,6 +20,7 @@ import { ActivationPageComponent } from './pages/activation-page/activation-page
 import { UpdatePasswordComponent } from './routes/update-password/update-password.component';
 import { UserComponent } from './routes/user/user.component';
 import { UpdatePasswordFormComponent } from './forms/update-password-form/update-password-form.component';
+import { PasswordChangedPageComponent } from './pages/password-changed-page/password-changed-page.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,8 @@ import { UpdatePasswordFormComponent } from './forms/update-password-form/update
     ActivationPageComponent,
     UpdatePasswordComponent,
     UserComponent,
-    UpdatePasswordFormComponent
+    UpdatePasswordFormComponent,
+    PasswordChangedPageComponent
     
 
   ],
@@ -60,6 +62,7 @@ import { UpdatePasswordFormComponent } from './forms/update-password-form/update
     SignupPageComponent,
     SuccessfullyConnectedPageComponent,
     ActivationPageComponent,
+    PasswordChangedPageComponent
   ]
 })
 export class UserModule { }

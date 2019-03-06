@@ -2,6 +2,11 @@ form {
     display: block;
     width: 100%;
     max-width: 30rem;
+    .error-block {
+        height: 2rem;
+        font-weight: bold;
+        color: red;
+    }
 }
 
 label {

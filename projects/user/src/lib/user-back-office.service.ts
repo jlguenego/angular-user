@@ -29,10 +29,10 @@ export class UserBackOfficeService {
     const userData = {
       displayName: formData.displayName,
       email: formData.email,
-      isVerified: false
+      isVerified: false,
     };
     localStorage.setItem('isLogged', key);
-    localStorage.setItem(key, JSON.stringify(userData));
+    localStorage.setItem(key, JSON.stringify({...userData, password: formData.password}));
     return Promise.resolve(userData);
   }
 
@@ -42,8 +42,13 @@ export class UserBackOfficeService {
     if (!json) {
       return Promise.reject(ERROR.BAD_LOGIN);
     }
+    const data = JSON.parse(json);
+    if (data.password !== formData.password) {
+      return Promise.reject(ERROR.BAD_LOGIN);
+    }
+    delete data.password;
     localStorage.setItem('isLogged', key);
-    return Promise.resolve(<UserData>JSON.parse(json));
+    return Promise.resolve(<UserData>data);
   }
 
   logout() {
@@ -70,6 +75,25 @@ export class UserBackOfficeService {
     } else {
       return Promise.reject();
     }
+  }
+
+  updatePassword(currentPassword: string, newPassword: string) {
+    console.log('updatePassword bo');
+    const key = localStorage.getItem('isLogged');
+    if (key) {
+      const json = localStorage.getItem(key);
+      const data = JSON.parse(json);
+      if (data.password !== currentPassword) {
+        console.log('wrong password', data.password, '<>', currentPassword);
+        return Promise.reject(ERROR.BAD_PASSWORD);
+      }
+      data.password = newPassword;
+      localStorage.setItem(key, JSON.stringify(data));
+      return Promise.resolve();
+    } else {
+      return Promise.reject(ERROR.BAD_PASSWORD);
+    }
+
   }
 
 }
