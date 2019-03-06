@@ -19,12 +19,19 @@
       "dom"
     ],
     "paths": {
+      "@jlguenego/angular-layout": [
+        "projects/layout/src/public_api.ts"
+      ],
+      "@jlguenego/angular-user": [
+        "projects/user/src/public_api.ts"
+      ],
+      "@jlguenego/angular-user-firebase": [
+        "projects/firebase/src/public_api.ts"
+      ],
       "layout": [
-        "dist/layout",
         "dist/layout"
       ],
       "layout/*": [
-        "dist/layout/*",
         "dist/layout/*"
       ],
       "user": [
@@ -32,12 +39,6 @@
       ],
       "user/*": [
         "dist/user/*"
-      ],
-      "widget": [
-        "dist/widget"
-      ],
-      "widget/*": [
-        "dist/widget/*"
       ],
       "firebase": [
         "dist/firebase"
