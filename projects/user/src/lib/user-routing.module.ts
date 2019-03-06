@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+
 import { ProfileComponent } from './routes/profile/profile.component';
 import { SucessfullyDeletedComponent } from './routes/sucessfully-deleted/sucessfully-deleted.component';
 import { UpdatePasswordComponent } from './routes/update-password/update-password.component';
