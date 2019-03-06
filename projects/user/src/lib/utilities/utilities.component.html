@@ -5,21 +5,7 @@
     <ng-container *ngIf="user.isLogged">
         <widget-popup [label]="user.userData.email">
             <div class="logged light-bg" *ngIf="user.isLogged">
-                <div class="identity">
-                    <div class="photo">
-                        <fa-icon [icon]="faUserCircle"></fa-icon>
-                    </div>
-                    <div class="id">
-                        <div class="display-name">{{user.userData.displayName}}</div>
-                    </div>
-                </div>
-                <div class="actions">
-                    <button (click)="profile()">My profile</button>
-                    <button (click)="signout()">Sign out</button>
-                </div>
-                <div *ngIf="user.needsActivation && (!user.userData.isVerified)" class="need-activation">
-                    <button class="important" (click)="activationDialog()">Activate my account</button>
-                </div>
+                <ng-container *ngTemplateOutlet="accountSummary"></ng-container>
             </div>
         </widget-popup>
     </ng-container>
@@ -30,21 +16,25 @@
         <button (click)="signinDialog()">Sign in</button>
     </div>
     <div class="logged" *ngIf="user.isLogged">
-        <div class="identity">
-            <div class="photo">
-                <fa-icon [icon]="faUserCircle"></fa-icon>
-            </div>
-            <div class="id">
-                <div class="display-name">{{user.userData.displayName}}</div>
-                <div>{{user.userData.email}}</div>
-            </div>
-        </div>
-        <div class="actions">
-            <button (click)="profile()">My profile</button>
-            <button (click)="signout()">Sign out</button>
-        </div>
-        <div *ngIf="user.needsActivation && (!user.userData.isVerified)" class="need-activation">
-            <button class="important" (click)="activationDialog()">Activate my account</button>
-        </div>
+        <ng-container *ngTemplateOutlet="accountSummary"></ng-container>
     </div>
 </ng-container>
+
+
+<ng-template #accountSummary>
+    <div class="identity">
+        <div class="photo">
+            <fa-icon [icon]="faUserCircle"></fa-icon>
+        </div>
+        <div class="id">
+            <div class="display-name">{{user.userData.displayName}}</div>
+        </div>
+    </div>
+    <div class="actions">
+        <button routerLink="/user">My profile</button>
+        <button (click)="signout()">Sign out</button>
+    </div>
+    <div *ngIf="user.needsActivation && (!user.userData.isVerified)" class="need-activation">
+        <button class="important" (click)="activationDialog()">Activate my account</button>
+    </div>
+</ng-template>

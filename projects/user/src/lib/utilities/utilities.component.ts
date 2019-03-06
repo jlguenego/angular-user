@@ -49,11 +49,6 @@ export class UtilitiesComponent implements OnInit {
     this.router.navigate(['/']);
   }
 
-  profile() {
-    console.log('profilex');
-    this.router.navigate(['/my-profile']);
-  }
-
   refresh(event) {
     this.user.refresh();
   }

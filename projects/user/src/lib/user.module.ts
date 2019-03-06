@@ -17,6 +17,8 @@ import { ProfileComponent } from './routes/profile/profile.component';
 import { SucessfullyDeletedComponent } from './routes/sucessfully-deleted/sucessfully-deleted.component';
 import { UserRoutingModule } from './user-routing.module';
 import { ActivationPageComponent } from './pages/activation-page/activation-page.component';
+import { UpdatePasswordComponent } from './routes/update-password/update-password.component';
+import { UserComponent } from './routes/user/user.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +34,9 @@ import { ActivationPageComponent } from './pages/activation-page/activation-page
     UpdateFormComponent,
     ProfileComponent,
     SucessfullyDeletedComponent,
-    ActivationPageComponent
+    ActivationPageComponent,
+    UpdatePasswordComponent,
+    UserComponent
     
 
   ],

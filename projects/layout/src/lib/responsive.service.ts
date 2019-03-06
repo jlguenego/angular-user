@@ -17,11 +17,9 @@ export class ResponsiveService {
   public isDesktop: boolean;
 
   constructor(@Inject(PLATFORM_ID) private platformId) {
-    console.log('responsive service constructor');
     if (isPlatformBrowser(platformId)) {
       this.update();
       window.onresize = event => {
-        console.log('responsive onresize');
         this.update();
       }
     }
