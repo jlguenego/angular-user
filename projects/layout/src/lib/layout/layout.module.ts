@@ -8,6 +8,7 @@ import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { BodyComponent } from './body/body.component';
 import { DialogComponent } from './dialog/dialog.component';
+import { ErrorPageComponent } from './pages/error-page/error-page.component';
 
 @NgModule({
   declarations: [
@@ -15,6 +16,7 @@ import { DialogComponent } from './dialog/dialog.component';
     FooterComponent,
     BodyComponent,
     DialogComponent,
+    ErrorPageComponent,
   ],
   imports: [
     CommonModule,
@@ -27,6 +29,9 @@ import { DialogComponent } from './dialog/dialog.component';
     FooterComponent, 
     BodyComponent, 
     DialogComponent,
+  ],
+  entryComponents: [
+    ErrorPageComponent
   ]
 })
 export class LayoutModule { }
