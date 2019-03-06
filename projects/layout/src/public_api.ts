@@ -8,6 +8,9 @@ export * from './lib/layout/header/header.component';
 export * from './lib/layout/body/body.component';
 export * from './lib/layout/footer/footer.component';
 export * from './lib/layout/dialog/dialog.component';
+export * from './lib/layout/pages/error-page/error-page.component';
+export * from './lib/layout/pages/success-page/success-page.component';
+
 
 export * from './lib/widget/widget.module';
 export * from './lib/widget/AbstractValueAccessor';

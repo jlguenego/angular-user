@@ -9,6 +9,7 @@ import { FooterComponent } from './footer/footer.component';
 import { BodyComponent } from './body/body.component';
 import { DialogComponent } from './dialog/dialog.component';
 import { ErrorPageComponent } from './pages/error-page/error-page.component';
+import { SuccessPageComponent } from './pages/success-page/success-page.component';
 
 @NgModule({
   declarations: [
@@ -17,6 +18,7 @@ import { ErrorPageComponent } from './pages/error-page/error-page.component';
     BodyComponent,
     DialogComponent,
     ErrorPageComponent,
+    SuccessPageComponent,
   ],
   imports: [
     CommonModule,
@@ -31,7 +33,8 @@ import { ErrorPageComponent } from './pages/error-page/error-page.component';
     DialogComponent,
   ],
   entryComponents: [
-    ErrorPageComponent
+    ErrorPageComponent,
+    SuccessPageComponent,
   ]
 })
 export class LayoutModule { }

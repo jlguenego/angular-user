@@ -19,6 +19,10 @@ export const ERROR = {
     BAD_PASSWORD: <Error>{
         code: 'auth/bad-password',
         message: 'Bad password'
+    },
+    NOT_CONNECTED: <Error>{
+        code: 'auth/not-connected',
+        message: 'Must be connected'
     }
 
 }

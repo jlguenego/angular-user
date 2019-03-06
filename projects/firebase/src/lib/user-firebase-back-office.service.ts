@@ -30,7 +30,7 @@ export class UserFirebaseBackOfficeService extends UserBackOfficeService {
         this.user.disconnect();
         this.manageFacebookSocialLoginIssue();
       }
-
+      this.user.newsFeed.next(this.user);
     });
   }
 
@@ -153,5 +153,10 @@ export class UserFirebaseBackOfficeService extends UserBackOfficeService {
         return Promise.reject();
       });
 
+  }
+
+  update(displayName: string) {
+    const user = this.afAuth.auth.currentUser;
+    return user.updateProfile({ displayName });
   }
 }

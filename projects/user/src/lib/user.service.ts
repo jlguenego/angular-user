@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { UserBackOfficeService } from './user-back-office.service';
+import { BehaviorSubject } from 'rxjs';
 
 export interface SignupFormData {
   email: string;
@@ -27,6 +28,8 @@ export class UserService {
   needsActivation = this.bo.needsActivation;
   hasSocialLogin = this.bo.hasSocialLogin;
 
+  newsFeed: BehaviorSubject<UserService> = new BehaviorSubject(this);
+
 
   constructor(
     private bo: UserBackOfficeService
@@ -35,11 +38,7 @@ export class UserService {
     this.bo.register(this);
   }
 
-  refresh() {
-    this.isConnected().catch(() => { });
-  }
-
-  isConnected(): Promise<void> {
+  refresh(): Promise<void> {
     return this.bo.refresh().then(userData => {
       this.connect(userData);
       return Promise.resolve();
@@ -109,6 +108,10 @@ export class UserService {
 
   loginWithGoogle():Promise<void> {
     return this.bo.loginWithGoogle();
+  }
+
+  update(displayName: string): Promise<void> {
+    return this.bo.update(displayName).then(() => this.refresh());
   }
 
 }

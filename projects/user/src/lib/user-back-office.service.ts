@@ -103,4 +103,16 @@ export class UserBackOfficeService {
     return Promise.reject();
   }
 
+  update(displayName: string): Promise<void> {
+    const key = localStorage.getItem('isLogged');
+    if (!key) {
+      return Promise.reject(ERROR.NOT_CONNECTED);
+    }
+    const json = localStorage.getItem(key);
+    const data = JSON.parse(json);
+    data.displayName = displayName;  
+    localStorage.setItem(key, JSON.stringify(data));
+    return Promise.resolve();
+  }
+
 }
