@@ -6,7 +6,7 @@
     "umdModuleIds": {
       "@jlguenego/angular-layout": "@jlguenego/angular-layout",
       "@fortawesome/angular-fontawesome": "@fortawesome/angular-fontawesome",
-      "@fortawesome/free-solid-svg-icons": "@@fortawesome/free-solid-svg-icons"
+      "@fortawesome/free-solid-svg-icons": "@fortawesome/free-solid-svg-icons"
     }
   }
 }
