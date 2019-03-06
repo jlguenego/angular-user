@@ -105,7 +105,7 @@ export class UserService {
   }
 
   loginWithFacebook() {
-
+    this.bo.loginWithFacebook();
   }
 
   loginWithGoogle() {

@@ -33,7 +33,7 @@ export class UserBackOfficeService {
       isVerified: false,
     };
     localStorage.setItem('isLogged', key);
-    localStorage.setItem(key, JSON.stringify({...userData, password: formData.password}));
+    localStorage.setItem(key, JSON.stringify({ ...userData, password: formData.password }));
     return Promise.resolve(userData);
   }
 
@@ -95,6 +95,7 @@ export class UserBackOfficeService {
 
   }
 
-  loginWithGoogle() {}
+  loginWithGoogle() { }
+  loginWithFacebook() { }
 
 }

@@ -14,12 +14,10 @@ export class UserFirebaseBackOfficeService extends UserBackOfficeService {
   constructor(
     private afAuth: AngularFireAuth,
     private responsive: ResponsiveService
-    ) {
+  ) {
     super();
     this.afAuth.user.subscribe(fuser => {
-      console.log('observable : ', fuser);
       if (fuser) {
-        console.log('fuser is verified : ', fuser.emailVerified);
         const userData = {
           email: fuser.email,
           displayName: fuser.displayName,
@@ -35,8 +33,6 @@ export class UserFirebaseBackOfficeService extends UserBackOfficeService {
   }
 
   createAccount(formData: SignupFormData): Promise<UserData> {
-    console.log('email', formData.email);
-    console.log('createAccount password', formData.password);
     let userData: UserData = undefined;
     return this.afAuth.auth.createUserWithEmailAndPassword(formData.email, formData.password).then(credentials => {
       userData = {
@@ -58,7 +54,6 @@ export class UserFirebaseBackOfficeService extends UserBackOfficeService {
 
   login(formData: SigninFormData): Promise<UserData> {
     return this.afAuth.auth.signInWithEmailAndPassword(formData.email, formData.password).then(credentials => {
-      console.log('credentials', credentials);
       const userData: UserData = {
         email: credentials.user.email,
         displayName: credentials.user.displayName,
@@ -66,14 +61,13 @@ export class UserFirebaseBackOfficeService extends UserBackOfficeService {
       };
       return Promise.resolve(userData);
     }).catch(err => {
-      console.log('cannot login', err);
+      console.error('cannot login', err);
       return Promise.reject(ERROR.BAD_LOGIN);
     });
   }
 
   logout() {
     this.afAuth.auth.signOut().then(() => {
-      console.log('logged out.');
     });
   }
 
@@ -88,7 +82,6 @@ export class UserFirebaseBackOfficeService extends UserBackOfficeService {
   }
 
   refresh() {
-    console.log('firebase isConnected ?');
     const user = this.afAuth.auth.currentUser;
     if (user) {
       return user.reload().then(() => {
@@ -97,15 +90,12 @@ export class UserFirebaseBackOfficeService extends UserBackOfficeService {
           displayName: user.displayName,
           isVerified: user.emailVerified
         };
-        console.log('yes');
-        console.log('verified ?', user.emailVerified);
         return Promise.resolve(userData);
       }).catch(err => {
         console.error('error while reloading account', err);
         return Promise.reject();
       });
     } else {
-      console.log('no');
       return Promise.reject();
     }
   }
@@ -122,10 +112,27 @@ export class UserFirebaseBackOfficeService extends UserBackOfficeService {
   }
 
   loginWithGoogle() {
-    console.log('login with google');
     if (this.responsive.isMobile) {
       return this.afAuth.auth.signInWithRedirect(new auth.GoogleAuthProvider());
     }
     return this.afAuth.auth.signInWithPopup(new auth.GoogleAuthProvider());
+  }
+
+  loginWithFacebook() {
+    if (this.responsive.isMobile) {
+      return this.afAuth.auth.signInWithRedirect(new auth.FacebookAuthProvider());
+    }
+    return this.afAuth.auth.signInWithPopup(new auth.FacebookAuthProvider())
+      .catch(error => {
+        if (error.code === 'auth/account-exists-with-different-credential') {
+          const provider = new auth.GoogleAuthProvider();
+          provider.setCustomParameters({ login_hint: error.email });
+          return this.afAuth.auth.signInWithPopup(provider).then(() => {
+            this.afAuth.auth.currentUser.linkWithPopup(new auth.FacebookAuthProvider())
+          });
+        }
+        return Promise.reject();
+      });
+
   }
 }
