@@ -7,8 +7,11 @@
     <div>PhotoURL*</div>
     <input type="text" name="photoURL" formControlName="photoURL">
   </label>
-  <div>
+  <div *ngIf="f.value.photoURL">
     <img [src]="f.value.photoURL" alt="User photo">
+  </div>
+  <div *ngIf="!f.value.photoURL">
+    <fa-icon [icon]="faUserCircle"></fa-icon>
   </div>
 
   <div class="error-block">

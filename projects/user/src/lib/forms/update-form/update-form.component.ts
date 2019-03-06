@@ -4,6 +4,7 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { UserService } from '../../user.service';
 import { DialogService, SuccessPageComponent } from '@jlguenego/angular-layout';
 import { errFn } from 'projects/misc/misc';
+import { faUserCircle } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'user-update-form',
@@ -14,6 +15,7 @@ export class UpdateFormComponent implements OnInit {
 
   errorCode: string;
   ERROR = ERROR;
+  faUserCircle = faUserCircle;
 
   f = new FormGroup({
     displayName: new FormControl('', Validators.required),
