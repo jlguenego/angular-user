@@ -12,7 +12,12 @@ import { ActivationPageComponent } from '../pages/activation-page/activation-pag
 @Component({
   selector: 'user-utilities',
   templateUrl: './utilities.component.html',
-  styleUrls: ['./utilities.component.scss']
+  styleUrls: ['./utilities.component.scss'],
+  host: {
+    // when the browser user comes back to this browser window tab, it will run refresh().
+    // this is needed for instance while checking user activation (mail verified)
+    '(window:focus)': 'refresh($event)',
+  }
 })
 export class UtilitiesComponent implements OnInit {
 
@@ -47,6 +52,10 @@ export class UtilitiesComponent implements OnInit {
   profile() {
     console.log('profilex');
     this.router.navigate(['/my-profile']);
+  }
+
+  refresh(event) {
+    this.user.refresh();
   }
 
 }

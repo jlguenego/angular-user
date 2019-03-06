@@ -8,8 +8,6 @@ import { faCaretUp, faCaretDown } from '@fortawesome/free-solid-svg-icons';
 })
 export class PopupComponent implements OnInit {
 
-  @Output() open = new EventEmitter();
-
   @Input() label: string;
   isOpen = false;
   faCaret = this.isOpen ? faCaretUp : faCaretDown;
@@ -22,7 +20,6 @@ export class PopupComponent implements OnInit {
   openPopup() {
     this.isOpen = true;
     this.faCaret = faCaretUp;
-    this.open.emit();
   }
 
   closePopup() {

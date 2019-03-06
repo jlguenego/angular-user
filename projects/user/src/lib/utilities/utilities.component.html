@@ -3,7 +3,7 @@
         <a (click)="signupDialog()">Sign up</a><button (click)="signinDialog()">Sign in</button>
     </ng-container>
     <ng-container *ngIf="user.isLogged">
-        <widget-popup [label]="user.userData.email" (open)="user.refresh()">
+        <widget-popup [label]="user.userData.email">
             <div class="logged light-bg" *ngIf="user.isLogged">
                 <div class="identity">
                     <div class="photo">

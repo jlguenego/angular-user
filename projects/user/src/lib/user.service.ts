@@ -37,50 +37,52 @@ export class UserService {
   }
 
   isConnected(): Promise<void> {
+    return this.bo.refresh().then(userData => {
+      this.connect(userData);
+      return Promise.resolve();
+    }).catch(err => {
+      this.disconnect();
+      return Promise.reject();
+    });
+  }
+
+  connect(userData: UserData) {
+    const key = this.getKey(userData.email);
+    localStorage.setItem('isLogged', key);
+    localStorage.setItem(key, JSON.stringify(userData));
     this.sync();
-    if (this.isLogged !== undefined) {
-      if (this.isLogged) {
-        return Promise.resolve();
-      } else {
-        return Promise.reject();
-      }
+  }
+
+  disconnect() {
+    localStorage.removeItem('isLogged');
+    if (this.userData.email) {
+      localStorage.removeItem(this.getKey(this.userData.email));
     }
+    this.sync();
   }
 
   createAccount(formData: SignupFormData): Promise<void> {
     // here you create the account
-    const key = this.getKey(formData.email);
     return this.bo.createAccount(formData).then(userData => {
-      localStorage.setItem('isLogged', key);
-      localStorage.setItem(key, JSON.stringify(userData));
-      this.sync();
+      this.connect(userData);
     }).catch(err => {
-      localStorage.removeItem('isLogged');
-      localStorage.removeItem(key);
-      this.sync();
+      this.disconnect();
       return Promise.reject(err);
     });
   }
 
   login(formData: SigninFormData): Promise<void> {
-    const key = this.getKey(formData.email);
     return this.bo.login(formData).then(userData => {
-      localStorage.setItem('isLogged', key);
-      localStorage.setItem(key, JSON.stringify(userData));
-      this.sync();
+      this.connect(userData);
     }).catch(err => {
-      console.log('user login', err);
-      localStorage.removeItem('isLogged');
-      localStorage.removeItem(key);
-      this.sync();
+      this.disconnect();
       return Promise.reject(err);
     });
   }
 
   logout() {
     this.bo.logout();
-    localStorage.removeItem('isLogged');
-    this.sync();
+    this.disconnect();
   }
 
   sendActivationMail() {
@@ -94,11 +96,8 @@ export class UserService {
   }
 
   delete(): Promise<void> {
-    const key = this.getKey(this.userData.email);
     return this.bo.delete().then(() => {
-      localStorage.removeItem(key);
-      localStorage.removeItem('isLogged');
-      this.sync();
+      this.disconnect();
     });
   }
 

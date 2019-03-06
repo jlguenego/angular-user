@@ -10,6 +10,22 @@ export class UserFirebaseBackOfficeService extends UserBackOfficeService {
 
   constructor(private afAuth: AngularFireAuth) {
     super();
+    this.afAuth.user.subscribe(fuser => {
+      console.log('observable : ', fuser);
+      if (fuser) {
+        console.log('fuser is verified : ', fuser.emailVerified);
+        const userData = {
+          email: fuser.email,
+          displayName: fuser.displayName,
+          isVerified: fuser.emailVerified
+        };
+
+        this.user.connect(userData);
+      } else {
+
+      }
+
+    });
   }
 
   createAccount(formData: SignupFormData): Promise<UserData> {
@@ -62,6 +78,29 @@ export class UserFirebaseBackOfficeService extends UserBackOfficeService {
   sendActivationMail() {
     if (this.needsActivation) {
       this.afAuth.auth.currentUser.sendEmailVerification();
+    }
+  }
+
+  refresh() {
+    console.log('firebase isConnected ?');
+    const user = this.afAuth.auth.currentUser;
+    if (user) {
+      return user.reload().then(() => {
+        const userData: UserData = {
+          email: user.email,
+          displayName: user.displayName,
+          isVerified: user.emailVerified
+        };
+        console.log('yes');
+        console.log('verified ?', user.emailVerified);
+        return Promise.resolve(userData);
+      }).catch(err => {
+        console.error('error while reloading account', err);
+        return Promise.reject();
+      });
+    } else {
+      console.log('no');
+      return Promise.reject();
     }
   }
 }

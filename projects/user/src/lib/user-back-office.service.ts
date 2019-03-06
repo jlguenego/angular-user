@@ -56,4 +56,16 @@ export class UserBackOfficeService {
     return Promise.resolve();
   }
 
+  refresh() {
+    const isLogged = localStorage.getItem('isLogged');
+    if (isLogged) {
+      const key = this.getKey(isLogged);
+      const json = localStorage.getItem(key);
+      const userData: UserData = JSON.parse(json);
+      return Promise.resolve(userData);
+    } else {
+      return Promise.reject();
+    }
+  }
+
 }
