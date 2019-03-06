@@ -19,10 +19,11 @@ export class UserFirebaseBackOfficeService extends UserBackOfficeService {
     super();
     this.afAuth.user.subscribe(fuser => {
       if (fuser) {
-        const userData = {
+        const userData: UserData = {
           email: fuser.email,
           displayName: fuser.displayName,
-          isVerified: fuser.emailVerified
+          isVerified: fuser.emailVerified,
+          photoURL: fuser.photoURL,
         };
 
         this.user.connect(userData);
@@ -105,7 +106,8 @@ export class UserFirebaseBackOfficeService extends UserBackOfficeService {
         const userData: UserData = {
           email: user.email,
           displayName: user.displayName,
-          isVerified: user.emailVerified
+          isVerified: user.emailVerified,
+          photoURL: user.photoURL,
         };
         return Promise.resolve(userData);
       }).catch(err => {

@@ -32,7 +32,6 @@ export class UserService {
 
   newsFeed: BehaviorSubject<UserService> = new BehaviorSubject(this);
 
-
   constructor(
     private bo: UserBackOfficeService
   ) {
@@ -50,7 +49,6 @@ export class UserService {
   }
 
   connect(userData: UserData) {
-    const key = this.getKey(userData.email);
     this.isLogged = true;
     this.userData = userData;
   }
