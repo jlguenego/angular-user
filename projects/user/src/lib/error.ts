@@ -15,6 +15,10 @@ export const ERROR = {
     BAD_LOGIN: <Error>{
         code: 'auth/bad-login',
         message: 'Bad login or password'
+    },
+    BAD_PASSWORD: <Error>{
+        code: 'auth/bad-password',
+        message: 'Bad password'
     }
 
 }
