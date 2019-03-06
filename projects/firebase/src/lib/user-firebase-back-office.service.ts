@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/auth';
-import { SignupFormData, UserBackOfficeService, UserData, ERROR, SigninFormData } from 'projects/user/src/public_api';
+import { SignupFormData, UserBackOfficeService, UserData, ERROR, SigninFormData } from '@jlguenego/angular-user';
 
 @Injectable({
   providedIn: 'root'
@@ -19,11 +19,12 @@ export class UserFirebaseBackOfficeService extends UserBackOfficeService {
     return this.afAuth.auth.createUserWithEmailAndPassword(formData.email, formData.password).then(credentials => {
       userData = {
         email: credentials.user.email,
-        displayName: credentials.user.displayName,
+        displayName: undefined,
         isVerified: credentials.user.emailVerified
       }
       return this.afAuth.auth.currentUser.updateProfile({ displayName: formData.displayName });
     }).then(() => {
+      userData.displayName = formData.displayName;
       if (this.needsActivation && (!userData.isVerified)) {
         this.afAuth.auth.currentUser.sendEmailVerification();
       }
