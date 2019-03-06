@@ -8,7 +8,7 @@ import { UserService } from '../user.service';
 import { SigninPageComponent } from '../pages/signin-page/signin-page.component';
 import { SignupPageComponent } from '../pages/signup-page/signup-page.component';
 import { ActivationPageComponent } from '../pages/activation-page/activation-page.component';
-import { errFn } from 'projects/misc/misc';
+import { errFn } from '../misc';
 
 @Component({
   selector: 'user-utilities',

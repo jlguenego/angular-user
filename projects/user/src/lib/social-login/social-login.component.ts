@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { UserService } from '../user.service';
 import { DialogService } from '@jlguenego/angular-layout';
-import { errFn } from 'projects/misc/misc';
+import { errFn } from '../misc';
 
 @Component({
   selector: 'user-social-login',

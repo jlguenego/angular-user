@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { UserBackOfficeService } from './user-back-office.service';
 import { BehaviorSubject } from 'rxjs';
-import { errFn } from 'projects/misc/misc';
+import { errFn } from './misc';
 
 export interface SignupFormData {
   email: string;

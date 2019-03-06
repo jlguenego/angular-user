@@ -3,7 +3,7 @@ import { ERROR } from '../../error';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { UserService } from '../../user.service';
 import { DialogService, SuccessPageComponent } from '@jlguenego/angular-layout';
-import { errFn } from 'projects/misc/misc';
+import { errFn } from '../../misc';
 import { faUserCircle } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
