@@ -101,16 +101,16 @@ export class UserService {
     return this.bo.updatePassword(currentPassword, newPassword);
   }
 
-  loginWithFacebook():Promise<void> {
+  loginWithFacebook(): Promise<void> {
     return this.bo.loginWithFacebook();
   }
 
-  loginWithGoogle():Promise<void> {
+  loginWithGoogle(): Promise<void> {
     return this.bo.loginWithGoogle();
   }
 
-  update(displayName: string): Promise<void> {
-    return this.bo.update(displayName).then(() => this.refresh());
+  update(obj: { displayName: string, photoURL: string }): Promise<void> {
+    return this.bo.update(obj).then(() => this.refresh());
   }
 
 }

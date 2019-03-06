@@ -33,7 +33,10 @@ export class UpdateFormComponent implements OnInit {
   }
 
   onSubmit() {
-    this.user.update(this.f.value.displayName).then(() => this.dialog.open(
+    this.user.update({
+      displayName: this.f.value.displayName,
+      photoURL: this.f.value.photoURL
+    }).then(() => this.dialog.open(
       SuccessPageComponent, 
       { title: 'Congratulations!', message: 'Update successfull!'})).catch(errFn);
   }

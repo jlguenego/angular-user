@@ -12,8 +12,18 @@
         align-items: center;
         width: 100%;
         .photo {
-            padding: 0.5rem;
-            font-size: 5rem;
+            display: block;
+            padding: 0 1rem 1rem 0;
+
+            fa-icon {
+                
+                padding: 0.5rem;
+                font-size: 5rem;
+            }
+            img {
+                display: block;
+                width: 6rem;
+            }
         }
         .id {
             display: block;
@@ -33,5 +43,12 @@
         button {
             flex-grow: 1;
         }
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .display-name {
+        font-weight: bold;
+        white-space: nowrap;
     }
 }

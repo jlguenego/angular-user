@@ -155,8 +155,8 @@ export class UserFirebaseBackOfficeService extends UserBackOfficeService {
 
   }
 
-  update(displayName: string) {
+  update(obj: { displayName: string, photoURL: string }) {
     const user = this.afAuth.auth.currentUser;
-    return user.updateProfile({ displayName });
+    return user.updateProfile(obj);
   }
 }

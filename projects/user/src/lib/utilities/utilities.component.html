@@ -24,7 +24,12 @@
 <ng-template #accountSummary>
     <div class="identity">
         <div class="photo">
-            <fa-icon [icon]="faUserCircle"></fa-icon>
+            <ng-container *ngIf="user.userData.photoURL">
+                <img [src]="user.userData.photoURL" alt="It's me ;)">
+            </ng-container>
+            <ng-container *ngIf="!user.userData.photoURL">
+                <fa-icon [icon]="faUserCircle"></fa-icon>
+            </ng-container>
         </div>
         <div class="id">
             <div class="display-name">{{user.userData.displayName}}</div>
