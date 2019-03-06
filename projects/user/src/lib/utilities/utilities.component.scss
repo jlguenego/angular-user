@@ -1,8 +1,3 @@
-div {
-    display: flex;
-    justify-content: space-around;
-}
-
 .logged {
     display: block;
     padding: 1rem;
@@ -26,10 +21,6 @@ div {
                 font-size: 0.8rem;
             }
         }
-    }
-    .actions {
-        display: flex;
-        justify-content: space-between;
     }
 
     .need-activation {
