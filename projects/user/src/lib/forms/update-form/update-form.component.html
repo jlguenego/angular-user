@@ -4,9 +4,12 @@
     <input type="text" name="name" formControlName="displayName" autocomplete="name">
   </label>
   <label>
-    <div>Display name*</div>
-    <input type="file" name="photo" formControlName="photo">
+    <div>PhotoURL*</div>
+    <input type="text" name="photoURL" formControlName="photoURL">
   </label>
+  <div>
+    <img [src]="f.value.photoURL" alt="User photo">
+  </div>
 
   <div class="error-block">
     <div class="error-incorrect" *ngIf="errorCode !== undefined">

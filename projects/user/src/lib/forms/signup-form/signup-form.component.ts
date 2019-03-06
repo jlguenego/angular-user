@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { UserService, SignupFormData } from '../../user.service';
 import { AccountCreatedPageComponent } from '../../pages/account-created-page/account-created-page.component';
-import { ERROR, Error } from '../../error';
+import { ERROR } from '../../error';
 import { DialogService, PasswordCheckService } from '@jlguenego/angular-layout';
 
 @Component({
@@ -13,7 +13,7 @@ import { DialogService, PasswordCheckService } from '@jlguenego/angular-layout';
 export class SignupFormComponent implements OnInit {
 
   ERROR = ERROR;
-  error: Error;
+  errorCode: string;
 
   f = new FormGroup({
     email: new FormControl('', [Validators.required, Validators.email]),
@@ -30,14 +30,13 @@ export class SignupFormComponent implements OnInit {
   }
 
   onSubmit() {
-    this.error = undefined;
+    this.errorCode = undefined;
 
     this.user.createAccount(<SignupFormData>this.f.value).then(() => {
       this.dialog.open(AccountCreatedPageComponent);
-    }).catch(
-      error => {
-        this.error = error;
-      });
+    }).catch(error => {
+      this.errorCode = error.code;
+    });
   }
 
 }

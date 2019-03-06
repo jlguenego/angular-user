@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { UserBackOfficeService } from './user-back-office.service';
 import { BehaviorSubject } from 'rxjs';
+import { errFn } from 'projects/misc/misc';
 
 export interface SignupFormData {
   email: string;
@@ -17,6 +18,7 @@ export interface UserData {
   email: string;
   displayName: string;
   isVerified: boolean;
+  photoURL?: string;
 }
 
 @Injectable({
@@ -79,7 +81,7 @@ export class UserService {
   }
 
   logout() {
-    return this.bo.logout().then(() => this.disconnect());
+    return this.bo.logout().then(() => this.disconnect()).catch(errFn);
   }
 
   sendActivationMail() {

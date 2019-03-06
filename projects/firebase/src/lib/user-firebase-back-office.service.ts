@@ -42,13 +42,11 @@ export class UserFirebaseBackOfficeService extends UserBackOfficeService {
 
     this.afAuth.auth.getRedirectResult().catch(async error => {
       if (error.code === 'auth/account-exists-with-different-credential') {
-        await this.afAuth.auth.fetchSignInMethodsForEmail(error.email);
         const provider = new auth.GoogleAuthProvider();
         provider.setCustomParameters({ login_hint: error.email });
-        return this.afAuth.auth.signInWithRedirect(provider);
+        this.afAuth.auth.signInWithRedirect(provider);
       }
     });
-
   }
 
   createAccount(formData: SignupFormData): Promise<UserData> {

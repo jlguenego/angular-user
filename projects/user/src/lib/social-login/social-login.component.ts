@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { UserService } from '../user.service';
 import { DialogService } from '@jlguenego/angular-layout';
+import { errFn } from 'projects/misc/misc';
 
 @Component({
   selector: 'user-social-login',
@@ -15,10 +16,10 @@ export class SocialLoginComponent implements OnInit {
   }
 
   loginWithFacebook() {
-    this.user.loginWithFacebook().then(() => this.dialog.close());
+    this.user.loginWithFacebook().then(() => this.dialog.close()).catch(errFn);
   }
   loginWithGoogle() {
-    this.user.loginWithGoogle().then(() => this.dialog.close());
+    this.user.loginWithGoogle().then(() => this.dialog.close()).catch(errFn);
   }
 
 }

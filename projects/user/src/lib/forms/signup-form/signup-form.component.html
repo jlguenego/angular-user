@@ -15,8 +15,8 @@
     <widget-checkbox #terms>I accept the </widget-checkbox> <a target="_blank" href="/legal">terms of use</a>.
   </label>
   <div class="error-block">
-    <div class="error-incorrect" *ngIf="error !== undefined">
-      <span *ngIf="error === ERROR.MAIL_ALREADY_IN_USE">Email already used.</span>
+    <div class="error-incorrect" *ngIf="errorCode !== undefined">
+      <span *ngIf="errorCode === ERROR.MAIL_ALREADY_IN_USE.code">Email already used.</span>
     </div>
   </div>
 
