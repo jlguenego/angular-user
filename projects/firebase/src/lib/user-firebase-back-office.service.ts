@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { SignupFormData, UserBackOfficeService, UserData, ERROR, SigninFormData } from '@jlguenego/angular-user';
+import { ResponsiveService } from '@jlguenego/angular-layout';
+import { auth } from 'firebase/app';
 
 @Injectable({
   providedIn: 'root'
@@ -9,7 +11,10 @@ export class UserFirebaseBackOfficeService extends UserBackOfficeService {
   needsActivation = true;
   hasSocialLogin = true;
 
-  constructor(private afAuth: AngularFireAuth) {
+  constructor(
+    private afAuth: AngularFireAuth,
+    private responsive: ResponsiveService
+    ) {
     super();
     this.afAuth.user.subscribe(fuser => {
       console.log('observable : ', fuser);
@@ -114,5 +119,13 @@ export class UserFirebaseBackOfficeService extends UserBackOfficeService {
         return this.afAuth.auth.currentUser.updatePassword(newPassword);
       });
 
+  }
+
+  loginWithGoogle() {
+    console.log('login with google');
+    if (this.responsive.isMobile) {
+      return this.afAuth.auth.signInWithRedirect(new auth.GoogleAuthProvider());
+    }
+    return this.afAuth.auth.signInWithPopup(new auth.GoogleAuthProvider());
   }
 }

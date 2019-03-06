@@ -28,7 +28,9 @@ export class UserService {
   hasSocialLogin = this.bo.hasSocialLogin;
 
 
-  constructor(private bo: UserBackOfficeService) {
+  constructor(
+    private bo: UserBackOfficeService
+  ) {
     this.refresh();
     this.bo.register(this);
   }
@@ -100,6 +102,14 @@ export class UserService {
 
   updatePassword(currentPassword: string, newPassword: string) {
     return this.bo.updatePassword(currentPassword, newPassword);
+  }
+
+  loginWithFacebook() {
+
+  }
+
+  loginWithGoogle() {
+    this.bo.loginWithGoogle();
   }
 
 }
