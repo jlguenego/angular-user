@@ -46,7 +46,6 @@ export class UserService {
       return Promise.resolve();
     }).catch(err => {
       this.disconnect();
-      return Promise.reject();
     });
   }
 
