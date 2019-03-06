@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { PageComponent } from '@jlguenego/angular-layout';
+import { PageComponent } from '../../../dialog.service';
 
 @Component({
   selector: 'layout-error-page',

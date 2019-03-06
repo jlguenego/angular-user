@@ -8,9 +8,8 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "build-layout": "rimraf dist/angular-layout && ng build layout && npm run build-layout-styles && npm run deploy-layout",
-    "build-layout-styles": "cpx \"./projects/layout/src/lib/scss/**/*\" \"./dist/angular-layout/scss\"",
-    "deploy-layout": "cpx \"./dist/angular-layout\" \"./node_modules/@jlguenego/angular-layout\""
+    "build-layout": "rimraf dist/angular-layout && ng build layout && npm run build-layout-styles",
+    "build-layout-styles": "cpx \"./projects/layout/src/lib/scss/**/*\" \"./dist/angular-layout/scss\""
   },
   "private": true,
   "dependencies": {
