@@ -11,7 +11,7 @@
     </ng-container>
 </ng-container>
 <ng-container *ngIf="resp.isMobile">
-    <div *ngIf="!user.isLogged">
+    <div class="not-logged" *ngIf="!user.isLogged">
         <a (click)="signupDialog()">Sign up</a>
         <button (click)="signinDialog()">Sign in</button>
     </div>

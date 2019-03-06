@@ -27,10 +27,28 @@ export class UserFirebaseBackOfficeService extends UserBackOfficeService {
 
         this.user.connect(userData);
       } else {
-
+        this.user.disconnect();
+        this.manageFacebookSocialLoginIssue();
       }
 
     });
+  }
+
+  manageFacebookSocialLoginIssue() {
+    // only in mobile situation.
+    if (this.responsive.isDesktop) {
+      return;
+    }
+
+    this.afAuth.auth.getRedirectResult().catch(async error => {
+      if (error.code === 'auth/account-exists-with-different-credential') {
+        await this.afAuth.auth.fetchSignInMethodsForEmail(error.email);
+        const provider = new auth.GoogleAuthProvider();
+        provider.setCustomParameters({ login_hint: error.email });
+        return this.afAuth.auth.signInWithRedirect(provider);
+      }
+    });
+
   }
 
   createAccount(formData: SignupFormData): Promise<UserData> {
@@ -112,14 +130,14 @@ export class UserFirebaseBackOfficeService extends UserBackOfficeService {
 
   }
 
-  loginWithGoogle():Promise<void> {
+  loginWithGoogle(): Promise<void> {
     if (this.responsive.isMobile) {
       return this.afAuth.auth.signInWithRedirect(new auth.GoogleAuthProvider());
     }
     return this.afAuth.auth.signInWithPopup(new auth.GoogleAuthProvider()).then(noop);
   }
 
-  loginWithFacebook():Promise<void> {
+  loginWithFacebook(): Promise<void> {
     if (this.responsive.isMobile) {
       return this.afAuth.auth.signInWithRedirect(new auth.FacebookAuthProvider());
     }
