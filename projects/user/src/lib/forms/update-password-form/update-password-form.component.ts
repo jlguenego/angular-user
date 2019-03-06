@@ -4,6 +4,7 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { UserService } from '../../user.service';
 import { DialogService } from '@jlguenego/angular-layout';
 import { PasswordChangedPageComponent } from '../../pages/password-changed-page/password-changed-page.component';
+import { PasswordCheckService } from '@jlguenego/angular-layout';
 
 
 @Component({
@@ -18,10 +19,10 @@ export class UpdatePasswordFormComponent implements OnInit {
 
   f = new FormGroup({
     currentPassword: new FormControl('', Validators.required),
-    newPassword: new FormControl('', Validators.required)
+    newPassword: new FormControl('', [Validators.required, this.check.validate()])
   });
 
-  constructor(private user: UserService, private dialog: DialogService) { }
+  constructor(public user: UserService, private dialog: DialogService, private check: PasswordCheckService) { }
 
   ngOnInit() {
   }
