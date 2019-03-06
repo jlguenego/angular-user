@@ -26,11 +26,14 @@ export class UserBackOfficeService {
     if (json) {
       return Promise.reject(ERROR.MAIL_ALREADY_IN_USE);
     }
-    return Promise.resolve({
+    const userData = {
       displayName: formData.displayName,
       email: formData.email,
       isVerified: false
-    });
+    };
+    localStorage.setItem('isLogged', key);
+    localStorage.setItem(key, JSON.stringify(userData));
+    return Promise.resolve(userData);
   }
 
   login(formData: SigninFormData): Promise<UserData> {
@@ -39,27 +42,28 @@ export class UserBackOfficeService {
     if (!json) {
       return Promise.reject(ERROR.BAD_LOGIN);
     }
+    localStorage.setItem('isLogged', key);
     return Promise.resolve(<UserData>JSON.parse(json));
   }
 
   logout() {
-    // nothing to do.
+    localStorage.removeItem('isLogged');
   }
 
   sendActivationMail() {
-    // nothing to do.
+    // nothing to do because no mail verification.
   }
 
   delete(): Promise<void> {
     const key = this.getKey(this.user.userData.email);
     localStorage.removeItem(key);
+    localStorage.removeItem('isLogged');
     return Promise.resolve();
   }
 
   refresh() {
-    const isLogged = localStorage.getItem('isLogged');
-    if (isLogged) {
-      const key = this.getKey(isLogged);
+    const key = localStorage.getItem('isLogged');
+    if (key) {
       const json = localStorage.getItem(key);
       const userData: UserData = JSON.parse(json);
       return Promise.resolve(userData);

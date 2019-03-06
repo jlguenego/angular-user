@@ -48,17 +48,13 @@ export class UserService {
 
   connect(userData: UserData) {
     const key = this.getKey(userData.email);
-    localStorage.setItem('isLogged', key);
-    localStorage.setItem(key, JSON.stringify(userData));
-    this.sync();
+    this.isLogged = true;
+    this.userData = userData;
   }
 
   disconnect() {
-    localStorage.removeItem('isLogged');
-    if (this.userData.email) {
-      localStorage.removeItem(this.getKey(this.userData.email));
-    }
-    this.sync();
+    this.isLogged = false;
+    this.userData = undefined;
   }
 
   createAccount(formData: SignupFormData): Promise<void> {
@@ -99,28 +95,6 @@ export class UserService {
     return this.bo.delete().then(() => {
       this.disconnect();
     });
-  }
-
-  sync() {
-    const isLogged = localStorage.getItem('isLogged');
-    if (!isLogged) {
-      localStorage.removeItem('isLogged');
-      this.isLogged = false;
-      this.userData = undefined;
-      return;
-    }
-    try {
-      const key = isLogged;
-      const data = localStorage.getItem(key);
-      if (data === undefined) {
-        throw 'no data';
-      }
-      this.userData = JSON.parse(data);
-      this.isLogged = true;
-    } catch (error) {
-      this.isLogged = false;
-      this.userData = undefined;
-    }
   }
 
 }
