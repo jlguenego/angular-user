@@ -3,6 +3,7 @@ import { AngularFireAuth } from '@angular/fire/auth';
 import { SignupFormData, UserBackOfficeService, UserData, ERROR, SigninFormData } from '@jlguenego/angular-user';
 import { ResponsiveService } from '@jlguenego/angular-layout';
 import { auth } from 'firebase/app';
+import { noop } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -111,18 +112,18 @@ export class UserFirebaseBackOfficeService extends UserBackOfficeService {
 
   }
 
-  loginWithGoogle() {
+  loginWithGoogle():Promise<void> {
     if (this.responsive.isMobile) {
       return this.afAuth.auth.signInWithRedirect(new auth.GoogleAuthProvider());
     }
-    return this.afAuth.auth.signInWithPopup(new auth.GoogleAuthProvider());
+    return this.afAuth.auth.signInWithPopup(new auth.GoogleAuthProvider()).then(noop);
   }
 
-  loginWithFacebook() {
+  loginWithFacebook():Promise<void> {
     if (this.responsive.isMobile) {
       return this.afAuth.auth.signInWithRedirect(new auth.FacebookAuthProvider());
     }
-    return this.afAuth.auth.signInWithPopup(new auth.FacebookAuthProvider())
+    return this.afAuth.auth.signInWithPopup(new auth.FacebookAuthProvider()).then(noop)
       .catch(error => {
         if (error.code === 'auth/account-exists-with-different-credential') {
           const provider = new auth.GoogleAuthProvider();

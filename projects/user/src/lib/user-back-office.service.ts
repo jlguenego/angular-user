@@ -95,7 +95,11 @@ export class UserBackOfficeService {
 
   }
 
-  loginWithGoogle() { }
-  loginWithFacebook() { }
+  loginWithGoogle(): Promise<void> {
+    return Promise.reject();
+  }
+  loginWithFacebook(): Promise<void> {
+    return Promise.reject();
+  }
 
 }

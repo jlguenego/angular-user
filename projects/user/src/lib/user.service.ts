@@ -104,12 +104,12 @@ export class UserService {
     return this.bo.updatePassword(currentPassword, newPassword);
   }
 
-  loginWithFacebook() {
-    this.bo.loginWithFacebook();
+  loginWithFacebook():Promise<void> {
+    return this.bo.loginWithFacebook();
   }
 
-  loginWithGoogle() {
-    this.bo.loginWithGoogle();
+  loginWithGoogle():Promise<void> {
+    return this.bo.loginWithGoogle();
   }
 
 }
