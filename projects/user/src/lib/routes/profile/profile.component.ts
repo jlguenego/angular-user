@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { UserService } from '../../user.service';
 import { Router } from '@angular/router';
-import { DialogService } from '@jlguenego/angular-layout';
-import { ErrorPageComponent } from 'projects/layout/src/lib/layout/pages/error-page/error-page.component';
+import { DialogService, ErrorPageComponent } from '@jlguenego/angular-layout';
 
 @Component({
   selector: 'user-profile',
