@@ -111,7 +111,6 @@ export class UserFirebaseBackOfficeService extends UserBackOfficeService {
         };
         return Promise.resolve(userData);
       }).catch(err => {
-        console.error('error while reloading account', err);
         return Promise.reject();
       });
     } else {
