@@ -17,3 +17,13 @@ input {
     border-color: hsl(0, 0%, 80%);
     border-radius: $radius;
 }
+
+.reset-submit {
+    padding-top: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    button {
+        margin: 0;
+    }
+}
