@@ -78,13 +78,11 @@ export class UserBackOfficeService {
   }
 
   updatePassword(currentPassword: string, newPassword: string) {
-    console.log('updatePassword bo');
     const key = localStorage.getItem('isLogged');
     if (key) {
       const json = localStorage.getItem(key);
       const data = JSON.parse(json);
       if (data.password !== currentPassword) {
-        console.log('wrong password', data.password, '<>', currentPassword);
         return Promise.reject(ERROR.BAD_PASSWORD);
       }
       data.password = newPassword;

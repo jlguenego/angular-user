@@ -29,7 +29,6 @@ export class SigninFormComponent implements OnInit {
     this.user.login(this.f.value).then(userData => {
       this.dialog.open(SuccessfullyConnectedPageComponent);
     }).catch(error => {
-      console.log('cannot login correctly', error);
       this.errorCode = error.code;
     });
   }

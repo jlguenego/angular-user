@@ -37,11 +37,25 @@
     padding: 2rem 1rem;
 }
 
+.page {
+    display: block;
+    text-align: center;
+    svg {
+        width: 20%;
+    }
+    p.congrats {
+        font-size: 1.5rem;
+    }
+    p {
+        font-size: 1rem;
+    }
+}
+
 @media only screen and (max-width: $breakpoint) {
-    .panel, .header {
+    .panel,
+    .header {
         border-radius: 0;
     }
-
     .content {
         padding: 2rem 0.5rem;
     }
