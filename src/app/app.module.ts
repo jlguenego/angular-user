@@ -31,9 +31,9 @@ import { environment } from 'src/environments/environment';
     LayoutModule,
     UserModule,
   ],
-  // providers: [{
-  //   provide: UserBackOfficeService, useClass: UserFirebaseBackOfficeService
-  // }],
+  providers: [{
+    provide: UserBackOfficeService, useClass: UserFirebaseBackOfficeService
+  }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

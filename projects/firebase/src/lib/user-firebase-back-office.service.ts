@@ -103,4 +103,15 @@ export class UserFirebaseBackOfficeService extends UserBackOfficeService {
       return Promise.reject();
     }
   }
+
+  updatePassword(currentPassword: string, newPassword: string) {
+    if (!this.user.userData) {
+      return Promise.reject(ERROR.BAD_PASSWORD);
+    }
+    return this.afAuth.auth.signInWithEmailAndPassword(this.user.userData.email, currentPassword)
+      .then(() => {
+        return this.afAuth.auth.currentUser.updatePassword(newPassword);
+      });
+
+  }
 }
