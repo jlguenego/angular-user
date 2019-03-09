@@ -27,9 +27,9 @@ import { environment } from 'src/environments/environment';
     BrowserModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireAuthModule,
-    AppRoutingModule,
     LayoutModule,
     UserModule,
+    AppRoutingModule,
   ],
   providers: [{
     provide: UserBackOfficeService, useClass: UserFirebaseBackOfficeService
