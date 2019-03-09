@@ -10,6 +10,7 @@ export * from './lib/layout/footer/footer.component';
 export * from './lib/layout/dialog/dialog.component';
 export * from './lib/layout/pages/error-page/error-page.component';
 export * from './lib/layout/pages/success-page/success-page.component';
+export * from './lib/layout/routes/not-found/not-found.component';
 
 
 export * from './lib/widget/widget.module';

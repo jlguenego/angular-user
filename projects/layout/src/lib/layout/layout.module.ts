@@ -10,6 +10,7 @@ import { BodyComponent } from './body/body.component';
 import { DialogComponent } from './dialog/dialog.component';
 import { ErrorPageComponent } from './pages/error-page/error-page.component';
 import { SuccessPageComponent } from './pages/success-page/success-page.component';
+import { NotFoundComponent } from './routes/not-found/not-found.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { SuccessPageComponent } from './pages/success-page/success-page.componen
     DialogComponent,
     ErrorPageComponent,
     SuccessPageComponent,
+    NotFoundComponent,
   ],
   imports: [
     CommonModule,
