@@ -15,11 +15,11 @@ const index = fs
 
 let app = express();
 
-app.get('**', function (req, res) {
+app.get('**',  (req, res) => {
   renderModuleFactory(AppServerModuleNgFactory, {
     url: req.path,
     document: index
-  }).then(html => res.status(200).send(html));
+  }).then(html => res.status(200).send(html)).catch(() => {});
 });
 
 module.exports = app;

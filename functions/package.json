@@ -10,8 +10,6 @@
     "logs": "firebase functions:log"
   },
   "dependencies": {
-    "firebase-admin": "~7.0.0",
-    "firebase-functions": "^2.2.0",
     "@angular/animations": "~7.2.0",
     "@angular/common": "~7.2.0",
     "@angular/compiler": "~7.2.0",
@@ -31,7 +29,10 @@
     "@jlguenego/angular-user-firebase": "0.0.2",
     "@types/fs-extra": "^5.0.5",
     "core-js": "^2.5.4",
+    "express": "^4.16.4",
     "firebase": "^5.8.5",
+    "firebase-admin": "~7.0.0",
+    "firebase-functions": "^2.2.0",
     "fs-extra": "^7.0.1",
     "rimraf": "^2.6.3",
     "rxjs": "~6.3.3",
