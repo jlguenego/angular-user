@@ -42,7 +42,6 @@
     "no-path-concat": 1,
     "prefer-arrow-callback": 1,
     "promise/always-return": 2,
-    //Enforces the use of catch() on un-returned promises
     "promise/catch-or-return": 2,
     "promise/no-nesting": 1
   }
