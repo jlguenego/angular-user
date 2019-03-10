@@ -47,3 +47,6 @@ Thumbs.db
 
 # Added for this project
 .firebase/
+environments/*json
+environments/*ts
+functions/secret.json

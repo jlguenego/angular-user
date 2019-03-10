@@ -24,7 +24,7 @@ import { environment } from 'src/environments/environment';
     HomeComponent
   ],
   imports: [
-    BrowserModule,
+    BrowserModule.withServerTransition({ appId: 'put-what-you-want-here' }),
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireAuthModule,
     LayoutModule,

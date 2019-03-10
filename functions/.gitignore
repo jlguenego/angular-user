@@ -6,3 +6,6 @@
 typings/
 
 node_modules/
+
+# Added for the project
+dist/
