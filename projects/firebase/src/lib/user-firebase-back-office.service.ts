@@ -188,4 +188,8 @@ export class UserFirebaseBackOfficeService extends UserBackOfficeService {
     const user = this.afAuth.auth.currentUser;
     return user.updateProfile(obj);
   }
+
+  sendResetPasswordEmail(email: string): Promise<void> {
+    return this.afAuth.auth.sendPasswordResetEmail(email);
+  }
 }

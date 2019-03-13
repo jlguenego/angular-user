@@ -124,7 +124,9 @@ export class UserService {
   }
 
   sendResetPasswordEmail(email: string): Promise<void> {
-    console.log('sending the email' , email);
+    if (this.hasForgottenPassword) {
+      return this.bo.sendResetPasswordEmail(email);
+    }
     return Promise.resolve();
   }
 

@@ -120,4 +120,8 @@ export class UserBackOfficeService {
     return Promise.resolve();
   }
 
+  sendResetPasswordEmail(email: string): Promise<void> {
+    return Promise.resolve();
+  }
+
 }

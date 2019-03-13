@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Validators, FormGroup, FormControl } from '@angular/forms';
-import { DialogService } from '@jlguenego/angular-layout';
+import { DialogService, SuccessPageComponent } from '@jlguenego/angular-layout';
 import { UserService } from '../../user.service';
 
 @Component({
@@ -20,8 +20,13 @@ export class ForgottenPasswordFormComponent implements OnInit {
   }
 
   onSubmit() {
-    this.user.sendResetPasswordEmail(this.f.value.email);
-    this.dialog.close();
+    this.user.sendResetPasswordEmail(this.f.value.email)
+      .then(() => {
+        this.dialog.open(SuccessPageComponent, {
+          title: 'Mail successfully sent!',
+          message: 'Please open your email messagerie.'
+        });
+      });
   }
 
 }
