@@ -27,6 +27,7 @@ import { MobileMenuIconComponent } from './mobile-menu-icon/mobile-menu-icon.com
 
 import { UserRoutingModule } from './user-routing.module';
 import { InitPasswordComponent } from './routes/init-password/init-password.component';
+import { InitPasswordFormComponent } from './forms/init-password-form/init-password-form.component';
 
 @NgModule({
   declarations: [
@@ -47,7 +48,8 @@ import { InitPasswordComponent } from './routes/init-password/init-password.comp
     UserComponent,
     UpdatePasswordFormComponent,
     PasswordChangedPageComponent,
-    InitPasswordComponent
+    InitPasswordComponent,
+    InitPasswordFormComponent
     
 
   ],
