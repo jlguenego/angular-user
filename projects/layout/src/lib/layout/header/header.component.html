@@ -1,10 +1,10 @@
 <ng-template #siteId>
   <div>
-    <div #ref routerLink="/">
+    <div #ref>
       <ng-content select=".site-id"></ng-content>
     </div>
-    <div *ngIf="ref.childNodes.length == 0" #ref routerLink="/">
-      <span class="site-id">DefaultLogo</span>
+    <div *ngIf="ref.childNodes.length == 0" #ref>
+      <a routerLink="/" class="site-id">DefaultLogo</a>
     </div>
   </div>
 </ng-template>
