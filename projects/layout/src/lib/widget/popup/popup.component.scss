@@ -5,12 +5,10 @@
 
 .label {
     cursor: pointer;
-//     &:hover {
-//         color: $header-color-small-relief;
-//     }
-//     &.active {
-//         color: $header-color-relief;
-//     }
+    border: 1px solid transparent;
+    &:hover {
+        background-color: hsla(0, 0%, 100%, 0.1);
+    }
 }
 
 .overlay {

@@ -41,7 +41,7 @@
         </div>
     </div>
     <div class="actions">
-        <button routerLink="/user">My profile</button>
+        <button routerLink="/user" autofocus>My profile</button>
         <button (click)="signout()">Sign out</button>
     </div>
     <div *ngIf="user.needsActivation && (!user.userData.isVerified)" class="need-activation">

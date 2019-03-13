@@ -6,13 +6,13 @@
 
 #{$dark-bg-selector} {
     *:focus {
-        outline: dashed white;
+        box-shadow: 0 0 0 1px hsla(0, 100%, 100%, 0.2);
     }
 }
 
 #{$light-bg-selector} {
     *:focus {
-        outline: dashed black;
+        box-shadow: 0 0 0 1px hsla(0, 100%, 0%, 0.2);
     }
 }
 
