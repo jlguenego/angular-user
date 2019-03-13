@@ -24,12 +24,15 @@ input {
     border-radius: $radius;
 }
 
-.reset-submit {
+.submit {
     padding-top: 1rem;
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-end;
     align-items: center;
     button {
         margin: 0;
+    }
+    &.reset {
+        justify-content: space-between;
     }
 }

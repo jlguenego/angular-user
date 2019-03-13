@@ -43,11 +43,11 @@ button {
             }
         }
         &.shadow {
-            background-color: transparent;
-            border-color: transparent;
+            background-color: $shadow-color;
+            border-color: $shadow-color;
             &:hover {
-                background-color: $shadow-color;
-                border-color: $shadow-color;
+                background-color: darken($shadow-color, 3);
+                border-color: darken($shadow-color, 3);
             }
         }
     }

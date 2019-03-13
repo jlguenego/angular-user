@@ -12,8 +12,8 @@
       <span *ngIf="errorCode === ERROR.BAD_LOGIN.code">Identifiant ou mot de passe incorrect.</span>
     </div>
   </div>
-  <div class="reset-submit">
-    <a href="#" (click)="forgotPassword()" >Forgot password?</a>
+  <div class="submit" [class.reset]="user.hasForgottenPassword">
+    <button *ngIf="user.hasForgottenPassword" type="button" class="shadow" (click)="forgotPassword()" >Forgot password?</button>
     <button type="submit" class="primary" [disabled]="f.invalid">Connexion</button>
   </div>
 </form>

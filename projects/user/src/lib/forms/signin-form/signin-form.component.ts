@@ -20,7 +20,7 @@ export class SigninFormComponent implements OnInit {
   ERROR = ERROR;
   errorCode: string;
 
-  constructor(private user: UserService, private dialog: DialogService) { }
+  constructor(public user: UserService, private dialog: DialogService) { }
 
   ngOnInit() {
   }
