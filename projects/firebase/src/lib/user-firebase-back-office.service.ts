@@ -118,6 +118,10 @@ export class UserFirebaseBackOfficeService extends UserBackOfficeService {
           isVerified: user.emailVerified,
           photoURL: user.photoURL,
         };
+        this.user.hasPassword = user.providerData.reduce((acc, provider) => {
+          console.log('provider', provider);
+          return acc || provider.providerId === 'password';
+        }, false);
         return Promise.resolve(userData);
       }).catch(err => {
         return Promise.reject();
@@ -134,6 +138,9 @@ export class UserFirebaseBackOfficeService extends UserBackOfficeService {
     return this.afAuth.auth.signInWithEmailAndPassword(this.user.userData.email, currentPassword)
       .then(() => {
         return this.afAuth.auth.currentUser.updatePassword(newPassword);
+      }).catch(err => {
+        console.error('error', err);
+        return Promise.reject(err);
       });
   }
 
