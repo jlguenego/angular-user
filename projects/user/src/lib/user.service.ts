@@ -29,6 +29,7 @@ export class UserService {
   isLogged: boolean = undefined;
   needsActivation = this.bo.needsActivation;
   hasSocialLogin = this.bo.hasSocialLogin;
+  hasPassword = true;
 
   newsFeed: BehaviorSubject<UserService> = new BehaviorSubject(this);
 

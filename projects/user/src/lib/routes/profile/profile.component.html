@@ -2,7 +2,8 @@
     <h1>My profile</h1>
     <h2>Password</h2>
     <div class="actions">
-        <button routerLink="/user/password-update">Update my password</button>
+        <button *ngIf="user.hasPassword" routerLink="/user/password-update">Update my password</button>
+        <button *ngIf="!user.hasPassword" routerLink="/user/password-init">Init my password</button>
     </div>
     <h2>My personal data</h2>
     <user-update-form></user-update-form>

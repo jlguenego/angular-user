@@ -29,11 +29,16 @@ export class UserFirebaseBackOfficeService extends UserBackOfficeService {
           isVerified: fuser.emailVerified,
           photoURL: fuser.photoURL,
         };
-
+        this.user.hasPassword = fuser.providerData.reduce((acc, provider) => {
+          console.log('provider', provider);
+          return acc || provider.providerId === 'password';
+        }, false);
+        console.log('this.user.hasPassword', this.user.hasPassword);
         this.user.connect(userData);
       } else {
         this.user.disconnect();
         this.manageFacebookSocialLoginIssue();
+        this.user.hasPassword === undefined;
       }
       this.user.newsFeed.next(this.user);
     });
