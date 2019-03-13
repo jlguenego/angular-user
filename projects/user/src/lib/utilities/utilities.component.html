@@ -3,7 +3,7 @@
         &nbsp;
     </ng-container>
     <ng-container *ngIf="user.isLogged === false">
-        <a (click)="signupDialog()">Sign up</a><button (click)="signinDialog()">Sign in</button>
+        <button class="shadow" (click)="signupDialog()">Sign up</button><button (click)="signinDialog()">Sign in</button>
     </ng-container>
     <ng-container *ngIf="user.isLogged === true">
         <widget-popup [label]="user.userData.email">
@@ -41,7 +41,7 @@
         </div>
     </div>
     <div class="actions">
-        <button routerLink="/user" autofocus>My profile</button>
+        <button routerLink="/user">My profile</button>
         <button (click)="signout()">Sign out</button>
     </div>
     <div *ngIf="user.needsActivation && (!user.userData.isVerified)" class="need-activation">

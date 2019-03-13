@@ -7,8 +7,7 @@ button {
     font-size: inherit;
 }
 
-.light-bg,
-.dark-bg .light-bg {
+#{$light-bg-selector} {
     color: $primary-vdark-color;
     button {
         color: $primary-vdark-color;
@@ -54,8 +53,7 @@ button {
     }
 }
 
-.dark-bg,
-.light-bg .dark-bg {
+#{$dark-bg-selector} {
     color: white;
     button {
         color: white;
@@ -70,6 +68,9 @@ button {
             background-color: $accent-dark-color;
             color: white;
             border-color: $accent-dark-color;
+        }
+        &.shadow {
+            border: 1px solid transparent;
         }
     }
 }
