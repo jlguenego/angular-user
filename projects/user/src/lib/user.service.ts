@@ -49,13 +49,11 @@ export class UserService {
   }
 
   connect(userData: UserData) {
-    console.log('connect', new Error());
     this.isLogged = true;
     this.userData = userData;
   }
 
   disconnect() {
-    console.log('disconnect');
     this.isLogged = false;
     this.userData = undefined;
   }
