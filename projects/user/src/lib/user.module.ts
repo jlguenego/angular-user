@@ -29,6 +29,7 @@ import { UserRoutingModule } from './user-routing.module';
 import { InitPasswordComponent } from './routes/init-password/init-password.component';
 import { InitPasswordFormComponent } from './forms/init-password-form/init-password-form.component';
 import { ForgottenPasswordPageComponent } from './pages/forgotten-password-page/forgotten-password-page.component';
+import { ForgottenPasswordFormComponent } from './forms/forgotten-password-form/forgotten-password-form.component';
 
 @NgModule({
   declarations: [
@@ -51,7 +52,8 @@ import { ForgottenPasswordPageComponent } from './pages/forgotten-password-page/
     PasswordChangedPageComponent,
     InitPasswordComponent,
     InitPasswordFormComponent,
-    ForgottenPasswordPageComponent
+    ForgottenPasswordPageComponent,
+    ForgottenPasswordFormComponent
     
 
   ],

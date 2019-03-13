@@ -123,4 +123,9 @@ export class UserService {
     return this.bo.update(obj).then(() => this.refresh());
   }
 
+  sendResetPasswordEmail(email: string): Promise<void> {
+    console.log('sending the email' , email);
+    return Promise.resolve();
+  }
+
 }

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DialogService } from '@jlguenego/angular-layout';
 
 @Component({
   selector: 'user-forgotten-password-page',
@@ -7,7 +8,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ForgottenPasswordPageComponent implements OnInit {
 
-  constructor() { }
+  title = "Forgotten password";
+
+  constructor(public dialog: DialogService) { }
 
   ngOnInit() {
   }
