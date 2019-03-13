@@ -5,6 +5,7 @@ import { DialogService } from '@jlguenego/angular-layout';
 import { SuccessfullyConnectedPageComponent } from '../../pages/successfully-connected-page/successfully-connected-page.component';
 import { UserService } from '../../user.service';
 import { ERROR } from '../../error';
+import { ForgottenPasswordPageComponent } from '../../pages/forgotten-password-page/forgotten-password-page.component';
 
 @Component({
   selector: 'user-signin-form',
@@ -35,7 +36,7 @@ export class SigninFormComponent implements OnInit {
   }
 
   forgotPassword() {
-    console.log('forgot password ?');
+    this.dialog.open(ForgottenPasswordPageComponent);
   }
 
 }

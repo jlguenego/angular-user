@@ -9,6 +9,7 @@ export class UserBackOfficeService {
 
   needsActivation = false;
   hasSocialLogin = false;
+  hasForgottenPassword = false;
   user: UserService;
 
   constructor() { }

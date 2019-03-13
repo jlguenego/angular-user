@@ -12,6 +12,7 @@ import { delay } from 'rxjs/operators';
 export class UserFirebaseBackOfficeService extends UserBackOfficeService {
   needsActivation = true;
   hasSocialLogin = true;
+  hasForgottenPassword = true;
 
   constructor(
     private afAuth: AngularFireAuth,
