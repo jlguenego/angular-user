@@ -20,3 +20,6 @@ $danger-light-color: hsl($danger-hue, 100%, 70%);
 $shadow-color: hsl(0, 0%, 98%);
 
 $focus-border-color: green;
+
+$dark-bg-selector: ".dark-bg, .light-bg .dark-bg";
+$light-bg-selector: ".light-bg, .dark-bg .light-bg";

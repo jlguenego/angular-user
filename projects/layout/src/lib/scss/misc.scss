@@ -2,9 +2,20 @@
     cursor: pointer;
 }
 
-*:focus {
-    border-color: $focus-border-color;
+
+
+#{$dark-bg-selector} {
+    *:focus {
+        outline: dashed white;
+    }
 }
+
+#{$light-bg-selector} {
+    *:focus {
+        outline: dashed black;
+    }
+}
+
 
 .overlay {
     display: block;
