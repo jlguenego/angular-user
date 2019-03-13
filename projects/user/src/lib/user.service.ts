@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { UserBackOfficeService } from './user-back-office.service';
-import { BehaviorSubject } from 'rxjs';
+import { BehaviorSubject, timer } from 'rxjs';
 import { errFn } from './misc';
 
 export interface SignupFormData {
@@ -35,25 +35,27 @@ export class UserService {
   constructor(
     private bo: UserBackOfficeService
   ) {
-    this.refresh();
     this.bo.register(this);
+    this.refresh();
   }
 
   refresh(): Promise<void> {
-    return this.bo.refresh().then(userData => {
+    return timer(0).toPromise().then(() => this.bo.refresh()).then(userData => {
       this.connect(userData);
-      return Promise.resolve();
+      return;
     }).catch(err => {
       this.disconnect();
     });
   }
 
   connect(userData: UserData) {
+    console.log('connect', new Error());
     this.isLogged = true;
     this.userData = userData;
   }
 
   disconnect() {
+    console.log('disconnect');
     this.isLogged = false;
     this.userData = undefined;
   }

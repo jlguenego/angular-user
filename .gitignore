@@ -50,3 +50,4 @@ Thumbs.db
 environments/*json
 environments/*ts
 functions/secret.json
+*.log

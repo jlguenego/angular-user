@@ -1,3 +1,9 @@
+.utilities {
+    display: flex;
+    justify-content: flex-end;
+    min-width: 15rem;
+}
+
 .not-logged {
     display: flex;
     justify-content: space-around;
@@ -33,6 +39,7 @@
                 white-space: nowrap;
             }
             .email {
+                text-align: center;
                 font-size: 0.8rem;
             }
         }

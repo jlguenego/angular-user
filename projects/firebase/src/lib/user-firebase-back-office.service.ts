@@ -4,6 +4,7 @@ import { SignupFormData, UserBackOfficeService, UserData, ERROR, SigninFormData 
 import { ResponsiveService } from '@jlguenego/angular-layout';
 import { auth } from 'firebase/app';
 import { noop } from 'rxjs';
+import { delay } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -17,7 +18,10 @@ export class UserFirebaseBackOfficeService extends UserBackOfficeService {
     private responsive: ResponsiveService
   ) {
     super();
-    this.afAuth.user.subscribe(fuser => {
+
+    this.afAuth.user.pipe(
+      delay(0)
+    ).subscribe(fuser => {
       if (fuser) {
         const userData: UserData = {
           email: fuser.email,

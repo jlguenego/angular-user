@@ -13,12 +13,15 @@ function mobilecheck() {
 })
 export class ResponsiveService {
 
-  public isMobile: boolean;
-  public isDesktop: boolean;
+  public isMobile = true;
+  public isDesktop = false;
+  public isServer = isPlatformBrowser(this.platformId);
 
   constructor(@Inject(PLATFORM_ID) private platformId) {
-    if (isPlatformBrowser(platformId)) {
+    
+    if (this.isServer) {
       this.update();
+      this.isServer = false;
       window.onresize = event => {
         this.update();
       }

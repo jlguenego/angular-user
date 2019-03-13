@@ -1,15 +1,19 @@
-<ng-container *ngIf="resp.isDesktop">
-    <ng-container *ngIf="!user.isLogged">
+<div class="utilities" *ngIf="resp.isDesktop">
+    <ng-container *ngIf="user.isLogged === undefined">
+        &nbsp;
+    </ng-container>
+    <ng-container *ngIf="user.isLogged === false">
         <a (click)="signupDialog()">Sign up</a><button (click)="signinDialog()">Sign in</button>
     </ng-container>
-    <ng-container *ngIf="user.isLogged">
+    <ng-container *ngIf="user.isLogged === true">
         <widget-popup [label]="user.userData.email">
             <div class="logged light-bg" *ngIf="user.isLogged">
                 <ng-container *ngTemplateOutlet="accountSummary"></ng-container>
             </div>
         </widget-popup>
     </ng-container>
-</ng-container>
+</div>
+
 <ng-container *ngIf="resp.isMobile">
     <div class="not-logged" *ngIf="!user.isLogged">
         <a (click)="signupDialog()">Sign up</a>
@@ -33,6 +37,7 @@
         </div>
         <div class="id">
             <div class="display-name">{{user.userData.displayName}}</div>
+            <div class="email">{{user.userData.email}}</div>
         </div>
     </div>
     <div class="actions">
