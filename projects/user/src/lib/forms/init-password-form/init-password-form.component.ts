@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ERROR } from '../../error';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { UserService } from '../../user.service';
-import { DialogService, PasswordCheckService } from '@jlguenego/angular-layout';
+import { DialogService, PasswordCheckService, ErrorPageComponent } from '@jlguenego/angular-layout';
 import { PasswordChangedPageComponent } from '../../pages/password-changed-page/password-changed-page.component';
 
 @Component({
@@ -29,7 +29,10 @@ export class InitPasswordFormComponent implements OnInit {
       .then(() => {
         this.dialog.open(PasswordChangedPageComponent);
       })
-      .catch(err => this.errorCode = err.code);
+      .catch(err => this.dialog.open(ErrorPageComponent, {
+        message: "Please signout and signin again to initiate a new password.",
+        explanation: "For security reason, some operations need a recent authentification."
+      }));
   }
 
 }

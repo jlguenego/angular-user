@@ -23,6 +23,10 @@ export const ERROR = {
     NOT_CONNECTED: <Error>{
         code: 'auth/not-connected',
         message: 'Must be connected'
+    },
+    NEEDS_RECENT_AUTH: <Error>{
+        code: 'auth/needs-recent-auth',
+        message: 'Needs recent authentication for security reason.'
     }
 
 }

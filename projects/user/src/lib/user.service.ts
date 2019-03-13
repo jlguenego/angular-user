@@ -25,7 +25,7 @@ export interface UserData {
   providedIn: 'root'
 })
 export class UserService {
-  
+
   userData: UserData;
   isLogged: boolean = undefined;
   needsActivation = this.bo.needsActivation;
@@ -103,8 +103,11 @@ export class UserService {
     return this.bo.updatePassword(currentPassword, newPassword);
   }
 
-  initPassword(newPassword: any): any {
-    throw new Error("Method not implemented.");
+  initPassword(newPassword: string): Promise<void> {
+    if (!this.hasSocialLogin) {
+      throw new Error('You should not initiate a password because social login are disabled.');
+    }
+    return this.bo.initPassword(newPassword);
   }
 
   loginWithFacebook(): Promise<void> {

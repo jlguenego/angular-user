@@ -93,7 +93,10 @@ export class UserBackOfficeService {
     } else {
       return Promise.reject(ERROR.BAD_PASSWORD);
     }
+  }
 
+  initPassword(newPassword: string): Promise<void> {
+    return Promise.resolve();
   }
 
   loginWithGoogle(): Promise<void> {

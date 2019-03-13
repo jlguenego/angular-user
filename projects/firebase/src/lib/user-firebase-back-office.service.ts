@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/auth';
-import { SignupFormData, UserBackOfficeService, UserData, ERROR, SigninFormData } from '@jlguenego/angular-user';
+import { SignupFormData, UserBackOfficeService, UserData, ERROR, SigninFormData, errFn } from '@jlguenego/angular-user';
 import { ResponsiveService } from '@jlguenego/angular-layout';
 import { auth } from 'firebase/app';
 import { noop } from 'rxjs';
@@ -135,7 +135,20 @@ export class UserFirebaseBackOfficeService extends UserBackOfficeService {
       .then(() => {
         return this.afAuth.auth.currentUser.updatePassword(newPassword);
       });
+  }
 
+  initPassword(newPassword: string): Promise<void> {
+    const user = this.afAuth.auth.currentUser;
+    if (!user) {
+      Promise.reject(ERROR.NOT_CONNECTED);
+    }
+    const credential = auth.EmailAuthProvider.credential(user.email, newPassword);
+    return user.linkAndRetrieveDataWithCredential(credential).then(() => {
+      this.user.refresh();
+    }).catch(err => {
+      console.error('error', err);
+      return Promise.reject(ERROR.NEEDS_RECENT_AUTH);
+    });
   }
 
   loginWithGoogle(): Promise<void> {
