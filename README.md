@@ -24,7 +24,7 @@ First do a normal angular application with Angular CLI.
 
 ```
 npm i -g @angular/cli
-ng new a-website --routing --style sass
+ng new a-website --routing --style scss
 cd a-website
 ```
 
