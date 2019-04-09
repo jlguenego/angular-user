@@ -23,7 +23,7 @@ Here are 3 modules that could accelerate your devs:
 First do a normal angular application with Angular CLI.
 
 ```
-npm i @angular/cli
+npm i -g @angular/cli
 ng new a-website --routing --style sass
 cd a-website
 ```
