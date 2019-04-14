@@ -1,6 +1,10 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { SignupPageComponent } from './signup-page.component';
+import { SocialLoginComponent } from '../../social-login/social-login.component';
+import { WidgetModule } from '@jlguenego/angular-layout';
+import { SignupFormComponent } from '../../forms/signup-form/signup-form.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 describe('SignupPageComponent', () => {
   let component: SignupPageComponent;
@@ -8,7 +12,8 @@ describe('SignupPageComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ SignupPageComponent ]
+      declarations: [ SignupPageComponent, SocialLoginComponent, SignupFormComponent ],
+      imports: [WidgetModule, ReactiveFormsModule]
     })
     .compileComponents();
   }));
