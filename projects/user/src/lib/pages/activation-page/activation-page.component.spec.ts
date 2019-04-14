@@ -4,7 +4,9 @@ import { ActivationPageComponent } from './activation-page.component';
 import { UserService, UserData } from '../../user.service';
 import { Injectable } from '@angular/core';
 
-@Injectable()
+@Injectable({
+  providedIn: 'root'
+})
 class MyUserService extends UserService {
   userData: UserData = {
     displayName: 'Jean-Louis GUENEGO',
@@ -19,10 +21,10 @@ describe('ActivationPageComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ActivationPageComponent ],
-      providers: [{provide: UserService, useValue: MyUserService}]
+      declarations: [ActivationPageComponent],
+      providers: [{ provide: UserService, useClass: MyUserService }]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {

@@ -11,6 +11,7 @@ export class ActivationPageComponent implements OnInit {
   constructor(public user: UserService) { }
 
   ngOnInit() {
+    console.log('%O', this.user);
     this.user.sendActivationMail();
   }
 
