@@ -1,6 +1,9 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { InitPasswordComponent } from './init-password.component';
+import { InitPasswordFormComponent } from '../../forms/init-password-form/init-password-form.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { WidgetModule } from '@jlguenego/angular-layout';
 
 describe('InitPasswordComponent', () => {
   let component: InitPasswordComponent;
@@ -8,7 +11,8 @@ describe('InitPasswordComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ InitPasswordComponent ]
+      declarations: [ InitPasswordComponent, InitPasswordFormComponent ],
+      imports: [ReactiveFormsModule, WidgetModule]
     })
     .compileComponents();
   }));
