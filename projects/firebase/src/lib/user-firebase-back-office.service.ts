@@ -148,7 +148,7 @@ export class UserFirebaseBackOfficeService extends UserBackOfficeService {
   initPassword(newPassword: string): Promise<void> {
     const user = this.afAuth.auth.currentUser;
     if (!user) {
-      Promise.reject(ERROR.NOT_CONNECTED);
+      return Promise.reject(ERROR.NOT_CONNECTED);
     }
     const credential = auth.EmailAuthProvider.credential(user.email, newPassword);
     return user.linkAndRetrieveDataWithCredential(credential).then(() => {
