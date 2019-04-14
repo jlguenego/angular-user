@@ -1,6 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { MobileMenuIconComponent } from './mobile-menu-icon.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 describe('MobileMenuIconComponent', () => {
   let component: MobileMenuIconComponent;
@@ -8,7 +9,8 @@ describe('MobileMenuIconComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ MobileMenuIconComponent ]
+      declarations: [ MobileMenuIconComponent ],
+      imports: [FontAwesomeModule]
     })
     .compileComponents();
   }));

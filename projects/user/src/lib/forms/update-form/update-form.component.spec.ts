@@ -1,6 +1,8 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { UpdateFormComponent } from './update-form.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 describe('UpdateFormComponent', () => {
   let component: UpdateFormComponent;
@@ -8,9 +10,10 @@ describe('UpdateFormComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ UpdateFormComponent ]
+      declarations: [UpdateFormComponent],
+      imports: [ReactiveFormsModule, FontAwesomeModule]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {

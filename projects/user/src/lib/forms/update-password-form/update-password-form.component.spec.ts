@@ -1,6 +1,8 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { UpdatePasswordFormComponent } from './update-password-form.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { WidgetModule } from '@jlguenego/angular-layout';
 
 describe('UpdatePasswordFormComponent', () => {
   let component: UpdatePasswordFormComponent;
@@ -8,9 +10,10 @@ describe('UpdatePasswordFormComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ UpdatePasswordFormComponent ]
+      declarations: [UpdatePasswordFormComponent],
+      imports: [ReactiveFormsModule, WidgetModule]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {
