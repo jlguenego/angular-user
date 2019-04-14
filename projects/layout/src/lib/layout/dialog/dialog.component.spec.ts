@@ -1,6 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { DialogComponent } from './dialog.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 describe('DialogComponent', () => {
   let component: DialogComponent;
@@ -8,7 +9,8 @@ describe('DialogComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ DialogComponent ]
+      declarations: [ DialogComponent ],
+      imports: [FontAwesomeModule]
     })
     .compileComponents();
   }));
