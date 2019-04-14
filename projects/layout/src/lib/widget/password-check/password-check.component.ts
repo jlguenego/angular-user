@@ -8,13 +8,13 @@ import { PasswordRule, PasswordCheckService } from '../../password-check.service
 })
 export class PasswordCheckComponent implements OnInit {
 
-  private _password: string;
+  private _password: string = '';
   @Input() set password(password: string) {
     this._password = password;
     this.rules = this.service.check(this._password);
   };
 
-  rules: PasswordRule[];
+  rules: PasswordRule[] = [];
 
   @Input() focus: boolean;
 
