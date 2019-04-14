@@ -17,16 +17,16 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have as title 'angular-user'`, () => {
+  it(`should have as nav[0].label 'Brainstorm'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.debugElement.componentInstance;
-    expect(app.title).toEqual('angular-user');
+    expect(app.nav[0].label).toEqual('Brainstorm');
   });
 
-  it('should render title in a h1 tag', () => {
+  it('should have a custom site-id', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.debugElement.nativeElement;
-    expect(compiled.querySelector('h1').textContent).toContain('Welcome to angular-user!');
+    expect(compiled.querySelector('.site-id span').textContent).toContain('Neuro');
   });
 });
