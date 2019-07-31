@@ -54,7 +54,7 @@ import { ForgottenPasswordFormComponent } from './forms/forgotten-password-form/
     InitPasswordFormComponent,
     ForgottenPasswordPageComponent,
     ForgottenPasswordFormComponent
-    
+
 
   ],
   imports: [

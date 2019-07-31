@@ -18,13 +18,13 @@ export class ResponsiveService {
   public isServer = isPlatformBrowser(this.platformId);
 
   constructor(@Inject(PLATFORM_ID) private platformId) {
-    
+
     if (this.isServer) {
       this.update();
       this.isServer = false;
       window.onresize = event => {
         this.update();
-      }
+      };
     }
   }
 

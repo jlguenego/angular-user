@@ -2,9 +2,9 @@ import { Injectable } from '@angular/core';
 import { ValidatorFn, AbstractControl } from '@angular/forms';
 
 export interface PasswordRule {
-  verified: boolean,
-  label: string,
-  check: (password: string) => boolean,
+  verified: boolean;
+  label: string;
+  check: (password: string) => boolean;
 }
 
 @Injectable({
@@ -52,13 +52,13 @@ export class PasswordCheckService {
 
     return (control: AbstractControl): { [key: string]: any } => {
       const rules = this.check(control.value);
-      for (let rule of rules) {
+      for (const rule of rules) {
         if (rule.verified === false) {
-          return { password: control.value }
+          return { password: control.value };
         }
       }
       return null;
-    }
+    };
   }
 
   check(password: string): PasswordRule[] {

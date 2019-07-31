@@ -9,7 +9,7 @@ import { UserService } from '../../user.service';
 })
 export class SignupPageComponent implements OnInit, PageComponent {
 
-  title = "Sign up";
+  title = 'Sign up';
   maxWidth = '20rem';
 
   constructor(public user: UserService) { }

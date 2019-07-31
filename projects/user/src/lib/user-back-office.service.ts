@@ -50,7 +50,7 @@ export class UserBackOfficeService {
     }
     delete data.password;
     localStorage.setItem('isLogged', key);
-    return Promise.resolve(<UserData>data);
+    return Promise.resolve(data as UserData);
   }
 
   logout(): Promise<void> {
@@ -114,8 +114,8 @@ export class UserBackOfficeService {
     }
     const json = localStorage.getItem(key);
     const data = JSON.parse(json);
-    data.displayName = obj.displayName;  
-    data.photoURL = obj.photoURL;  
+    data.displayName = obj.displayName;
+    data.photoURL = obj.photoURL;
     localStorage.setItem(key, JSON.stringify(data));
     return Promise.resolve();
   }

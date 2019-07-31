@@ -21,8 +21,8 @@ export class ProfileComponent implements OnInit {
       this.user.delete().then(() => {
         this.router.navigate(['/user/account-deleted']);
       }).catch(err => this.dialog.open(ErrorPageComponent, {
-        message: "Please signout and signin again to delete your account.",
-        explanation: "For security reason, some operations need a recent authentification."
+        message: 'Please signout and signin again to delete your account.',
+        explanation: 'For security reason, some operations need a recent authentification.'
       }));
     }
   }

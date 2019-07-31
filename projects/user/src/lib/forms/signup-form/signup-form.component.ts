@@ -32,7 +32,7 @@ export class SignupFormComponent implements OnInit {
   onSubmit() {
     this.errorCode = undefined;
 
-    this.user.createAccount(<SignupFormData>this.f.value).then(() => {
+    this.user.createAccount(this.f.value as SignupFormData).then(() => {
       this.dialog.open(AccountCreatedPageComponent);
     }).catch(error => {
       this.errorCode = error.code;

@@ -12,7 +12,7 @@ import { AnchorDirective } from '../../widget/anchor.directive';
 export class DialogComponent implements OnInit {
 
   isVisible = false;
-  title = "Error: I need a title";
+  title = 'Error: I need a title';
   faTimes = faTimes;
   maxWidth = DIALOG_DEFAULT_MAXWIDTH;
   @ViewChild(AnchorDirective, { static: false }) anchorHost: AnchorDirective;

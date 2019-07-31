@@ -7,7 +7,7 @@ import { UserService } from '../../user.service';
   styleUrls: ['./activation-page.component.scss']
 })
 export class ActivationPageComponent implements OnInit {
-  title = "Activate your account";
+  title = 'Activate your account';
   constructor(public user: UserService) { }
 
   ngOnInit() {

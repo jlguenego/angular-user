@@ -8,7 +8,7 @@ import { DialogService, PageComponent } from '../../../dialog.service';
 })
 export class SuccessPageComponent implements OnInit, PageComponent {
 
-  title = "Congratulations!";
+  title = 'Congratulations!';
   data = { message: 'I need a message...' };
 
   constructor(public dialog: DialogService) { }

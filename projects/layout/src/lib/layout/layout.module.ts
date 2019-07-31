@@ -29,9 +29,9 @@ import { NotFoundComponent } from './routes/not-found/not-found.component';
     WidgetModule,
   ],
   exports: [
-    HeaderComponent, 
-    FooterComponent, 
-    BodyComponent, 
+    HeaderComponent,
+    FooterComponent,
+    BodyComponent,
     DialogComponent,
   ],
   entryComponents: [

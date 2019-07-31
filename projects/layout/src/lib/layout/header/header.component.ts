@@ -3,7 +3,7 @@ import { faBars } from '@fortawesome/free-solid-svg-icons';
 import { BehaviorSubject } from 'rxjs';
 import { ResponsiveService } from '../../responsive.service';
 
-export interface NavItem { label: string, route: string };
+export interface NavItem { label: string; route: string; }
 
 @Component({
   selector: 'layout-header',
@@ -32,7 +32,7 @@ export class HeaderComponent implements OnInit {
     });
   }
 
-  ngOnInit() { 
+  ngOnInit() {
     if (!this.mobileNavItems) {
       this.mobileNavItems = this.navItems;
     }

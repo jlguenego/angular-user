@@ -8,11 +8,11 @@ import { PasswordRule, PasswordCheckService } from '../../password-check.service
 })
 export class PasswordCheckComponent implements OnInit {
 
-  private _password: string = '';
+  private _password = '';
   @Input() set password(password: string) {
     this._password = password;
     this.rules = this.service.check(this._password);
-  };
+  }
 
   rules: PasswordRule[] = [];
 
@@ -26,7 +26,7 @@ export class PasswordCheckComponent implements OnInit {
 
   allRulesVerified() {
     return this.rules.reduce((acc, rule) => {
-      return acc && rule.verified
+      return acc && rule.verified;
     }, true);
   }
 

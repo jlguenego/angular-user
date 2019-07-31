@@ -30,8 +30,8 @@ export class InitPasswordFormComponent implements OnInit {
         this.dialog.open(PasswordChangedPageComponent);
       })
       .catch(err => this.dialog.open(ErrorPageComponent, {
-        message: "Please signout and signin again to initiate a new password.",
-        explanation: "For security reason, some operations need a recent authentification."
+        message: 'Please signout and signin again to initiate a new password.',
+        explanation: 'For security reason, some operations need a recent authentification.'
       }));
   }
 

@@ -8,7 +8,7 @@ import { DialogService } from '@jlguenego/angular-layout';
 })
 export class ForgottenPasswordPageComponent implements OnInit {
 
-  title = "Forgotten password";
+  title = 'Forgotten password';
 
   constructor(public dialog: DialogService) { }
 

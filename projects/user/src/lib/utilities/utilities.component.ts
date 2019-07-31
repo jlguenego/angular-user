@@ -42,7 +42,7 @@ export class UtilitiesComponent implements OnInit {
   }
 
   activationDialog() {
-    this.dialog.open(ActivationPageComponent)
+    this.dialog.open(ActivationPageComponent);
   }
 
   signout() {

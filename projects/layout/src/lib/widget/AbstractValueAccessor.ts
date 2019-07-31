@@ -3,7 +3,7 @@ import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 
 export abstract class AbstractValueAccessor implements ControlValueAccessor {
   _value: any = '';
-  get value(): any { return this._value; };
+  get value(): any { return this._value; }
   set value(v: any) {
     if (v !== this._value) {
       this._value = v;

@@ -4,29 +4,29 @@ export interface Error {
 }
 
 export const ERROR = {
-    MAIL_ALREADY_IN_USE: <Error>{
+    MAIL_ALREADY_IN_USE: {
         code: 'auth/mail-already-in-use',
         message: 'The mail is already in use'
-    },
-    WEAK_PASSWORD: <Error>{
+    } as Error,
+    WEAK_PASSWORD: {
         code: 'auth/weak-password',
         message: 'The password is too weak'
-    },
-    BAD_LOGIN: <Error>{
+    } as Error,
+    BAD_LOGIN: {
         code: 'auth/bad-login',
         message: 'Bad login or password'
-    },
-    BAD_PASSWORD: <Error>{
+    } as Error,
+    BAD_PASSWORD: {
         code: 'auth/bad-password',
         message: 'Bad password'
-    },
-    NOT_CONNECTED: <Error>{
+    } as Error,
+    NOT_CONNECTED: {
         code: 'auth/not-connected',
         message: 'Must be connected'
-    },
-    NEEDS_RECENT_AUTH: <Error>{
+    } as Error,
+    NEEDS_RECENT_AUTH: {
         code: 'auth/needs-recent-auth',
         message: 'Needs recent authentication for security reason.'
-    }
+    } as Error
 
-}
+};

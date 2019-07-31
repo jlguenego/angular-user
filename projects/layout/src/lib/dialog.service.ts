@@ -32,7 +32,7 @@ export class DialogService {
     timer(0).subscribe(() => {
       this.currentPage = page;
       const componentRef = this.component.loadComponent(this.currentPage);
-      const pageComponent = (<PageComponent>componentRef.instance);
+      const pageComponent = (componentRef.instance as PageComponent);
       this.component.title = pageComponent.title;
       pageComponent.data = data;
       this.component.maxWidth = pageComponent.maxWidth || DIALOG_DEFAULT_MAXWIDTH;

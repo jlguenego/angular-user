@@ -9,7 +9,7 @@ import { UserBackOfficeService } from '../../user-back-office.service';
 })
 export class AccountCreatedPageComponent implements OnInit {
 
-  title = "Congratulations!"
+  title = 'Congratulations!';
 
   constructor(public dialog: DialogService, public bo: UserBackOfficeService) { }
 

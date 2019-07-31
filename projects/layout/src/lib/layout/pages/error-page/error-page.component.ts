@@ -7,11 +7,11 @@ import { PageComponent } from '../../../dialog.service';
   styleUrls: ['./error-page.component.scss']
 })
 export class ErrorPageComponent implements OnInit, PageComponent {
-  title = "Error";
+  title = 'Error';
   data = {
-    message: "I need a message...",
-    explanation: ""
-  }
+    message: 'I need a message...',
+    explanation: ''
+  };
 
   constructor() { }
 

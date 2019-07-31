@@ -61,13 +61,13 @@ export class UserFirebaseBackOfficeService extends UserBackOfficeService {
   }
 
   createAccount(formData: SignupFormData): Promise<UserData> {
-    let userData: UserData = undefined;
+    let userData: UserData;
     return this.afAuth.auth.createUserWithEmailAndPassword(formData.email, formData.password).then(credentials => {
       userData = {
         email: credentials.user.email,
         displayName: undefined,
         isVerified: credentials.user.emailVerified
-      }
+      };
       return this.afAuth.auth.currentUser.updateProfile({ displayName: formData.displayName });
     }).then(() => {
       userData.displayName = formData.displayName;
@@ -176,7 +176,7 @@ export class UserFirebaseBackOfficeService extends UserBackOfficeService {
           const provider = new auth.GoogleAuthProvider();
           provider.setCustomParameters({ login_hint: error.email });
           return this.afAuth.auth.signInWithPopup(provider).then(() => {
-            this.afAuth.auth.currentUser.linkWithPopup(new auth.FacebookAuthProvider())
+            this.afAuth.auth.currentUser.linkWithPopup(new auth.FacebookAuthProvider());
           });
         }
         return Promise.reject();

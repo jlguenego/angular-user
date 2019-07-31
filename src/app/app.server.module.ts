@@ -12,4 +12,4 @@ import { AppModule } from './app.module';
         AppComponent
     ],
 })
-export class AppServerModule { };
+export class AppServerModule { }
