@@ -15,7 +15,7 @@ export class DialogComponent implements OnInit {
   title = "Error: I need a title";
   faTimes = faTimes;
   maxWidth = DIALOG_DEFAULT_MAXWIDTH;
-  @ViewChild(AnchorDirective) anchorHost: AnchorDirective;
+  @ViewChild(AnchorDirective, { static: false }) anchorHost: AnchorDirective;
 
   constructor(
     public dialog: DialogService,
