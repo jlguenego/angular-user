@@ -2,16 +2,17 @@ import { Component, OnInit, Input } from '@angular/core';
 import { PasswordRule, PasswordCheckService } from '../../password-check.service';
 
 @Component({
+  // tslint:disable-next-line: component-selector
   selector: 'widget-password-check',
   templateUrl: './password-check.component.html',
   styleUrls: ['./password-check.component.scss']
 })
 export class PasswordCheckComponent implements OnInit {
 
-  private _password = '';
+  private privatePassword = '';
   @Input() set password(password: string) {
-    this._password = password;
-    this.rules = this.service.check(this._password);
+    this.privatePassword = password;
+    this.rules = this.service.check(this.privatePassword);
   }
 
   rules: PasswordRule[] = [];
@@ -21,7 +22,7 @@ export class PasswordCheckComponent implements OnInit {
   constructor(public service: PasswordCheckService) { }
 
   ngOnInit() {
-    this.rules = this.service.check(this._password);
+    this.rules = this.service.check(this.privatePassword);
   }
 
   allRulesVerified() {

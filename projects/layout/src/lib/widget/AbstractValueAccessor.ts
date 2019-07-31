@@ -2,17 +2,17 @@ import { forwardRef } from '@angular/core';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 
 export abstract class AbstractValueAccessor implements ControlValueAccessor {
-  _value: any = '';
-  get value(): any { return this._value; }
+  private privateValue: any = '';
+  get value(): any { return this.privateValue; }
   set value(v: any) {
-    if (v !== this._value) {
-      this._value = v;
+    if (v !== this.privateValue) {
+      this.privateValue = v;
       this.onChange(v);
     }
   }
 
   writeValue(value: any) {
-    this._value = value;
+    this.privateValue = value;
     // warning: comment below if only want to emit on user intervention
     this.onChange(value);
   }

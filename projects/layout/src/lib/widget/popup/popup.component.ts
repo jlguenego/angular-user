@@ -2,6 +2,7 @@ import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
 import { faCaretUp, faCaretDown } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
+  // tslint:disable-next-line: component-selector
   selector: 'widget-popup',
   templateUrl: './popup.component.html',
   styleUrls: ['./popup.component.scss']

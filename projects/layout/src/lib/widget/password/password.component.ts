@@ -3,6 +3,7 @@ import { faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons';
 import { AbstractValueAccessor, MakeProvider } from '../AbstractValueAccessor';
 
 @Component({
+  // tslint:disable-next-line: component-selector
   selector: 'widget-password',
   templateUrl: './password.component.html',
   styleUrls: ['./password.component.scss'],
