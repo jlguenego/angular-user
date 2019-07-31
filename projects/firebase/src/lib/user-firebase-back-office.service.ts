@@ -39,7 +39,7 @@ export class UserFirebaseBackOfficeService extends UserBackOfficeService {
       } else {
         this.user.disconnect();
         this.manageFacebookSocialLoginIssue();
-        this.user.hasPassword === undefined;
+        this.user.hasPassword = true;
       }
       this.user.newsFeed.next(this.user);
     });
@@ -151,7 +151,7 @@ export class UserFirebaseBackOfficeService extends UserBackOfficeService {
       return Promise.reject(ERROR.NOT_CONNECTED);
     }
     const credential = auth.EmailAuthProvider.credential(user.email, newPassword);
-    return user.linkAndRetrieveDataWithCredential(credential).then(() => {
+    return user.linkWithCredential(credential).then(() => {
       this.user.refresh();
     }).catch(err => {
       console.error('error', err);
