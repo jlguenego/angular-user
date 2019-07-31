@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, HostListener } from '@angular/core';
 import { Router } from '@angular/router';
 import { faUserCircle } from '@fortawesome/free-solid-svg-icons';
 
@@ -14,11 +14,6 @@ import { errFn } from '../misc';
   selector: 'user-utilities',
   templateUrl: './utilities.component.html',
   styleUrls: ['./utilities.component.scss'],
-  host: {
-    // when the browser user comes back to this browser window tab, it will run refresh().
-    // this is needed for instance while checking user activation (mail verified)
-    '(window:focus)': 'refresh($event)',
-  }
 })
 export class UtilitiesComponent implements OnInit {
 
@@ -49,6 +44,9 @@ export class UtilitiesComponent implements OnInit {
     this.user.logout().catch(errFn);
   }
 
+  // when the browser user comes back to this browser window tab, it will run refresh().
+  // this is needed for instance while checking user activation (mail verified)
+  @HostListener('window:focus')
   refresh(event) {
     this.user.refresh();
   }
