@@ -12,7 +12,6 @@ const routes: Routes = [
   { path: 'presentation', component: PresentationComponent },
   { path: 'legal', component: LegalComponent },
   { path: '**', component: NotFoundComponent },
-
 ];
 
 @NgModule({
